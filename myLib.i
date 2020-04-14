@@ -93,6 +93,17 @@ typedef volatile struct {
 extern DMA *dma;
 # 251 "myLib.h"
 void DMANow(int channel, volatile const void *src, volatile void *dst, unsigned int cnt);
+# 342 "myLib.h"
+typedef struct{
+    const unsigned char* data;
+    int length;
+    int frequency;
+    int isPlaying;
+    int loops;
+    int duration;
+    int priority;
+    int vBlankCount;
+} SOUND;
 
 
 
@@ -105,6 +116,9 @@ unsigned short *videoBuffer = (unsigned short *)0x6000000;
 
 
 DMA *dma = (DMA *)0x40000B0;
+
+
+OBJ_ATTR shadowOAM[128];
 
 
 void setPixel3(int col, int row, unsigned short color) {
@@ -127,7 +141,7 @@ void setPixel4(int col, int row, unsigned char colorIndex) {
 
 void drawRect3(int col, int row, int width, int height, volatile unsigned short color) {
     for(int r = 0; r < height; r++) {
-        DMANow(3, &color, &videoBuffer[((row + r)*(240)+(col))], (2 << 23) | width);
+        DMANow(3, &color, &videoBuffer[((row+r)*(240)+(col))], (2 << 23) | width);
     }
 }
 
