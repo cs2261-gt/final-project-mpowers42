@@ -59,6 +59,8 @@ typedef unsigned int u32;
 // Display Constants
 #define SCREENHEIGHT 160
 #define SCREENWIDTH  240
+#define WORLDHEIGHT 256
+#define WORLDWIDTH 1024
 
 // Video Buffer
 extern unsigned short *videoBuffer;

@@ -8,6 +8,7 @@
 #include "winScreen.h"
 #include "loseScreen.h"
 #include "spritesheet.h"
+#include "background.h"
 
 // Prototype
 void initialize();
@@ -56,7 +57,7 @@ int main() {
 void initialize() {
 
     // Set up BG0 register
-    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL | BG_4BPP;
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE | BG_4BPP;
 
     REG_DISPCTL = MODE0 | BG0_ENABLE | SPRITE_ENABLE;
 
@@ -92,9 +93,9 @@ void start() {
 void goToGame() {
 
     // DMA bg tiles, map, and palette into memory
-    DMANow(3, gameScreenPal, PALETTE, 256);
-    DMANow(3, gameScreenTiles, &CHARBLOCK[0], gameScreenTilesLen / 2);
-    DMANow(3, gameScreenMap, &SCREENBLOCK[28], gameScreenMapLen / 2);
+    DMANow(3, backgroundPal, PALETTE, 256);
+    DMANow(3, backgroundTiles, &CHARBLOCK[0], backgroundTilesLen / 2);
+    DMANow(3, backgroundMap, &SCREENBLOCK[28], backgroundMapLen / 2);
 
     // DMA sprite tiles and palette into palette
     DMANow(3, spritesheetPal, SPRITEPALETTE, 256);

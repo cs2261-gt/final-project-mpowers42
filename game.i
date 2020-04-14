@@ -2,88 +2,88 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "game.c"
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 1 3
-# 10 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/ieeefp.h" 1 3
-# 11 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/_ansi.h" 1 3
-# 15 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/_ansi.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/newlib.h" 1 3
-# 14 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/newlib.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/_newlib_version.h" 1 3
-# 15 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/newlib.h" 2 3
-# 16 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/_ansi.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/config.h" 1 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 1 3
+# 10 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/ieeefp.h" 1 3
+# 11 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/_ansi.h" 1 3
+# 10 "/opt/devkitpro/devkitARM/arm-none-eabi/include/_ansi.h" 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/newlib.h" 1 3
+# 14 "/opt/devkitpro/devkitARM/arm-none-eabi/include/newlib.h" 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/_newlib_version.h" 1 3
+# 15 "/opt/devkitpro/devkitARM/arm-none-eabi/include/newlib.h" 2 3
+# 11 "/opt/devkitpro/devkitARM/arm-none-eabi/include/_ansi.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/config.h" 1 3
 
 
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/ieeefp.h" 1 3
-# 5 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/config.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/features.h" 1 3
-# 6 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/config.h" 2 3
-# 17 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/_ansi.h" 2 3
-# 12 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/ieeefp.h" 1 3
+# 5 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/config.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/features.h" 1 3
+# 6 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/config.h" 2 3
+# 12 "/opt/devkitpro/devkitARM/arm-none-eabi/include/_ansi.h" 2 3
+# 12 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
 
 
 
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 1 3 4
-# 216 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 3 4
+# 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 1 3 4
+# 209 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 3 4
 
-# 216 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 3 4
+# 209 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 3 4
 typedef unsigned int size_t;
-# 328 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 3 4
+# 321 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 3 4
 typedef unsigned int wchar_t;
-# 17 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
+# 17 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 1 3
-# 13 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/_ansi.h" 1 3
-# 14 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 1 3 4
-# 149 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 3 4
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 1 3
+# 13 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/_ansi.h" 1 3
+# 14 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 1 3 4
+# 143 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 3 4
 typedef int ptrdiff_t;
-# 15 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 1 3
-# 24 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_types.h" 1 3
+# 15 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 1 3
+# 24 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_types.h" 1 3
 
 
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 1 3
-# 41 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 1 3
+# 41 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef signed char __int8_t;
 
 typedef unsigned char __uint8_t;
-# 55 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 55 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef short int __int16_t;
 
 typedef short unsigned int __uint16_t;
-# 77 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 77 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long int __int32_t;
 
 typedef long unsigned int __uint32_t;
-# 103 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 103 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long long int __int64_t;
 
 typedef long long unsigned int __uint64_t;
-# 134 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 134 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef signed char __int_least8_t;
 
 typedef unsigned char __uint_least8_t;
-# 160 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 160 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef short int __int_least16_t;
 
 typedef short unsigned int __uint_least16_t;
-# 182 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 182 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long int __int_least32_t;
 
 typedef long unsigned int __uint_least32_t;
-# 200 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 200 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long long int __int_least64_t;
 
 typedef long long unsigned int __uint_least64_t;
-# 214 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
+# 214 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long long int __intmax_t;
 
 
@@ -103,7 +103,7 @@ typedef long long unsigned int __uintmax_t;
 typedef int __intptr_t;
 
 typedef unsigned int __uintptr_t;
-# 5 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/_types.h" 2 3
+# 5 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/_types.h" 2 3
 
 
 typedef __int64_t _off_t;
@@ -116,18 +116,18 @@ typedef __uint32_t __ino_t;
 
 
 typedef __uint32_t __dev_t;
-# 25 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/lock.h" 1 3
+# 25 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/lock.h" 1 3
 
 
 
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stdint.h" 1 3 4
-# 9 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stdint.h" 3 4
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdint.h" 1 3 4
-# 13 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdint.h" 3 4
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_intsup.h" 1 3 4
-# 35 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stdint.h" 1 3 4
+# 9 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stdint.h" 3 4
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdint.h" 1 3 4
+# 13 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdint.h" 3 4
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_intsup.h" 1 3 4
+# 35 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_intsup.h" 3 4
        
        
        
@@ -135,7 +135,7 @@ typedef __uint32_t __dev_t;
        
        
        
-# 187 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 187 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_intsup.h" 3 4
        
        
        
@@ -143,9 +143,9 @@ typedef __uint32_t __dev_t;
        
        
        
-# 14 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdint.h" 2 3 4
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_stdint.h" 1 3 4
-# 20 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_stdint.h" 3 4
+# 14 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdint.h" 2 3 4
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_stdint.h" 1 3 4
+# 20 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_stdint.h" 3 4
 typedef __int8_t int8_t ;
 
 
@@ -209,7 +209,7 @@ typedef __intptr_t intptr_t;
 
 
 typedef __uintptr_t uintptr_t;
-# 15 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdint.h" 2 3 4
+# 15 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdint.h" 2 3 4
 
 
 
@@ -236,20 +236,20 @@ typedef __uint_least32_t uint_least32_t;
 
 typedef __int_least64_t int_least64_t;
 typedef __uint_least64_t uint_least64_t;
-# 51 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdint.h" 3 4
+# 51 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdint.h" 3 4
   typedef int int_fast8_t;
   typedef unsigned int uint_fast8_t;
-# 61 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdint.h" 3 4
+# 61 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdint.h" 3 4
   typedef int int_fast16_t;
   typedef unsigned int uint_fast16_t;
-# 71 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdint.h" 3 4
+# 71 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdint.h" 3 4
   typedef int int_fast32_t;
   typedef unsigned int uint_fast32_t;
-# 81 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdint.h" 3 4
+# 81 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdint.h" 3 4
   typedef long long int int_fast64_t;
   typedef long long unsigned int uint_fast64_t;
-# 10 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stdint.h" 2 3 4
-# 6 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/lock.h" 2 3
+# 10 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stdint.h" 2 3 4
+# 6 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/lock.h" 2 3
 
 typedef int32_t _LOCK_T;
 
@@ -273,7 +273,7 @@ extern void __libc_lock_release_recursive(_LOCK_RECURSIVE_T *lock);
 
 extern int __libc_lock_try_acquire(_LOCK_T *lock);
 extern int __libc_lock_try_acquire_recursive(_LOCK_RECURSIVE_T *lock);
-# 26 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 2 3
+# 26 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 2 3
 
 
 typedef long __blkcnt_t;
@@ -289,7 +289,7 @@ typedef __uint64_t __fsblkcnt_t;
 
 
 typedef __uint32_t __fsfilcnt_t;
-# 50 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 3
+# 50 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 3
 typedef int __pid_t;
 
 
@@ -306,7 +306,7 @@ typedef unsigned short __gid_t;
 
 
 typedef __uint32_t __id_t;
-# 88 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 3
+# 88 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 3
 typedef __uint32_t __mode_t;
 
 
@@ -326,18 +326,18 @@ typedef _off64_t __loff_t;
 
 
 typedef long __key_t;
-# 129 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 3
+# 129 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 3
 typedef unsigned int __size_t;
-# 145 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 3
+# 145 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 3
 typedef signed int _ssize_t;
-# 156 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 3
+# 156 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 3
 typedef _ssize_t __ssize_t;
 
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 1 3 4
-# 357 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 3 4
+# 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 1 3 4
+# 350 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 3 4
 typedef unsigned int wint_t;
-# 160 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_types.h" 2 3
+# 160 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_types.h" 2 3
 
 
 
@@ -362,10 +362,20 @@ typedef void *_iconv_t;
 
 
 
+
+
+
 typedef unsigned long __clock_t;
 
 
-typedef long __time_t;
+
+
+
+
+typedef __int_least64_t __time_t;
+
+
+
 
 
 typedef unsigned long __clockid_t;
@@ -381,6 +391,7 @@ typedef __uint8_t __sa_family_t;
 typedef __uint32_t __socklen_t;
 
 
+typedef int __nl_item;
 typedef unsigned short __nlink_t;
 typedef long __suseconds_t;
 typedef unsigned long __useconds_t;
@@ -389,7 +400,7 @@ typedef unsigned long __useconds_t;
 
 
 typedef char * __va_list;
-# 16 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 2 3
+# 16 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 2 3
 
 
 
@@ -397,7 +408,7 @@ typedef char * __va_list;
 
 
 typedef unsigned long __ULong;
-# 38 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 38 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
 struct _reent;
 
 struct __locale_t;
@@ -443,7 +454,7 @@ struct _on_exit_args {
 
  __ULong _is_cxa;
 };
-# 93 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 93 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
 struct _atexit {
  struct _atexit *_next;
  int _ind;
@@ -451,12 +462,12 @@ struct _atexit {
  void (*_fns[32])(void);
         struct _on_exit_args _on_exit_args;
 };
-# 117 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 117 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
 struct __sbuf {
  unsigned char *_base;
  int _size;
 };
-# 181 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 181 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
 struct __sFILE {
   unsigned char *_p;
   int _r;
@@ -473,13 +484,13 @@ struct __sFILE {
 
   void * _cookie;
 
-  int (* _read) (struct _reent *, void *, char *, int)
-                                          ;
-  int (* _write) (struct _reent *, void *, const char *, int)
-
-                                   ;
-  _fpos_t (* _seek) (struct _reent *, void *, _fpos_t, int);
-  int (* _close) (struct _reent *, void *);
+  int (*_read) (struct _reent *, void *,
+        char *, int);
+  int (*_write) (struct _reent *, void *,
+         const char *,
+         int);
+  _fpos_t (*_seek) (struct _reent *, void *, _fpos_t, int);
+  int (*_close) (struct _reent *, void *);
 
 
   struct __sbuf _ub;
@@ -507,7 +518,7 @@ struct __sFILE {
   _mbstate_t _mbstate;
   int _flags2;
 };
-# 287 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 287 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
 typedef struct __sFILE __FILE;
 
 
@@ -518,7 +529,7 @@ struct _glue
   int _niobs;
   __FILE *_iobs;
 };
-# 319 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 319 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
 struct _rand48 {
   unsigned short _seed[3];
   unsigned short _mult[3];
@@ -528,7 +539,7 @@ struct _rand48 {
 
 
 };
-# 571 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 610 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
 struct _reent
 {
   int _errno;
@@ -547,7 +558,7 @@ struct _reent
 
   int __sdidinit;
 
-  void (* __cleanup) (struct _reent *);
+  void (*__cleanup) (struct _reent *);
 
 
   struct _Bigint *_result;
@@ -607,10 +618,12 @@ struct _reent
 
 
   struct _glue __sglue;
+
   __FILE __sf[3];
+
   void *deviceData;
 };
-# 769 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/reent.h" 3
+# 817 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/reent.h" 3
 extern struct _reent *_impure_ptr ;
 extern struct _reent *const _global_impure_ptr ;
 
@@ -621,15 +634,15 @@ void _reclaim_reent (struct _reent *);
 
 
   struct _reent * __getreent (void);
-# 19 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/cdefs.h" 1 3
-# 45 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/cdefs.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 1 3 4
-# 46 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/cdefs.h" 2 3
-# 20 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/stdlib.h" 1 3
-# 21 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
-# 33 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 19 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/cdefs.h" 1 3
+# 47 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/cdefs.h" 3
+# 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 1 3 4
+# 48 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/cdefs.h" 2 3
+# 20 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/stdlib.h" 1 3
+# 21 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 2 3
+# 33 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 
 
 typedef struct
@@ -682,12 +695,13 @@ int atoi (const char *__nptr);
 int _atoi_r (struct _reent *, const char *__nptr);
 long atol (const char *__nptr);
 long _atol_r (struct _reent *, const char *__nptr);
-void * bsearch (const void * __key, const void * __base, size_t __nmemb, size_t __size, __compar_fn_t _compar)
-
-
-
-                                ;
-void * calloc (size_t __nmemb, size_t __size) ;
+void * bsearch (const void *__key,
+         const void *__base,
+         size_t __nmemb,
+         size_t __size,
+         __compar_fn_t _compar);
+void *calloc(size_t, size_t) __attribute__((__malloc__)) __attribute__((__warn_unused_result__))
+      __attribute__((__alloc_size__(1, 2))) ;
 div_t div (int __numer, int __denom);
 void exit (int __status) __attribute__ ((__noreturn__));
 void free (void *) ;
@@ -701,7 +715,7 @@ char * _findenv_r (struct _reent *, const char *, int *);
 
 long labs (long);
 ldiv_t ldiv (long __numer, long __denom);
-void * malloc (size_t __size) ;
+void *malloc(size_t) __attribute__((__malloc__)) __attribute__((__warn_unused_result__)) __attribute__((__alloc_size__(1))) ;
 int mblen (const char *, size_t);
 int _mblen_r (struct _reent *, const char *, size_t, _mbstate_t *);
 int mbtowc (wchar_t *restrict, const char *restrict, size_t);
@@ -712,17 +726,17 @@ size_t mbstowcs (wchar_t *restrict, const char *restrict, size_t);
 size_t _mbstowcs_r (struct _reent *, wchar_t *restrict, const char *restrict, size_t, _mbstate_t *);
 size_t wcstombs (char *restrict, const wchar_t *restrict, size_t);
 size_t _wcstombs_r (struct _reent *, char *restrict, const wchar_t *restrict, size_t, _mbstate_t *);
-# 133 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 134 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 char * _mkdtemp_r (struct _reent *, char *);
 int _mkostemp_r (struct _reent *, char *, int);
 int _mkostemps_r (struct _reent *, char *, int, int);
 int _mkstemp_r (struct _reent *, char *);
 int _mkstemps_r (struct _reent *, char *, int);
 char * _mktemp_r (struct _reent *, char *) __attribute__ ((__deprecated__("the use of `mktemp' is dangerous; use `mkstemp' instead")));
-void qsort (void * __base, size_t __nmemb, size_t __size, __compar_fn_t _compar);
+void qsort (void *__base, size_t __nmemb, size_t __size, __compar_fn_t _compar);
 int rand (void);
-void * realloc (void * __r, size_t __size) ;
-# 154 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+void *realloc(void *, size_t) __attribute__((__warn_unused_result__)) __attribute__((__alloc_size__(2))) ;
+# 156 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 void srand (unsigned __seed);
 double strtod (const char *restrict __n, char **restrict __end_PTR);
 double _strtod_r (struct _reent *,const char *restrict __n, char **restrict __end_PTR);
@@ -739,9 +753,9 @@ long strtol (const char *restrict __n, char **restrict __end_PTR, int __base);
 long _strtol_r (struct _reent *,const char *restrict __n, char **restrict __end_PTR, int __base);
 unsigned long strtoul (const char *restrict __n, char **restrict __end_PTR, int __base);
 unsigned long _strtoul_r (struct _reent *,const char *restrict __n, char **restrict __end_PTR, int __base);
-# 186 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 188 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 int system (const char *__string);
-# 197 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 199 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 void _Exit (int __status) __attribute__ ((__noreturn__));
 
 
@@ -753,10 +767,10 @@ void * _reallocf_r (struct _reent *, void *, size_t);
 
 
 int _setenv_r (struct _reent *, const char *__string, const char *__value, int __overwrite);
-# 219 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 221 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 char * __itoa (int, char *, int);
 char * __utoa (unsigned, char *, int);
-# 258 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 260 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 long long atoll (const char *__nptr);
 
 long long _atoll_r (struct _reent *, const char *__nptr);
@@ -770,8 +784,9 @@ long long _strtoll_r (struct _reent *, const char *restrict __n, char **restrict
 unsigned long long strtoull (const char *restrict __n, char **restrict __end_PTR, int __base);
 
 unsigned long long _strtoull_r (struct _reent *, const char *restrict __n, char **restrict __end_PTR, int __base);
-# 279 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 281 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 int _unsetenv_r (struct _reent *, const char *__string);
+
 
 
 
@@ -789,27 +804,27 @@ void _mstats_r (struct _reent *, char *);
 int _system_r (struct _reent *, const char *);
 
 void __eprintf (const char *, const char *, unsigned int, const char *);
-# 316 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 319 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 extern long double _strtold_r (struct _reent *, const char *restrict, char **restrict);
 
 extern long double strtold (const char *restrict, char **restrict);
-# 333 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdlib.h" 3
+# 336 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 
 # 2 "game.c" 2
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 1 3
-# 36 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 1 3 4
-# 37 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 1 3
+# 36 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
+# 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 1 3 4
+# 37 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 2 3
 
 
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stdarg.h" 1 3 4
-# 40 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stdarg.h" 3 4
+# 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stdarg.h" 1 3 4
+# 40 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list;
-# 41 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 2 3
-# 61 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/types.h" 1 3
-# 28 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/types.h" 3
+# 41 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 2 3
+# 61 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/types.h" 1 3
+# 28 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/types.h" 3
 typedef __uint8_t u_int8_t;
 
 
@@ -822,10 +837,10 @@ typedef __uint32_t u_int32_t;
 typedef __uint64_t u_int64_t;
 
 typedef int register_t;
-# 62 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/types.h" 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h" 1 3 4
-# 63 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/types.h" 2 3
-# 113 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/types.h" 3
+# 62 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/types.h" 3
+# 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 1 3 4
+# 63 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/types.h" 2 3
+# 113 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/types.h" 3
 typedef __blkcnt_t blkcnt_t;
 
 
@@ -842,7 +857,7 @@ typedef unsigned long clock_t;
 
 
 
-typedef long time_t;
+typedef __int_least64_t time_t;
 
 
 
@@ -869,7 +884,7 @@ typedef __id_t id_t;
 
 
 typedef __ino_t ino_t;
-# 173 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/types.h" 3
+# 173 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/types.h" 3
 typedef __off_t off_t;
 
 
@@ -936,11 +951,11 @@ typedef __suseconds_t suseconds_t;
 typedef __int64_t sbintime_t;
 
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/_pthreadtypes.h" 1 3
-# 240 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/types.h" 2 3
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/machine/types.h" 1 3
-# 241 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/types.h" 2 3
-# 62 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/_pthreadtypes.h" 1 3
+# 240 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/types.h" 2 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/types.h" 1 3
+# 241 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/types.h" 2 3
+# 62 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 2 3
 
 
 
@@ -958,9 +973,9 @@ typedef _fpos_t fpos_t;
 
 
 
-# 1 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/sys/stdio.h" 1 3
-# 80 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 2 3
-# 186 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 3
+# 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/sys/stdio.h" 1 3
+# 80 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 2 3
+# 186 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
 FILE * tmpfile (void);
 char * tmpnam (char *);
 
@@ -971,22 +986,22 @@ int fflush (FILE *);
 FILE * freopen (const char *restrict, const char *restrict, FILE *restrict);
 void setbuf (FILE *restrict, char *restrict);
 int setvbuf (FILE *restrict, char *restrict, int, size_t);
-int fprintf (FILE *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-int fscanf (FILE *restrict, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-int printf (const char *restrict, ...) __attribute__ ((__format__ (__printf__, 1, 2)))
-                                                            ;
-int scanf (const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 1, 2)))
-                                                           ;
-int sscanf (const char *restrict, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-int vfprintf (FILE *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int vprintf (const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 1, 0)))
-                                                            ;
-int vsprintf (char *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
+int fprintf (FILE *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+int fscanf (FILE *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+int printf (const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 1, 2)));
+int scanf (const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 1, 2)));
+int sscanf (const char *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+int vfprintf (FILE *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int vprintf (const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 1, 0)));
+int vsprintf (char *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
 int fgetc (FILE *);
 char * fgets (char *restrict, int, FILE *restrict);
 int fputc (int, FILE *);
@@ -998,14 +1013,14 @@ int putc (int, FILE *);
 int putchar (int);
 int puts (const char *);
 int ungetc (int, FILE *);
-size_t fread (void * restrict, size_t _size, size_t _n, FILE *restrict);
-size_t fwrite (const void * restrict , size_t _size, size_t _n, FILE *);
+size_t fread (void *restrict, size_t _size, size_t _n, FILE *restrict);
+size_t fwrite (const void *restrict , size_t _size, size_t _n, FILE *);
 
 
 
 int fgetpos (FILE *restrict, fpos_t *restrict);
 
-int fseek (FILE *, off_t, int);
+int fseek (FILE *, long, int);
 
 
 
@@ -1019,34 +1034,34 @@ int ferror (FILE *);
 void perror (const char *);
 
 FILE * fopen (const char *restrict _name, const char *restrict _type);
-int sprintf (char *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
+int sprintf (char *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
 int remove (const char *);
 int rename (const char *, const char *);
-# 266 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 3
-int snprintf (char *restrict, size_t, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int vsnprintf (char *restrict, size_t, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int vfscanf (FILE *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-int vscanf (const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 1, 0)))
-                                                           ;
-int vsscanf (const char *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-# 393 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 3
-int _asiprintf_r (struct _reent *, char **, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-char * _asniprintf_r (struct _reent *, char *, size_t *, const char *, ...) __attribute__ ((__format__ (__printf__, 4, 5)))
-                                                            ;
-char * _asnprintf_r (struct _reent *, char *restrict, size_t *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 4, 5)))
-                                                            ;
-int _asprintf_r (struct _reent *, char **restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _diprintf_r (struct _reent *, int, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _dprintf_r (struct _reent *, int, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
+# 266 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
+int snprintf (char *restrict, size_t, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int vsnprintf (char *restrict, size_t, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int vfscanf (FILE *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+int vscanf (const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 1, 0)));
+int vsscanf (const char *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 396 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
+int _asiprintf_r (struct _reent *, char **, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+char * _asniprintf_r (struct _reent *, char *, size_t *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 4, 5)));
+char * _asnprintf_r (struct _reent *, char *restrict, size_t *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 4, 5)));
+int _asprintf_r (struct _reent *, char **restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _diprintf_r (struct _reent *, int, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _dprintf_r (struct _reent *, int, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
 int _fclose_r (struct _reent *, FILE *);
 int _fcloseall_r (struct _reent *);
 FILE * _fdopen_r (struct _reent *, int, const char *);
@@ -1062,120 +1077,120 @@ char * _fgets_unlocked_r (struct _reent *, char *restrict, int, FILE *restrict);
 int _fgetpos_r (struct _reent *, FILE *, fpos_t *);
 int _fsetpos_r (struct _reent *, FILE *, const fpos_t *);
 
-int _fiprintf_r (struct _reent *, FILE *, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _fiscanf_r (struct _reent *, FILE *, const char *, ...) __attribute__ ((__format__ (__scanf__, 3, 4)))
-                                                           ;
+int _fiprintf_r (struct _reent *, FILE *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _fiscanf_r (struct _reent *, FILE *, const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 3, 4)));
 FILE * _fmemopen_r (struct _reent *, void *restrict, size_t, const char *restrict);
 FILE * _fopen_r (struct _reent *, const char *restrict, const char *restrict);
 FILE * _freopen_r (struct _reent *, const char *restrict, const char *restrict, FILE *restrict);
-int _fprintf_r (struct _reent *, FILE *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
+int _fprintf_r (struct _reent *, FILE *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
 int _fpurge_r (struct _reent *, FILE *);
 int _fputc_r (struct _reent *, int, FILE *);
 int _fputc_unlocked_r (struct _reent *, int, FILE *);
 int _fputs_r (struct _reent *, const char *restrict, FILE *restrict);
 int _fputs_unlocked_r (struct _reent *, const char *restrict, FILE *restrict);
-size_t _fread_r (struct _reent *, void * restrict, size_t _size, size_t _n, FILE *restrict);
-size_t _fread_unlocked_r (struct _reent *, void * restrict, size_t _size, size_t _n, FILE *restrict);
-int _fscanf_r (struct _reent *, FILE *restrict, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 3, 4)))
-                                                           ;
-int _fseek_r (struct _reent *, FILE *, off_t, int);
+size_t _fread_r (struct _reent *, void *restrict, size_t _size, size_t _n, FILE *restrict);
+size_t _fread_unlocked_r (struct _reent *, void *restrict, size_t _size, size_t _n, FILE *restrict);
+int _fscanf_r (struct _reent *, FILE *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 3, 4)));
+int _fseek_r (struct _reent *, FILE *, long, int);
 int _fseeko_r (struct _reent *, FILE *, _off_t, int);
 long _ftell_r (struct _reent *, FILE *);
 _off_t _ftello_r (struct _reent *, FILE *);
 void _rewind_r (struct _reent *, FILE *);
-size_t _fwrite_r (struct _reent *, const void * restrict, size_t _size, size_t _n, FILE *restrict);
-size_t _fwrite_unlocked_r (struct _reent *, const void * restrict, size_t _size, size_t _n, FILE *restrict);
+size_t _fwrite_r (struct _reent *, const void *restrict, size_t _size, size_t _n, FILE *restrict);
+size_t _fwrite_unlocked_r (struct _reent *, const void *restrict, size_t _size, size_t _n, FILE *restrict);
 int _getc_r (struct _reent *, FILE *);
 int _getc_unlocked_r (struct _reent *, FILE *);
 int _getchar_r (struct _reent *);
 int _getchar_unlocked_r (struct _reent *);
 char * _gets_r (struct _reent *, char *);
-int _iprintf_r (struct _reent *, const char *, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-int _iscanf_r (struct _reent *, const char *, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
+int _iprintf_r (struct _reent *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+int _iscanf_r (struct _reent *, const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
 FILE * _open_memstream_r (struct _reent *, char **, size_t *);
 void _perror_r (struct _reent *, const char *);
-int _printf_r (struct _reent *, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
+int _printf_r (struct _reent *, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
 int _putc_r (struct _reent *, int, FILE *);
 int _putc_unlocked_r (struct _reent *, int, FILE *);
 int _putchar_unlocked_r (struct _reent *, int);
 int _putchar_r (struct _reent *, int);
 int _puts_r (struct _reent *, const char *);
 int _remove_r (struct _reent *, const char *);
-int _rename_r (struct _reent *, const char *_old, const char *_new)
-                                          ;
-int _scanf_r (struct _reent *, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-int _siprintf_r (struct _reent *, char *, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _siscanf_r (struct _reent *, const char *, const char *, ...) __attribute__ ((__format__ (__scanf__, 3, 4)))
-                                                           ;
-int _sniprintf_r (struct _reent *, char *, size_t, const char *, ...) __attribute__ ((__format__ (__printf__, 4, 5)))
-                                                            ;
-int _snprintf_r (struct _reent *, char *restrict, size_t, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 4, 5)))
-                                                            ;
-int _sprintf_r (struct _reent *, char *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _sscanf_r (struct _reent *, const char *restrict, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 3, 4)))
-                                                           ;
+int _rename_r (struct _reent *,
+      const char *_old, const char *_new);
+int _scanf_r (struct _reent *, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+int _siprintf_r (struct _reent *, char *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _siscanf_r (struct _reent *, const char *, const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 3, 4)));
+int _sniprintf_r (struct _reent *, char *, size_t, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 4, 5)));
+int _snprintf_r (struct _reent *, char *restrict, size_t, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 4, 5)));
+int _sprintf_r (struct _reent *, char *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _sscanf_r (struct _reent *, const char *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 3, 4)));
 char * _tempnam_r (struct _reent *, const char *, const char *);
 FILE * _tmpfile_r (struct _reent *);
 char * _tmpnam_r (struct _reent *, char *);
 int _ungetc_r (struct _reent *, int, FILE *);
-int _vasiprintf_r (struct _reent *, char **, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-char * _vasniprintf_r (struct _reent*, char *, size_t *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 4, 0)))
-                                                            ;
-char * _vasnprintf_r (struct _reent*, char *, size_t *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 4, 0)))
-                                                            ;
-int _vasprintf_r (struct _reent *, char **, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vdiprintf_r (struct _reent *, int, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vdprintf_r (struct _reent *, int, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vfiprintf_r (struct _reent *, FILE *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vfiscanf_r (struct _reent *, FILE *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 3, 0)))
-                                                           ;
-int _vfprintf_r (struct _reent *, FILE *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vfscanf_r (struct _reent *, FILE *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 3, 0)))
-                                                           ;
-int _viprintf_r (struct _reent *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int _viscanf_r (struct _reent *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-int _vprintf_r (struct _reent *, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int _vscanf_r (struct _reent *, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-int _vsiprintf_r (struct _reent *, char *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vsiscanf_r (struct _reent *, const char *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 3, 0)))
-                                                           ;
-int _vsniprintf_r (struct _reent *, char *, size_t, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 4, 0)))
-                                                            ;
-int _vsnprintf_r (struct _reent *, char *restrict, size_t, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 4, 0)))
-                                                            ;
-int _vsprintf_r (struct _reent *, char *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vsscanf_r (struct _reent *, const char *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 3, 0)))
-                                                           ;
+int _vasiprintf_r (struct _reent *, char **, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+char * _vasniprintf_r (struct _reent*, char *, size_t *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 4, 0)));
+char * _vasnprintf_r (struct _reent*, char *, size_t *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 4, 0)));
+int _vasprintf_r (struct _reent *, char **, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vdiprintf_r (struct _reent *, int, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vdprintf_r (struct _reent *, int, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vfiprintf_r (struct _reent *, FILE *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vfiscanf_r (struct _reent *, FILE *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 3, 0)));
+int _vfprintf_r (struct _reent *, FILE *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vfscanf_r (struct _reent *, FILE *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 3, 0)));
+int _viprintf_r (struct _reent *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int _viscanf_r (struct _reent *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+int _vprintf_r (struct _reent *, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int _vscanf_r (struct _reent *, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+int _vsiprintf_r (struct _reent *, char *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vsiscanf_r (struct _reent *, const char *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 3, 0)));
+int _vsniprintf_r (struct _reent *, char *, size_t, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 4, 0)));
+int _vsnprintf_r (struct _reent *, char *restrict, size_t, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 4, 0)));
+int _vsprintf_r (struct _reent *, char *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vsscanf_r (struct _reent *, const char *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 3, 0)));
 
 
 
 int fpurge (FILE *);
 ssize_t __getdelim (char **, size_t *, int, FILE *);
 ssize_t __getline (char **, size_t *, FILE *);
-# 574 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 3
+# 577 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
 int __srget_r (struct _reent *, FILE *);
 int __swbuf_r (struct _reent *, int, FILE *);
-# 684 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 3
+# 687 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
 static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
 
 
@@ -1186,7 +1201,25 @@ static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
  else
   return (__swbuf_r(_ptr, _c, _p));
 }
-# 767 "/Users/mariezimmy/Desktop/TA2261/devkitARM/arm-none-eabi/include/stdio.h" 3
+# 741 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
+static __inline int
+_getchar_unlocked(void)
+{
+ struct _reent *_ptr;
+
+ _ptr = (__getreent());
+ return ((--(((_ptr)->_stdin))->_r < 0 ? __srget_r(_ptr, ((_ptr)->_stdin)) : (int)(*(((_ptr)->_stdin))->_p++)));
+}
+
+static __inline int
+_putchar_unlocked(int _c)
+{
+ struct _reent *_ptr;
+
+ _ptr = (__getreent());
+ return (__sputc_r(_ptr, _c, ((_ptr)->_stdout)));
+}
+# 797 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
 
 # 3 "game.c" 2
 # 1 "myLib.h" 1
@@ -1199,9 +1232,9 @@ static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
-# 64 "myLib.h"
+# 66 "myLib.h"
 extern unsigned short *videoBuffer;
-# 85 "myLib.h"
+# 87 "myLib.h"
 typedef struct {
  u16 tileimg[8192];
 } charblock;
@@ -1244,7 +1277,7 @@ typedef struct {
 
 
 extern OBJ_ATTR shadowOAM[];
-# 157 "myLib.h"
+# 159 "myLib.h"
 void hideSprites();
 
 
@@ -1268,10 +1301,10 @@ typedef struct {
     int numFrames;
     int hide;
 } ANISPRITE;
-# 200 "myLib.h"
+# 202 "myLib.h"
 extern unsigned short oldButtons;
 extern unsigned short buttons;
-# 211 "myLib.h"
+# 213 "myLib.h"
 typedef volatile struct {
     volatile const void *src;
     volatile void *dst;
@@ -1280,8 +1313,19 @@ typedef volatile struct {
 
 
 extern DMA *dma;
-# 251 "myLib.h"
+# 253 "myLib.h"
 void DMANow(int channel, volatile const void *src, volatile void *dst, unsigned int cnt);
+# 344 "myLib.h"
+typedef struct{
+    const unsigned char* data;
+    int length;
+    int frequency;
+    int isPlaying;
+    int loops;
+    int duration;
+    int priority;
+    int vBlankCount;
+} SOUND;
 
 
 
@@ -1291,8 +1335,10 @@ int collision(int colA, int rowA, int widthA, int heightA, int colB, int rowB, i
 # 1 "game.h" 1
 
 typedef struct {
-    int row;
- int col;
+    int screenRow;
+ int screenCol;
+ int worldRow;
+ int worldCol;
     int rdel;
  int cdel;
  int height;
@@ -1409,7 +1455,21 @@ int zombiesRemaining;
 int zombieTimer;
 
 
+int hOff;
+int vOff;
+int playerHOff;
+
+
+int screenBlock;
+
+
 void initGame() {
+
+
+    vOff = 0;
+    hOff = 0;
+    playerHOff = 0;
+    screenBlock = 28;
 
     initCat();
     initZombie();
@@ -1424,12 +1484,14 @@ void initGame() {
 
 void initCat() {
 
-    cat.row = 80;
-    cat.col = 10;
     cat.rdel = 1;
     cat.cdel = 1;
     cat.height = 16;
     cat.width = 16;
+
+
+    cat.worldRow = 160 / 2 - cat.width / 2 + vOff;
+    cat.worldCol = 240 / 2 - cat.height / 2 + hOff;
 }
 
 
@@ -1466,6 +1528,18 @@ void initHairball() {
 
 void updateGame() {
 
+
+    if (hOff > 256) {
+        screenBlock++;
+        hOff -= 256;
+        (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((screenBlock)<<8) | (1<<14) | (0<<7);
+    }
+
+    if (playerHOff > 512) {
+        playerHOff -= 512;
+    }
+
+
     zombieTimer++;
      if (zombieTimer % 100 == 0) {
         fireZombie();
@@ -1476,28 +1550,42 @@ void updateGame() {
   updateZombie(&zombie[i]);
     for (int i = 0; i < 5; i++)
   updateHairball(&hairball[i]);
+
+    (*(volatile unsigned short *)0x04000010) = hOff;
+    (*(volatile unsigned short *)0x04000012) = vOff;
 }
 
 
 void updateCat() {
 
-    if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<6))) && cat.row - cat.rdel > 0) {
+    if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<6))) && cat.worldRow - cat.rdel > 0) {
 
-        cat.row -= cat.rdel;
+        cat.worldRow -= cat.rdel;
 
-    } else if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<7))) && cat.row + cat.rdel < 160 - 16) {
+    } else if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<7))) && cat.worldRow + cat.rdel < 160 - 16) {
 
-        cat.row += cat.rdel;
+        cat.worldRow += cat.rdel;
 
-    } else if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<5))) && cat.col - cat.cdel > 0) {
 
-        cat.col -= cat.cdel;
 
-    } else if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<4))) && cat.col + cat.cdel < 240 - 16) {
 
-        cat.col += cat.cdel;
 
+    } else
+    if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<4)))) {
+
+        if (cat.worldCol + cat.width < 1024 - 1) {
+            cat.worldCol++;
+        }
+
+
+        if (screenBlock < 31 && hOff < (1024 - 240 - 1) && cat.screenCol > 240 / 3) {
+            hOff++;
+            playerHOff++;
+        }
     }
+
+    cat.screenRow = cat.worldRow - vOff;
+    cat.screenCol = cat.worldCol - playerHOff;
 
     if ((!(~(oldButtons)&((1<<0))) && (~buttons & ((1<<0))))) {
         fireHairball();
@@ -1573,8 +1661,8 @@ void drawGame() {
 
 void drawCat() {
 
-    shadowOAM[0].attr0 = cat.row | (0<<14);
-    shadowOAM[0].attr1 = cat.col | (1<<14);
+    shadowOAM[0].attr0 = cat.screenRow | (0<<14);
+    shadowOAM[0].attr1 = cat.screenCol | (1<<14);
     shadowOAM[0].attr2 = ((0)*32+(0));
 }
 
@@ -1609,8 +1697,8 @@ void fireHairball() {
   if (!hairball[i].active) {
 
 
-   hairball[i].row = cat.row + cat.height/2 - hairball[i].height/2;
-   hairball[i].col = cat.col + cat.width/2 - hairball[i].width/2;
+   hairball[i].row = cat.screenRow + cat.height/2 - hairball[i].height/2;
+   hairball[i].col = cat.screenCol + cat.width/2 - hairball[i].width/2;
 
 
    hairball[i].active = 1;

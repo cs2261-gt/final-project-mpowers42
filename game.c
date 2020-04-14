@@ -15,8 +15,22 @@ HAIRBALL hairball[HAIRBALLCOUNT];
 int zombiesRemaining;
 int zombieTimer; // timer for spawning zombies at intervals
 
+// Horizontal and vertical offsets
+int hOff;
+int vOff;
+int playerHOff;
+
+// Screenblock to change for XL background
+int screenBlock;
+
 // Initialize game
 void initGame() {
+
+    // Initialize horizontal and vertical offsets and screenblock
+    vOff = 0;
+    hOff = 0;
+    playerHOff = 0;
+    screenBlock = 28;
 
     initCat();
     initZombie();
@@ -31,12 +45,14 @@ void initGame() {
 // Initialize cat
 void initCat() {
 
-    cat.row = 80;
-    cat.col = 10;
     cat.rdel = 1;
     cat.cdel = 1;
     cat.height = 16;
     cat.width = 16;
+
+    // Place in the middle of the screen
+    cat.worldRow = SCREENHEIGHT / 2 - cat.width / 2 + vOff;
+    cat.worldCol = SCREENWIDTH / 2 - cat.height / 2 + hOff;
 }
 
 // Initialize zombie
@@ -72,7 +88,19 @@ void initHairball() {
 
 // Update game
 void updateGame() {
-    // spawn zombies at a fixed rate
+
+    // Wrap XL BG correctly
+    if (hOff > 256) {
+        screenBlock++;
+        hOff -= 256;
+        REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(screenBlock) | BG_SIZE_WIDE | BG_4BPP;
+    }
+
+    if (playerHOff > 512) {
+        playerHOff -= 512;
+    }
+
+    // Spawn zombies at a fixed rate
     zombieTimer++;
      if (zombieTimer % 100 == 0) {
         fireZombie();
@@ -83,28 +111,42 @@ void updateGame() {
 		updateZombie(&zombie[i]);
     for (int i = 0; i < HAIRBALLCOUNT; i++)
 		updateHairball(&hairball[i]);
+
+    REG_BG0HOFF = hOff;
+    REG_BG0VOFF = vOff;
 }
 
 // Update cat
 void updateCat() {
 
-    if (BUTTON_HELD(BUTTON_UP) && cat.row - cat.rdel > 0) {
+    if (BUTTON_HELD(BUTTON_UP) && cat.worldRow - cat.rdel > 0) {
 
-        cat.row -= cat.rdel;
+        cat.worldRow -= cat.rdel;
 
-    } else if (BUTTON_HELD(BUTTON_DOWN) && cat.row + cat.rdel < SCREENHEIGHT - 16) {
+    } else if (BUTTON_HELD(BUTTON_DOWN) && cat.worldRow + cat.rdel < SCREENHEIGHT - 16) {
 
-        cat.row += cat.rdel;
+        cat.worldRow += cat.rdel;
 
-    } else if (BUTTON_HELD(BUTTON_LEFT) && cat.col - cat.cdel > 0) {
+    // } else if (BUTTON_HELD(BUTTON_LEFT) && cat.col - cat.cdel > 0) {
 
-        cat.col -= cat.cdel;
+    //     cat.col -= cat.cdel;
 
-    } else if (BUTTON_HELD(BUTTON_RIGHT) && cat.col + cat.cdel < SCREENWIDTH - 16) {
+    } else 
+    if (BUTTON_HELD(BUTTON_RIGHT)) {
 
-        cat.col += cat.cdel;
+        if (cat.worldCol + cat.width < WORLDWIDTH - 1) {
+            cat.worldCol++;
+        }
 
+        // SCREENWIDTH / 3 is complex movement - change it to what fits the game
+        if (screenBlock < 31 && hOff < (WORLDWIDTH - SCREENWIDTH - 1) && cat.screenCol > SCREENWIDTH / 3) {
+            hOff++;
+            playerHOff++;
+        }
     }
+
+    cat.screenRow = cat.worldRow - vOff;
+    cat.screenCol = cat.worldCol - playerHOff;
 
     if (BUTTON_PRESSED(BUTTON_A)) {
         fireHairball();
@@ -180,8 +222,8 @@ void drawGame() {
 // Draw cat
 void drawCat() {
 
-    shadowOAM[0].attr0 = cat.row | ATTR0_SQUARE;
-    shadowOAM[0].attr1 = cat.col | ATTR1_SMALL; // 16 x 16
+    shadowOAM[0].attr0 = cat.screenRow | ATTR0_SQUARE;
+    shadowOAM[0].attr1 = cat.screenCol | ATTR1_SMALL; // 16 x 16
     shadowOAM[0].attr2 = ATTR2_TILEID(0, 0);
 }
 
@@ -216,8 +258,8 @@ void fireHairball() {
 		if (!hairball[i].active) {
 
 			// Position the new bullet
-			hairball[i].row = cat.row + cat.height/2 - hairball[i].height/2;
-			hairball[i].col = cat.col + cat.width/2 - hairball[i].width/2;
+			hairball[i].row = cat.screenRow + cat.height/2 - hairball[i].height/2;
+			hairball[i].col = cat.screenCol + cat.width/2 - hairball[i].width/2;
 
 			// Take the bullet out of the pool
 			hairball[i].active = 1;
