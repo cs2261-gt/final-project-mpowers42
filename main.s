@@ -41,13 +41,14 @@ goToStart:
 	ldr	r1, .L4+16
 	mov	lr, pc
 	bx	r4
-	mov	r1, #67108864
+	mov	r2, #67108864
+	mov	r3, #0
 	mov	r0, #256
-	mov	r2, #0
-	ldr	r3, .L4+20
-	strh	r0, [r1]	@ movhi
+	ldr	r1, .L4+20
+	strh	r0, [r2]	@ movhi
+	strh	r3, [r2, #16]	@ movhi
 	pop	{r4, lr}
-	str	r2, [r3]
+	str	r3, [r1]
 	bx	lr
 .L5:
 	.align	2
@@ -116,7 +117,7 @@ goToGame:
 	ldr	r1, .L13+4
 	mov	lr, pc
 	bx	r4
-	mov	r3, #144
+	mov	r3, #128
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L13+8
@@ -253,13 +254,15 @@ goToPause:
 	ldr	r1, .L28+16
 	mov	lr, pc
 	bx	r4
-	mov	r1, #67108864
-	mov	r0, #256
-	mov	r2, #2
-	ldr	r3, .L28+20
-	strh	r0, [r1]	@ movhi
+	mov	r3, #67108864
+	mov	ip, #256
+	mov	r0, #0
+	mov	r1, #2
+	ldr	r2, .L28+20
+	strh	ip, [r3]	@ movhi
+	strh	r0, [r3, #16]	@ movhi
 	pop	{r4, lr}
-	str	r2, [r3]
+	str	r1, [r2]
 	bx	lr
 .L29:
 	.align	2
@@ -336,13 +339,15 @@ goToWin:
 	ldr	r1, .L44+16
 	mov	lr, pc
 	bx	r4
-	mov	r1, #67108864
-	mov	r0, #256
-	mov	r2, #3
-	ldr	r3, .L44+20
-	strh	r0, [r1]	@ movhi
+	mov	r3, #67108864
+	mov	ip, #256
+	mov	r0, #0
+	mov	r1, #3
+	ldr	r2, .L44+20
+	strh	ip, [r3]	@ movhi
+	strh	r0, [r3, #16]	@ movhi
 	pop	{r4, lr}
-	str	r2, [r3]
+	str	r1, [r2]
 	bx	lr
 .L45:
 	.align	2
@@ -405,13 +410,15 @@ goToLose:
 	ldr	r1, .L52+16
 	mov	lr, pc
 	bx	r4
-	mov	r1, #67108864
-	mov	r0, #256
-	mov	r2, #4
-	ldr	r3, .L52+20
-	strh	r0, [r1]	@ movhi
+	mov	r3, #67108864
+	mov	ip, #256
+	mov	r0, #0
+	mov	r1, #4
+	ldr	r2, .L52+20
+	strh	ip, [r3]	@ movhi
+	strh	r0, [r3, #16]	@ movhi
 	pop	{r4, lr}
-	str	r2, [r3]
+	str	r1, [r2]
 	bx	lr
 .L53:
 	.align	2

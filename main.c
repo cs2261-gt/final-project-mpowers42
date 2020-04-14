@@ -73,8 +73,11 @@ void goToStart() {
     DMANow(3, startScreenTiles, &CHARBLOCK[0], startScreenTilesLen / 2);
     DMANow(3, startScreenMap, &SCREENBLOCK[28], startScreenMapLen / 2);
 
-    // turn off sprites
+    // Turn off sprites
     REG_DISPCTL = MODE0 | BG0_ENABLE;
+
+    // Reset hOff to 0
+    REG_BG0HOFF = 0;
 
     state = START;
 }
@@ -139,6 +142,9 @@ void goToPause() {
 
     REG_DISPCTL = MODE0 | BG0_ENABLE;
 
+    // Reset hOff to 0
+    REG_BG0HOFF = 0;
+
     state = PAUSE;
 }
 
@@ -162,6 +168,9 @@ void goToWin() {
 
     REG_DISPCTL = MODE0 | BG0_ENABLE;
 
+    // Reset hOff to 0
+    REG_BG0HOFF = 0;
+
     state = WIN;
 }
 
@@ -182,6 +191,9 @@ void goToLose() {
     DMANow(3, loseScreenMap, &SCREENBLOCK[28], loseScreenMapLen / 2);
 
     REG_DISPCTL = MODE0 | BG0_ENABLE;
+
+    // Reset hOff to 0
+    REG_BG0HOFF = 0;
 
     state = LOSE;
 }

@@ -1232,9 +1232,9 @@ _putchar_unlocked(int _c)
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
-# 64 "myLib.h"
+# 66 "myLib.h"
 extern unsigned short *videoBuffer;
-# 85 "myLib.h"
+# 87 "myLib.h"
 typedef struct {
  u16 tileimg[8192];
 } charblock;
@@ -1277,7 +1277,7 @@ typedef struct {
 
 
 extern OBJ_ATTR shadowOAM[];
-# 157 "myLib.h"
+# 159 "myLib.h"
 void hideSprites();
 
 
@@ -1301,10 +1301,10 @@ typedef struct {
     int numFrames;
     int hide;
 } ANISPRITE;
-# 200 "myLib.h"
+# 202 "myLib.h"
 extern unsigned short oldButtons;
 extern unsigned short buttons;
-# 211 "myLib.h"
+# 213 "myLib.h"
 typedef volatile struct {
     volatile const void *src;
     volatile void *dst;
@@ -1313,9 +1313,9 @@ typedef volatile struct {
 
 
 extern DMA *dma;
-# 251 "myLib.h"
+# 253 "myLib.h"
 void DMANow(int channel, volatile const void *src, volatile void *dst, unsigned int cnt);
-# 342 "myLib.h"
+# 344 "myLib.h"
 typedef struct{
     const unsigned char* data;
     int length;
@@ -1335,8 +1335,10 @@ int collision(int colA, int rowA, int widthA, int heightA, int colB, int rowB, i
 # 1 "game.h" 1
 
 typedef struct {
-    int row;
- int col;
+    int screenRow;
+ int screenCol;
+ int worldRow;
+ int worldCol;
     int rdel;
  int cdel;
  int height;
@@ -1456,7 +1458,7 @@ extern const unsigned short spritesheetPal[256];
 # 11 "main.c" 2
 # 1 "background.h" 1
 # 22 "background.h"
-extern const unsigned short backgroundTiles[144];
+extern const unsigned short backgroundTiles[128];
 
 
 extern const unsigned short backgroundMap[4096];
@@ -1531,6 +1533,9 @@ void goToStart() {
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
 
+
+    (*(volatile unsigned short *)0x04000010) = 0;
+
     state = START;
 }
 
@@ -1549,7 +1554,7 @@ void goToGame() {
 
 
     DMANow(3, backgroundPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, backgroundTiles, &((charblock *)0x6000000)[0], 288 / 2);
+    DMANow(3, backgroundTiles, &((charblock *)0x6000000)[0], 256 / 2);
     DMANow(3, backgroundMap, &((screenblock *)0x6000000)[28], 8192 / 2);
 
 
@@ -1594,6 +1599,9 @@ void goToPause() {
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
 
+
+    (*(volatile unsigned short *)0x04000010) = 0;
+
     state = PAUSE;
 }
 
@@ -1617,6 +1625,9 @@ void goToWin() {
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
 
+
+    (*(volatile unsigned short *)0x04000010) = 0;
+
     state = WIN;
 }
 
@@ -1637,6 +1648,9 @@ void goToLose() {
     DMANow(3, loseScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
+
+
+    (*(volatile unsigned short *)0x04000010) = 0;
 
     state = LOSE;
 }
