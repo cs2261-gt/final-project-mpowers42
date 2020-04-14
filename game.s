@@ -113,14 +113,14 @@ initCat:
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
 	mov	ip, #1
-	mov	r0, #16
+	mov	r0, #32
 	ldr	r2, .L17
 	ldr	r3, .L17+4
 	ldr	r1, [r2]
 	ldr	r2, [r3]
 	ldr	r3, .L17+8
-	add	r1, r1, #72
-	add	r2, r2, #112
+	add	r1, r1, #64
+	add	r2, r2, #104
 	str	r1, [r3, #8]
 	str	r2, [r3, #12]
 	str	ip, [r3, #16]
@@ -197,9 +197,9 @@ initGame:
 	mov	r4, #0
 	mov	lr, #28
 	mov	r1, #1
-	mov	r2, #16
-	mov	ip, #72
-	mov	r0, #112
+	mov	r2, #32
+	mov	ip, #64
+	mov	r0, #104
 	ldr	r3, .L29
 	str	r4, [r3]
 	ldr	r3, .L29+4
@@ -381,16 +381,17 @@ drawGame:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
+	ldr	ip, .L60
+	ldr	r3, [ip, #4]
+	mvn	r3, r3, lsl #17
+	mvn	r3, r3, lsr #17
 	push	{r4, r5, lr}
-	ldr	r0, .L60
+	ldr	r0, .L60+4
 	mov	lr, #0
 	mov	r2, r0
 	mov	r1, r0
 	mov	r5, #512
-	mov	r4, #2
-	ldr	ip, .L60+4
-	ldr	r3, [ip, #4]
-	orr	r3, r3, #16384
+	mov	r4, #4
 	ldr	ip, [ip]
 	strh	r3, [r0, #2]	@ movhi
 	ldr	r3, .L60+8
@@ -412,7 +413,7 @@ drawGame:
 	add	r1, r1, #8
 	bne	.L53
 	mov	r4, #512
-	mov	lr, #4
+	mov	lr, #6
 	ldr	r3, .L60+12
 	add	r0, r3, #140
 .L56:
@@ -433,8 +434,8 @@ drawGame:
 .L61:
 	.align	2
 .L60:
-	.word	shadowOAM
 	.word	cat
+	.word	shadowOAM
 	.word	zombie
 	.word	hairball
 	.size	drawGame, .-drawGame
@@ -449,14 +450,16 @@ drawCat:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
+	ldr	r2, .L63
+	ldr	r3, [r2, #4]
+	mvn	r3, r3, lsl #17
 	mov	r1, #0
-	ldr	r3, .L63
-	ldm	r3, {r0, r2}
-	ldr	r3, .L63+4
-	orr	r2, r2, #16384
-	strh	r2, [r3, #2]	@ movhi
-	strh	r0, [r3]	@ movhi
-	strh	r1, [r3, #4]	@ movhi
+	mvn	r3, r3, lsr #17
+	ldr	r0, [r2]
+	ldr	r2, .L63+4
+	strh	r3, [r2, #2]	@ movhi
+	strh	r0, [r2]	@ movhi
+	strh	r1, [r2, #4]	@ movhi
 	bx	lr
 .L64:
 	.align	2
@@ -477,7 +480,7 @@ drawZombie:
 	ldr	r3, [r0, #24]
 	cmp	r3, #0
 	beq	.L66
-	mov	ip, #2
+	mov	ip, #4
 	ldr	r3, [r0, #4]
 	ldr	r2, .L72
 	str	lr, [sp, #-4]!
@@ -514,7 +517,7 @@ drawHairball:
 	ldr	r3, [r0, #24]
 	cmp	r3, #0
 	beq	.L75
-	mov	r2, #4
+	mov	r2, #6
 	ldr	r3, .L81
 	str	lr, [sp, #-4]!
 	ldr	lr, [r0]

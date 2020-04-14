@@ -47,8 +47,8 @@ void initCat() {
 
     cat.rdel = 1;
     cat.cdel = 1;
-    cat.height = 16;
-    cat.width = 16;
+    cat.height = 32;
+    cat.width = 32;
 
     // Place in the middle of the screen
     cat.worldRow = SCREENHEIGHT / 2 - cat.width / 2 + vOff;
@@ -223,7 +223,7 @@ void drawGame() {
 void drawCat() {
 
     shadowOAM[0].attr0 = cat.screenRow | ATTR0_SQUARE;
-    shadowOAM[0].attr1 = cat.screenCol | ATTR1_SMALL; // 16 x 16
+    shadowOAM[0].attr1 = cat.screenCol | ATTR1_MEDIUM; // 32 x 32
     shadowOAM[0].attr2 = ATTR2_TILEID(0, 0);
 }
 
@@ -233,7 +233,7 @@ void drawZombie(ZOMBIE* z, int index) {
     if (z->active) {
         shadowOAM[index].attr0 = z->row | ATTR0_SQUARE;
         shadowOAM[index].attr1 = z->col | ATTR1_SMALL; // 16 x 16
-        shadowOAM[index].attr2 = ATTR2_TILEID(2, 0);
+        shadowOAM[index].attr2 = ATTR2_TILEID(4, 0);
     } else {
         shadowOAM[index].attr0 = ATTR0_HIDE;
     }
@@ -244,7 +244,7 @@ void drawHairball(HAIRBALL* h, int index) {
     if (h->active) {
             shadowOAM[index].attr0 = h->row | ATTR0_SQUARE;
             shadowOAM[index].attr1 = h->col | ATTR1_TINY; // 8 x 8
-            shadowOAM[index].attr2 = ATTR2_TILEID(4, 0);
+            shadowOAM[index].attr2 = ATTR2_TILEID(6, 0);
     } else {
         shadowOAM[index].attr0 = ATTR0_HIDE;
     }

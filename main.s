@@ -72,7 +72,7 @@ initialize:
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
 	mov	r3, #67108864
-	mov	r1, #23552
+	mov	r1, #7168
 	mov	r2, #4352
 	strh	r1, [r3, #8]	@ movhi
 	strh	r2, [r3]	@ movhi
@@ -109,9 +109,12 @@ goToGame:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, lr}
-	mov	r3, #256
+	push	{r4, r5, r6, lr}
+	mov	r2, #23552
+	mov	r5, #67108864
 	ldr	r4, .L13
+	strh	r2, [r5, #8]	@ movhi
+	mov	r3, #256
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L13+4
@@ -136,15 +139,14 @@ goToGame:
 	mov	lr, pc
 	bx	r4
 	mov	r0, #3
+	ldr	r1, .L13+28
 	mov	r3, #16384
-	ldr	r2, .L13+28
-	ldr	r1, .L13+32
+	ldr	r2, .L13+32
 	mov	lr, pc
 	bx	r4
-	mov	r2, #67108864
-	mov	r1, #4352
+	mov	r2, #4352
 	ldr	r3, .L13+36
-	strh	r1, [r2]	@ movhi
+	strh	r2, [r5]	@ movhi
 	mov	lr, pc
 	bx	r3
 	ldr	r3, .L13+40
@@ -158,7 +160,7 @@ goToGame:
 	bx	r4
 	mov	r2, #1
 	ldr	r3, .L13+48
-	pop	{r4, lr}
+	pop	{r4, r5, r6, lr}
 	str	r2, [r3]
 	bx	lr
 .L14:
@@ -171,8 +173,8 @@ goToGame:
 	.word	backgroundMap
 	.word	83886592
 	.word	spritesheetPal
-	.word	100728832
 	.word	spritesheetTiles
+	.word	100728832
 	.word	hideSprites
 	.word	waitForVBlank
 	.word	shadowOAM
@@ -234,35 +236,37 @@ goToPause:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, lr}
+	push	{r4, r5, r6, lr}
+	mov	r2, #7168
+	mov	r4, #67108864
+	ldr	r5, .L28
+	strh	r2, [r4, #8]	@ movhi
 	mov	r3, #256
-	ldr	r4, .L28
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L28+4
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	mov	r3, #16
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L28+8
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	mov	r3, #1024
 	mov	r0, #3
 	ldr	r2, .L28+12
 	ldr	r1, .L28+16
 	mov	lr, pc
-	bx	r4
-	mov	r3, #67108864
-	mov	ip, #256
-	mov	r0, #0
-	mov	r1, #2
-	ldr	r2, .L28+20
-	strh	ip, [r3]	@ movhi
-	strh	r0, [r3, #16]	@ movhi
-	pop	{r4, lr}
-	str	r1, [r2]
+	bx	r5
+	mov	r0, #256
+	mov	r1, #0
+	mov	r2, #2
+	ldr	r3, .L28+20
+	strh	r0, [r4]	@ movhi
+	strh	r1, [r4, #16]	@ movhi
+	str	r2, [r3]
+	pop	{r4, r5, r6, lr}
 	bx	lr
 .L29:
 	.align	2
@@ -319,35 +323,37 @@ goToWin:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, lr}
+	push	{r4, r5, r6, lr}
+	mov	r2, #7168
+	mov	r4, #67108864
+	ldr	r5, .L44
+	strh	r2, [r4, #8]	@ movhi
 	mov	r3, #256
-	ldr	r4, .L44
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L44+4
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	mov	r3, #16
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L44+8
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	mov	r3, #1024
 	mov	r0, #3
 	ldr	r2, .L44+12
 	ldr	r1, .L44+16
 	mov	lr, pc
-	bx	r4
-	mov	r3, #67108864
-	mov	ip, #256
-	mov	r0, #0
-	mov	r1, #3
-	ldr	r2, .L44+20
-	strh	ip, [r3]	@ movhi
-	strh	r0, [r3, #16]	@ movhi
-	pop	{r4, lr}
-	str	r1, [r2]
+	bx	r5
+	mov	r0, #256
+	mov	r1, #0
+	mov	r2, #3
+	ldr	r3, .L44+20
+	strh	r0, [r4]	@ movhi
+	strh	r1, [r4, #16]	@ movhi
+	str	r2, [r3]
+	pop	{r4, r5, r6, lr}
 	bx	lr
 .L45:
 	.align	2
@@ -390,35 +396,37 @@ goToLose:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, lr}
+	push	{r4, r5, r6, lr}
+	mov	r2, #7168
+	mov	r4, #67108864
+	ldr	r5, .L52
+	strh	r2, [r4, #8]	@ movhi
 	mov	r3, #256
-	ldr	r4, .L52
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L52+4
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	mov	r3, #16
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L52+8
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	mov	r3, #1024
 	mov	r0, #3
 	ldr	r2, .L52+12
 	ldr	r1, .L52+16
 	mov	lr, pc
-	bx	r4
-	mov	r3, #67108864
-	mov	ip, #256
-	mov	r0, #0
-	mov	r1, #4
-	ldr	r2, .L52+20
-	strh	ip, [r3]	@ movhi
-	strh	r0, [r3, #16]	@ movhi
-	pop	{r4, lr}
-	str	r1, [r2]
+	bx	r5
+	mov	r0, #256
+	mov	r1, #0
+	mov	r2, #4
+	ldr	r3, .L52+20
+	strh	r0, [r4]	@ movhi
+	strh	r1, [r4, #16]	@ movhi
+	str	r2, [r3]
+	pop	{r4, r5, r6, lr}
 	bx	lr
 .L53:
 	.align	2
@@ -513,7 +521,7 @@ main:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	mov	r3, #67108864
-	mov	r1, #23552
+	mov	r1, #7168
 	mov	r2, #4352
 	ldr	r5, .L89
 	push	{r4, r7, fp, lr}

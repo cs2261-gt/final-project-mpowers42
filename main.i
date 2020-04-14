@@ -1514,7 +1514,7 @@ int main() {
 void initialize() {
 
 
-    (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (1<<14) | (0<<7);
+    (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (0<<14) | (0<<7);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8) | (1<<12);
 
@@ -1551,6 +1551,9 @@ void start() {
 
 
 void goToGame() {
+
+
+    (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (1<<14) | (0<<7);
 
 
     DMANow(3, backgroundPal, ((unsigned short *)0x5000000), 256);
@@ -1593,6 +1596,9 @@ void game() {
 void goToPause() {
 
 
+    (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (0<<14) | (0<<7);
+
+
     DMANow(3, pauseScreenPal, ((unsigned short *)0x5000000), 256);
     DMANow(3, pauseScreenTiles, &((charblock *)0x6000000)[0], 32 / 2);
     DMANow(3, pauseScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
@@ -1619,6 +1625,9 @@ void pause() {
 void goToWin() {
 
 
+    (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (0<<14) | (0<<7);
+
+
     DMANow(3, winScreenPal, ((unsigned short *)0x5000000), 256);
     DMANow(3, winScreenTiles, &((charblock *)0x6000000)[0], 32 / 2);
     DMANow(3, winScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
@@ -1641,6 +1650,9 @@ void win() {
 
 
 void goToLose() {
+
+
+    (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (0<<14) | (0<<7);
 
 
     DMANow(3, loseScreenPal, ((unsigned short *)0x5000000), 256);

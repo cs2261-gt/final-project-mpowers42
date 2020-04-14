@@ -1486,8 +1486,8 @@ void initCat() {
 
     cat.rdel = 1;
     cat.cdel = 1;
-    cat.height = 16;
-    cat.width = 16;
+    cat.height = 32;
+    cat.width = 32;
 
 
     cat.worldRow = 160 / 2 - cat.width / 2 + vOff;
@@ -1662,7 +1662,7 @@ void drawGame() {
 void drawCat() {
 
     shadowOAM[0].attr0 = cat.screenRow | (0<<14);
-    shadowOAM[0].attr1 = cat.screenCol | (1<<14);
+    shadowOAM[0].attr1 = cat.screenCol | (2<<14);
     shadowOAM[0].attr2 = ((0)*32+(0));
 }
 
@@ -1672,7 +1672,7 @@ void drawZombie(ZOMBIE* z, int index) {
     if (z->active) {
         shadowOAM[index].attr0 = z->row | (0<<14);
         shadowOAM[index].attr1 = z->col | (1<<14);
-        shadowOAM[index].attr2 = ((0)*32+(2));
+        shadowOAM[index].attr2 = ((0)*32+(4));
     } else {
         shadowOAM[index].attr0 = (2<<8);
     }
@@ -1683,7 +1683,7 @@ void drawHairball(HAIRBALL* h, int index) {
     if (h->active) {
             shadowOAM[index].attr0 = h->row | (0<<14);
             shadowOAM[index].attr1 = h->col | (0<<14);
-            shadowOAM[index].attr2 = ((0)*32+(4));
+            shadowOAM[index].attr2 = ((0)*32+(6));
     } else {
         shadowOAM[index].attr0 = (2<<8);
     }

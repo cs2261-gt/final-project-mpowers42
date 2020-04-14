@@ -57,7 +57,7 @@ int main() {
 void initialize() {
 
     // Set up BG0 register
-    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE | BG_4BPP;
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL | BG_4BPP;
 
     REG_DISPCTL = MODE0 | BG0_ENABLE | SPRITE_ENABLE;
 
@@ -94,6 +94,9 @@ void start() {
 
 // Sets up the game state
 void goToGame() {
+
+    // Change size to wide
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE | BG_4BPP;
 
     // DMA bg tiles, map, and palette into memory
     DMANow(3, backgroundPal, PALETTE, 256);
@@ -135,6 +138,9 @@ void game() {
 // Sets up the pause state
 void goToPause() {
 
+    // Change size to small
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL | BG_4BPP;
+
     // DMA bg tiles, map, and palette into memory
     DMANow(3, pauseScreenPal, PALETTE, 256);
     DMANow(3, pauseScreenTiles, &CHARBLOCK[0], pauseScreenTilesLen / 2);
@@ -161,6 +167,9 @@ void pause() {
 // Sets up the win state
 void goToWin() {
 
+    // Change size to small
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL | BG_4BPP;
+
     // DMA bg tiles, map, and palette into memory
     DMANow(3, winScreenPal, PALETTE, 256);
     DMANow(3, winScreenTiles, &CHARBLOCK[0], winScreenTilesLen / 2);
@@ -184,6 +193,9 @@ void win() {
 
 // Sets up the lose state
 void goToLose() {
+
+    // Change size to small
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL | BG_4BPP;
 
     // DMA bg tiles, map, and palette into memory
     DMANow(3, loseScreenPal, PALETTE, 256);
