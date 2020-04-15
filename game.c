@@ -50,6 +50,10 @@ void initCat() {
     cat.height = 32;
     cat.width = 32;
 
+    cat.aniCounter = 0;
+    cat.currFrame = 0;
+    cat.numFrames = 3;
+
     // Place in the middle of the screen
     cat.worldRow = SCREENHEIGHT / 2 - cat.width / 2 + vOff;
     cat.worldCol = SCREENWIDTH / 2 - cat.height / 2 + hOff;
@@ -138,6 +142,10 @@ void updateCat() {
             hOff++;
             playerHOff++;
         }
+
+        animateCat();
+    } else {
+        cat.currFrame = 1;
     }
 
     cat.screenRow = cat.worldRow - vOff;
@@ -173,15 +181,15 @@ void updateZombie(ZOMBIE* z) {
             }
         }
 
-        // Handle zombie-cat collisions
-        for (int i = 0; i < ZOMBIECOUNT; i++) {
-            if (collision(z->col, z->row, z->width, z->height,
-            cat.worldCol, cat.worldRow, cat.width, cat.height) 
-            && z->active) {
-                
-                goToLose();
-            }
-        }
+        // // Handle zombie-cat collisions
+        // for (int i = 0; i < ZOMBIECOUNT; i++) {
+        //     if (collision(z->col, z->row, z->width, z->height,
+        //     cat.worldCol, cat.worldRow, cat.width, cat.height) 
+        //     && z->active) {
+
+        //         goToLose();
+        //     }
+        // }
     }
 }
 
@@ -229,7 +237,7 @@ void drawCat() {
 
     shadowOAM[0].attr0 = cat.screenRow | ATTR0_SQUARE;
     shadowOAM[0].attr1 = cat.screenCol | ATTR1_MEDIUM; // 32 x 32
-    shadowOAM[0].attr2 = ATTR2_TILEID(0, 0);
+    shadowOAM[0].attr2 = ATTR2_TILEID(0, cat.currFrame * 4);
 }
 
 // Draw zombie
@@ -253,6 +261,20 @@ void drawHairball(HAIRBALL* h, int index) {
     } else {
         shadowOAM[index].attr0 = ATTR0_HIDE;
     }
+}
+
+// Animate the cat
+void animateCat() {
+
+    if (cat.aniCounter % 14 == 0) {
+        if (cat.currFrame < cat.numFrames - 1) {
+            cat.currFrame++;
+        } else {
+            cat.currFrame = 0;
+        }
+    }
+
+    cat.aniCounter++;
 }
 
 // Fire a hairball

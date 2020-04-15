@@ -8,9 +8,9 @@ typedef struct {
 	int cdel;
 	int height;
 	int width;
-    // int aniCounter;
-	// int currFrame;
-	// int numFrames;
+    int aniCounter;
+	int currFrame;
+	int numFrames;
 } CAT;
 
 // Zombie struct
@@ -61,5 +61,6 @@ void drawGame();
 void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
+void animateCat();
 void fireHairball();
 void fireZombie();

@@ -1343,9 +1343,9 @@ typedef struct {
  int cdel;
  int height;
  int width;
-
-
-
+    int aniCounter;
+ int currFrame;
+ int numFrames;
 } CAT;
 
 
@@ -1396,6 +1396,7 @@ void drawGame();
 void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
+void animateCat();
 void fireHairball();
 void fireZombie();
 # 5 "game.c" 2
@@ -1489,6 +1490,10 @@ void initCat() {
     cat.height = 32;
     cat.width = 32;
 
+    cat.aniCounter = 0;
+    cat.currFrame = 0;
+    cat.numFrames = 3;
+
 
     cat.worldRow = 160 / 2 - cat.width / 2 + vOff;
     cat.worldCol = 240 / 2 - cat.height / 2 + hOff;
@@ -1577,6 +1582,10 @@ void updateCat() {
             hOff++;
             playerHOff++;
         }
+
+        animateCat();
+    } else {
+        cat.currFrame = 1;
     }
 
     cat.screenRow = cat.worldRow - vOff;
@@ -1611,16 +1620,7 @@ void updateZombie(ZOMBIE* z) {
                 zombiesRemaining--;
             }
         }
-
-
-        for (int i = 0; i < 5; i++) {
-            if (collision(z->col, z->row, z->width, z->height,
-            cat.worldCol, cat.worldRow, cat.width, cat.height)
-            && z->active) {
-
-                goToLose();
-            }
-        }
+# 193 "game.c"
     }
 }
 
@@ -1668,7 +1668,7 @@ void drawCat() {
 
     shadowOAM[0].attr0 = cat.screenRow | (0<<14);
     shadowOAM[0].attr1 = cat.screenCol | (2<<14);
-    shadowOAM[0].attr2 = ((0)*32+(0));
+    shadowOAM[0].attr2 = ((cat.currFrame * 4)*32+(0));
 }
 
 
@@ -1692,6 +1692,20 @@ void drawHairball(HAIRBALL* h, int index) {
     } else {
         shadowOAM[index].attr0 = (2<<8);
     }
+}
+
+
+void animateCat() {
+
+    if (cat.aniCounter % 14 == 0) {
+        if (cat.currFrame < cat.numFrames - 1) {
+            cat.currFrame++;
+        } else {
+            cat.currFrame = 0;
+        }
+    }
+
+    cat.aniCounter++;
 }
 
 
