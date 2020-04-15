@@ -127,12 +127,7 @@ void updateCat() {
 
         cat.worldRow += cat.rdel;
 
-    // } else if (BUTTON_HELD(BUTTON_LEFT) && cat.col - cat.cdel > 0) {
-
-    //     cat.col -= cat.cdel;
-
-    } else 
-    if (BUTTON_HELD(BUTTON_RIGHT)) {
+    } else if (BUTTON_HELD(BUTTON_RIGHT)) {
 
         if (cat.worldCol + cat.width < WORLDWIDTH - 1) {
             cat.worldCol++;
@@ -175,6 +170,16 @@ void updateZombie(ZOMBIE* z) {
 
                 // Update "score" (for now)
                 zombiesRemaining--;
+            }
+        }
+
+        // Handle zombie-cat collisions
+        for (int i = 0; i < ZOMBIECOUNT; i++) {
+            if (collision(z->col, z->row, z->width, z->height,
+            cat.worldCol, cat.worldRow, cat.width, cat.height) 
+            && z->active) {
+                
+                goToLose();
             }
         }
     }

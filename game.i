@@ -1566,12 +1566,7 @@ void updateCat() {
 
         cat.worldRow += cat.rdel;
 
-
-
-
-
-    } else
-    if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<4)))) {
+    } else if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<4)))) {
 
         if (cat.worldCol + cat.width < 1024 - 1) {
             cat.worldCol++;
@@ -1614,6 +1609,16 @@ void updateZombie(ZOMBIE* z) {
 
 
                 zombiesRemaining--;
+            }
+        }
+
+
+        for (int i = 0; i < 5; i++) {
+            if (collision(z->col, z->row, z->width, z->height,
+            cat.worldCol, cat.worldRow, cat.width, cat.height)
+            && z->active) {
+
+                goToLose();
             }
         }
     }
