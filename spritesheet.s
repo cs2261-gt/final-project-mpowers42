@@ -33,39 +33,39 @@ spritesheetPal:
 	.short	0
 	.short	0
 	.short	0
-	.short	2249
-	.short	8794
-	.short	4463
-	.short	7450
-	.short	3407
-	.short	7633
-	.short	6644
-	.short	7703
-	.short	6442
-	.short	10907
-	.short	8726
-	.short	8792
-	.short	9850
-	.short	3305
-	.short	1360
-	.short	1268
-	.short	7514
-	.short	4502
-	.short	7737
-	.short	5520
-	.short	2283
-	.short	9817
-	.short	2450
-	.short	11963
-	.short	7500
-	.short	9783
-	.short	9883
-	.short	8793
-	.short	5487
-	.short	3474
-	.short	9849
-	.short	1226
-	.short	178
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
 	.short	0
 	.short	0
 	.short	0
@@ -4886,9 +4886,9 @@ spritesheetTiles:
 	.short	0
 	.short	2152
 	.short	0
-	.short	2216
+	.short	2152
 	.short	0
-	.short	-31064
+	.short	-31128
 	.short	0
 	.short	-31096
 	.short	0
@@ -4926,7 +4926,7 @@ spritesheetTiles:
 	.short	134
 	.short	26240
 	.short	-30620
-	.short	18016
+	.short	18048
 	.short	26212
 	.short	18024
 	.short	26214

@@ -1585,6 +1585,8 @@ void updateCat() {
 
         animateCat();
     } else {
+
+
         cat.currFrame = 1;
     }
 
@@ -1620,7 +1622,16 @@ void updateZombie(ZOMBIE* z) {
                 zombiesRemaining--;
             }
         }
-# 193 "game.c"
+
+
+
+            if (collision(z->col, z->row, z->width, z->height,
+            cat.worldCol, cat.worldRow, cat.width, cat.height)
+            && z->active) {
+
+                goToLose();
+            }
+
     }
 }
 

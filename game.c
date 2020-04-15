@@ -145,6 +145,8 @@ void updateCat() {
 
         animateCat();
     } else {
+
+        // Stand still if no button is held
         cat.currFrame = 1;
     }
 
@@ -183,12 +185,12 @@ void updateZombie(ZOMBIE* z) {
 
         // // Handle zombie-cat collisions
         // for (int i = 0; i < ZOMBIECOUNT; i++) {
-        //     if (collision(z->col, z->row, z->width, z->height,
-        //     cat.worldCol, cat.worldRow, cat.width, cat.height) 
-        //     && z->active) {
+            if (collision(z->col, z->row, z->width, z->height,
+            cat.worldCol, cat.worldRow, cat.width, cat.height) 
+            && z->active) {
 
-        //         goToLose();
-        //     }
+                goToLose();
+            }
         // }
     }
 }
