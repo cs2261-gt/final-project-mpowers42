@@ -1,3 +1,11 @@
+// Finished: XL background implementation, basic gameplay, cat sprite and animation, state machine, collisions
+// What needs to be added: Zombie sprites and animation, cars and bushes as "road blocks", cheat, random entrance at the end to win
+/* Cheat idea: There is a green crystal (or maybe a green fish/some sort of cat food) that the cat can get and 
+    makes the cheeks turn green and allows the cat to eat the zombies */
+/* Bugs: Sometimes zombies disappear randomly, sometimes the bullets don't work, and the zombie speed and cat moving forward speed cancel each other out;
+    also if the cat gets to the end of the road without killing enough zombies, the game doesn't end which will be fixed with later implementation */
+// How to play: Go up, down, and right with the up, down, and right buttons, press A to shoot hairballs, try to kill zombies
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "myLib.h"

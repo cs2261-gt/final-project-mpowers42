@@ -1626,7 +1626,7 @@ void updateZombie(ZOMBIE* z) {
 
 
             if (collision(z->col, z->row, z->width, z->height,
-            cat.worldCol, cat.worldRow, cat.width, cat.height)
+            cat.screenCol, cat.screenRow, cat.width, cat.height)
             && z->active) {
 
                 goToLose();
@@ -1671,7 +1671,7 @@ void drawGame() {
         drawZombie(&zombie[i], 1 + i);
     }
     for (int i = 0; i < 5; i++)
-  drawHairball(&hairball[i], 2 + i);
+  drawHairball(&hairball[i], 5 + i);
 }
 
 

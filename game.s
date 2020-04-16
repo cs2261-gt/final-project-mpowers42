@@ -59,10 +59,9 @@ updateZombie.part.0:
 	ldr	r0, [r5, #4]
 	bne	.L4
 	ldr	r3, .L19+12
-	add	r2, r3, #8
 	ldr	r1, [r3, #28]
 	ldr	ip, [r3, #24]
-	ldm	r2, {r2, r3}
+	ldm	r3, {r2, r3}
 	str	ip, [sp, #12]
 	str	r1, [sp, #8]
 	str	r2, [sp, #4]
@@ -462,10 +461,10 @@ drawGame:
 	ldrne	ip, [r3]
 	ldrne	r1, [r3, #4]
 	add	r3, r3, #28
-	strhne	lr, [r2, #20]	@ movhi
-	strhne	ip, [r2, #16]	@ movhi
-	strhne	r1, [r2, #18]	@ movhi
-	strheq	r4, [r2, #16]	@ movhi
+	strhne	lr, [r2, #44]	@ movhi
+	strhne	ip, [r2, #40]	@ movhi
+	strhne	r1, [r2, #42]	@ movhi
+	strheq	r4, [r2, #40]	@ movhi
 	cmp	r3, r0
 	add	r2, r2, #8
 	bne	.L65

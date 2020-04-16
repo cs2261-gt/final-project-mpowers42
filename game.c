@@ -183,15 +183,13 @@ void updateZombie(ZOMBIE* z) {
             }
         }
 
-        // // Handle zombie-cat collisions
-        // for (int i = 0; i < ZOMBIECOUNT; i++) {
-            if (collision(z->col, z->row, z->width, z->height,
-            cat.worldCol, cat.worldRow, cat.width, cat.height) 
+        // Handle zombie-cat collisions
+        if (collision(z->col, z->row, z->width, z->height,
+            cat.screenCol, cat.screenRow, cat.width, cat.height) 
             && z->active) {
 
-                goToLose();
-            }
-        // }
+            goToLose();
+        }
     }
 }
 
@@ -231,7 +229,7 @@ void drawGame() {
         drawZombie(&zombie[i], 1 + i);
     }
     for (int i = 0; i < HAIRBALLCOUNT; i++)
-		drawHairball(&hairball[i], 2 + i);
+		drawHairball(&hairball[i], 5 + i);
 }
 
 // Draw cat

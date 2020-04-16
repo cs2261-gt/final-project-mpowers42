@@ -3881,7 +3881,7 @@ spritesheetTiles:
 	.short	2150
 	.short	26624
 	.short	2182
-	.short	24576
+	.short	26624
 	.short	2182
 	.short	-32768
 	.short	136
@@ -4893,7 +4893,7 @@ spritesheetTiles:
 	.short	-31096
 	.short	0
 	.short	26240
-	.short	0
+	.short	8
 	.short	26240
 	.short	8
 	.short	26624
@@ -4928,7 +4928,7 @@ spritesheetTiles:
 	.short	-30620
 	.short	18048
 	.short	26212
-	.short	18024
+	.short	18056
 	.short	26214
 	.short	26198
 	.short	22118
