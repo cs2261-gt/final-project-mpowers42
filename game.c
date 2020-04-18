@@ -127,11 +127,13 @@ void updateCat() {
 
         cat.worldRow -= cat.rdel;
 
-    } else if (BUTTON_HELD(BUTTON_DOWN) && cat.worldRow + cat.rdel < SCREENHEIGHT - 16) {
+    }
+    if (BUTTON_HELD(BUTTON_DOWN) && cat.worldRow + cat.rdel < SCREENHEIGHT - 16) {
 
         cat.worldRow += cat.rdel;
 
-    } else if (BUTTON_HELD(BUTTON_RIGHT)) {
+    } 
+    if (BUTTON_HELD(BUTTON_RIGHT)) {
 
         if (cat.worldCol + cat.width < WORLDWIDTH - 1) {
             cat.worldCol++;
@@ -185,7 +187,7 @@ void updateZombie(ZOMBIE* z) {
 
         // Handle zombie-cat collisions
         if (collision(z->col, z->row, z->width, z->height,
-            cat.screenCol, cat.screenRow, cat.width, cat.height) 
+            cat.screenCol - 5, cat.screenRow + 10, cat.width, cat.height) // Adjusting bc cat sprite is not the full 32 x 32
             && z->active) {
 
             goToLose();
@@ -285,8 +287,8 @@ void fireHairball() {
 		if (!hairball[i].active) {
 
 			// Position the new bullet
-			hairball[i].row = cat.screenRow + cat.height/2 - hairball[i].height/2;
-			hairball[i].col = cat.screenCol + cat.width/2 - hairball[i].width/2;
+			hairball[i].row = cat.screenRow + cat.height/2 ;
+            hairball[i].col = cat.screenCol + cat.width/2 ;
 
 			// Take the bullet out of the pool
 			hairball[i].active = 1;

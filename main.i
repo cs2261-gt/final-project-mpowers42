@@ -2,11 +2,7 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "main.c"
-
-
-
-
-
+# 9 "main.c"
 # 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 1 3
 # 10 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 # 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/ieeefp.h" 1 3
@@ -815,7 +811,7 @@ extern long double _strtold_r (struct _reent *, const char *restrict, char **res
 extern long double strtold (const char *restrict, char **restrict);
 # 336 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 
-# 7 "main.c" 2
+# 10 "main.c" 2
 # 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 1 3
 # 36 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
 # 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 1 3 4
@@ -1226,7 +1222,7 @@ _putchar_unlocked(int _c)
 }
 # 797 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
 
-# 8 "main.c" 2
+# 11 "main.c" 2
 # 1 "myLib.h" 1
 
 
@@ -1336,7 +1332,7 @@ typedef struct{
 
 
 int collision(int colA, int rowA, int widthA, int heightA, int colB, int rowB, int widthB, int heightB);
-# 9 "main.c" 2
+# 12 "main.c" 2
 # 1 "game.h" 1
 
 typedef struct {
@@ -1404,7 +1400,7 @@ void drawHairball(HAIRBALL *, int index);
 void animateCat();
 void fireHairball();
 void fireZombie();
-# 10 "main.c" 2
+# 13 "main.c" 2
 # 1 "startScreen.h" 1
 # 22 "startScreen.h"
 extern const unsigned short startScreenTiles[16];
@@ -1414,7 +1410,7 @@ extern const unsigned short startScreenMap[1024];
 
 
 extern const unsigned short startScreenPal[256];
-# 11 "main.c" 2
+# 14 "main.c" 2
 # 1 "gameScreen.h" 1
 # 22 "gameScreen.h"
 extern const unsigned short gameScreenTiles[16];
@@ -1424,7 +1420,7 @@ extern const unsigned short gameScreenMap[1024];
 
 
 extern const unsigned short gameScreenPal[256];
-# 12 "main.c" 2
+# 15 "main.c" 2
 # 1 "pauseScreen.h" 1
 # 22 "pauseScreen.h"
 extern const unsigned short pauseScreenTiles[16];
@@ -1434,7 +1430,7 @@ extern const unsigned short pauseScreenMap[1024];
 
 
 extern const unsigned short pauseScreenPal[256];
-# 13 "main.c" 2
+# 16 "main.c" 2
 # 1 "winScreen.h" 1
 # 22 "winScreen.h"
 extern const unsigned short winScreenTiles[16];
@@ -1444,7 +1440,7 @@ extern const unsigned short winScreenMap[1024];
 
 
 extern const unsigned short winScreenPal[256];
-# 14 "main.c" 2
+# 17 "main.c" 2
 # 1 "loseScreen.h" 1
 # 22 "loseScreen.h"
 extern const unsigned short loseScreenTiles[16];
@@ -1454,14 +1450,14 @@ extern const unsigned short loseScreenMap[1024];
 
 
 extern const unsigned short loseScreenPal[256];
-# 15 "main.c" 2
+# 18 "main.c" 2
 # 1 "spritesheet.h" 1
 # 21 "spritesheet.h"
 extern const unsigned short spritesheetTiles[16384];
 
 
 extern const unsigned short spritesheetPal[256];
-# 16 "main.c" 2
+# 19 "main.c" 2
 # 1 "background.h" 1
 # 22 "background.h"
 extern const unsigned short backgroundTiles[128];
@@ -1471,7 +1467,7 @@ extern const unsigned short backgroundMap[4096];
 
 
 extern const unsigned short backgroundPal[256];
-# 17 "main.c" 2
+# 20 "main.c" 2
 
 
 void initialize();

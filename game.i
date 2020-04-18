@@ -1567,11 +1567,13 @@ void updateCat() {
 
         cat.worldRow -= cat.rdel;
 
-    } else if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<7))) && cat.worldRow + cat.rdel < 160 - 16) {
+    }
+    if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<7))) && cat.worldRow + cat.rdel < 160 - 16) {
 
         cat.worldRow += cat.rdel;
 
-    } else if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<4)))) {
+    }
+    if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<4)))) {
 
         if (cat.worldCol + cat.width < 1024 - 1) {
             cat.worldCol++;
@@ -1624,14 +1626,12 @@ void updateZombie(ZOMBIE* z) {
         }
 
 
-
-            if (collision(z->col, z->row, z->width, z->height,
-            cat.screenCol, cat.screenRow, cat.width, cat.height)
+        if (collision(z->col, z->row, z->width, z->height,
+            cat.screenCol - 5, cat.screenRow + 10, cat.width, cat.height)
             && z->active) {
 
-                goToLose();
-            }
-
+            goToLose();
+        }
     }
 }
 
@@ -1727,8 +1727,8 @@ void fireHairball() {
   if (!hairball[i].active) {
 
 
-   hairball[i].row = cat.screenRow + cat.height/2 - hairball[i].height/2;
-   hairball[i].col = cat.screenCol + cat.width/2 - hairball[i].width/2;
+   hairball[i].row = cat.screenRow + cat.height/2 ;
+            hairball[i].col = cat.screenCol + cat.width/2 ;
 
 
    hairball[i].active = 1;

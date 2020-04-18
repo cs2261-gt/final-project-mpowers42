@@ -59,13 +59,15 @@ updateZombie.part.0:
 	ldr	r0, [r5, #4]
 	bne	.L4
 	ldr	r3, .L19+12
-	ldr	r1, [r3, #28]
-	ldr	ip, [r3, #24]
-	ldm	r3, {r2, r3}
-	str	ip, [sp, #12]
-	str	r1, [sp, #8]
-	str	r2, [sp, #4]
+	ldm	r3, {r1, r2}
+	ldr	lr, [r3, #24]
+	ldr	ip, [r3, #28]
+	add	r1, r1, #10
+	sub	r3, r2, #5
+	str	r1, [sp, #4]
 	str	r3, [sp]
+	str	lr, [sp, #12]
+	str	ip, [sp, #8]
 	ldr	r3, [r5, #16]
 	ldr	r2, [r5, #20]
 	ldr	r1, [r5]
@@ -645,29 +647,23 @@ fireHairball:
 	cmp	r1, #0
 	bne	.L98
 .L107:
-	push	{r4, r5, r6, r7, lr}
+	push	{r4, lr}
 	mov	r4, #1
-	ldr	r2, .L108+4
+	ldr	ip, .L108+4
+	ldr	r1, [ip, #24]
+	ldr	r2, [ip, #28]
+	ldr	lr, [ip]
+	ldr	ip, [ip, #4]
 	rsb	r3, r3, r3, lsl #3
+	add	r1, r1, r1, lsr #31
+	add	r2, r2, r2, lsr #31
+	add	r2, ip, r2, asr r4
+	add	r1, lr, r1, asr r4
 	add	ip, r0, r3, lsl #2
-	ldr	r6, [r2, #24]
-	ldr	r5, [r2, #28]
-	ldr	lr, [ip, #16]
-	add	r7, r6, r6, lsr #31
-	ldr	r1, [r2]
-	add	r6, r5, r5, lsr #31
-	ldr	r2, [r2, #4]
-	add	r5, lr, lr, lsr #31
-	ldr	lr, [ip, #20]
-	add	r1, r1, r7, asr r4
-	add	r2, r2, r6, asr r4
-	add	lr, lr, lr, lsr #31
-	sub	r1, r1, r5, asr r4
-	sub	r2, r2, lr, asr r4
 	str	r4, [ip, #24]
 	str	r1, [r0, r3, lsl #2]
 	str	r2, [ip, #4]
-	pop	{r4, r5, r6, r7, lr}
+	pop	{r4, lr}
 	bx	lr
 .L109:
 	.align	2
@@ -685,118 +681,118 @@ updateCat:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	ldr	r3, .L126
-	ldrh	r2, [r3, #48]
-	ldr	ip, .L126+4
-	ldr	r3, .L126+8
-	tst	r2, #64
-	push	{r4, r5, lr}
-	ldr	r2, [r3, #8]
-	ldr	r1, [r3, #12]
-	ldr	lr, [ip]
+	ldr	r3, .L128
+	ldrh	r3, [r3, #48]
+	tst	r3, #64
+	push	{r4, lr}
+	ldr	r3, .L128+4
 	bne	.L111
-	ldr	r0, [r3, #16]
-	sub	r0, r2, r0
-	cmp	r0, #0
-	ble	.L111
-.L124:
-	mov	r2, r0
-	str	r0, [r3, #8]
-.L112:
-	ldr	ip, .L126+12
-	ldr	r0, .L126+16
-	ldr	ip, [ip]
-	ldrh	r0, [r0]
-	sub	r1, r1, lr
-	sub	r2, r2, ip
-	tst	r0, #1
-	str	r1, [r3, #4]
-	str	r2, [r3]
-	beq	.L110
-	ldr	r3, .L126+20
-	ldrh	r3, [r3]
-	tst	r3, #1
-	beq	.L125
-.L110:
-	pop	{r4, r5, lr}
-	bx	lr
+	ldr	r2, [r3, #8]
+	ldr	r1, [r3, #16]
+	sub	r2, r2, r1
+	cmp	r2, #0
+	strgt	r2, [r3, #8]
 .L111:
-	ldr	r0, .L126
-	ldrh	r0, [r0, #48]
-	tst	r0, #128
-	bne	.L113
-	ldr	r0, [r3, #16]
-	add	r0, r2, r0
-	cmp	r0, #143
-	ble	.L124
-.L113:
-	ldr	r0, .L126
-	ldrh	r0, [r0, #48]
-	tst	r0, #16
-	movne	r0, #1
-	strne	r0, [r3, #36]
+	ldr	r2, .L128
+	ldrh	r2, [r2, #48]
+	tst	r2, #128
 	bne	.L112
+	ldr	r2, [r3, #8]
+	ldr	r1, [r3, #16]
+	add	r2, r2, r1
+	cmp	r2, #143
+	strle	r2, [r3, #8]
+.L112:
+	ldr	r2, .L128
+	ldrh	r1, [r2, #48]
+	ldr	r2, .L128+8
+	tst	r1, #16
+	ldr	ip, [r2]
+	movne	r2, #1
+	ldr	r1, [r3, #12]
+	strne	r2, [r3, #36]
+	bne	.L118
 	ldr	r0, [r3, #28]
-	ldr	r4, .L126+24
+	ldr	lr, .L128+12
 	add	r0, r1, r0
-	cmp	r0, r4
-	ldr	r0, .L126+28
+	cmp	r0, lr
+	ldr	r0, .L128+16
 	ldr	r0, [r0]
 	addle	r1, r1, #1
 	strle	r1, [r3, #12]
 	cmp	r0, #30
-	bgt	.L116
-	ldr	r4, .L126+32
-	ldr	r5, .L126+36
-	ldr	r0, [r4]
-	cmp	r0, r5
-	bgt	.L116
-	ldr	r5, [r3, #4]
-	cmp	r5, #80
+	bgt	.L115
+	ldr	lr, .L128+20
+	ldr	r4, .L128+24
+	ldr	r0, [lr]
+	cmp	r0, r4
+	bgt	.L115
+	ldr	r4, [r3, #4]
+	cmp	r4, #80
 	addgt	r0, r0, #1
-	addgt	lr, lr, #1
-	strgt	r0, [r4]
-	strgt	lr, [ip]
+	addgt	ip, ip, #1
+	strgt	r0, [lr]
+	strgt	ip, [r2]
+.L115:
+	ldr	r0, [r3, #32]
+	add	r2, r0, r0, lsl #3
+	add	r2, r2, r2, lsl #6
+	add	r2, r0, r2, lsl #3
+	ldr	lr, .L128+28
+	add	r2, r2, r2, lsl #15
+	add	r2, r0, r2, lsl #3
+	sub	r2, lr, r2
+	cmp	lr, r2, ror #1
+	bcs	.L126
 .L116:
-	ldr	ip, [r3, #32]
-	add	r0, ip, ip, lsl #3
-	add	r0, r0, r0, lsl #6
-	add	r0, ip, r0, lsl #3
-	ldr	r4, .L126+40
-	add	r0, r0, r0, lsl #15
-	add	r0, ip, r0, lsl #3
-	sub	r0, r4, r0
-	cmp	r4, r0, ror #1
-	bcc	.L117
-	ldr	r0, [r3, #40]
-	ldr	r4, [r3, #36]
-	sub	r0, r0, #1
-	cmp	r4, r0
-	movge	r0, #0
-	addlt	r4, r4, #1
-	strlt	r4, [r3, #36]
-	strge	r0, [r3, #36]
-.L117:
-	add	ip, ip, #1
-	str	ip, [r3, #32]
-	b	.L112
-.L125:
-	pop	{r4, r5, lr}
-	b	fireHairball
-.L127:
-	.align	2
+	add	r0, r0, #1
+	str	r0, [r3, #32]
+.L118:
+	ldr	r0, .L128+32
+	ldr	r2, .L128+36
+	ldr	lr, [r0]
+	ldrh	r0, [r2]
+	ldr	r2, [r3, #8]
+	sub	r1, r1, ip
+	sub	r2, r2, lr
+	tst	r0, #1
+	str	r1, [r3, #4]
+	str	r2, [r3]
+	beq	.L110
+	ldr	r3, .L128+40
+	ldrh	r3, [r3]
+	tst	r3, #1
+	beq	.L127
+.L110:
+	pop	{r4, lr}
+	bx	lr
 .L126:
+	ldr	r2, [r3, #40]
+	ldr	lr, [r3, #36]
+	sub	r2, r2, #1
+	cmp	lr, r2
+	movge	r2, #0
+	addlt	lr, lr, #1
+	strlt	lr, [r3, #36]
+	strge	r2, [r3, #36]
+	b	.L116
+.L127:
+	pop	{r4, lr}
+	b	fireHairball
+.L129:
+	.align	2
+.L128:
 	.word	67109120
-	.word	playerHOff
 	.word	cat
-	.word	vOff
-	.word	oldButtons
-	.word	buttons
+	.word	playerHOff
 	.word	1022
 	.word	screenBlock
 	.word	hOff
 	.word	782
 	.word	306783378
+	.word	vOff
+	.word	oldButtons
+	.word	buttons
 	.size	updateCat, .-updateCat
 	.align	2
 	.global	updateGame
@@ -809,12 +805,12 @@ updateGame:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	push	{r4, r5, r6, lr}
-	ldr	r6, .L146
+	ldr	r6, .L148
 	ldr	r3, [r6]
 	cmp	r3, #256
-	ble	.L129
+	ble	.L131
 	mov	ip, #67108864
-	ldr	r0, .L146+4
+	ldr	r0, .L148+4
 	ldr	r1, [r0]
 	add	r1, r1, #1
 	lsl	r2, r1, #24
@@ -824,59 +820,59 @@ updateGame:
 	str	r3, [r6]
 	str	r1, [r0]
 	strh	r2, [ip, #8]	@ movhi
-.L129:
-	ldr	r2, .L146+8
+.L131:
+	ldr	r2, .L148+8
 	ldr	r3, [r2]
-	ldr	r1, .L146+12
+	ldr	r1, .L148+12
 	cmp	r3, #512
 	subgt	r3, r3, #512
 	strgt	r3, [r2]
 	ldr	r3, [r1]
-	ldr	r0, .L146+16
-	ldr	r2, .L146+20
+	ldr	r0, .L148+16
+	ldr	r2, .L148+20
 	add	r3, r3, #1
 	mla	r2, r3, r2, r0
-	ldr	r0, .L146+24
+	ldr	r0, .L148+24
 	cmp	r0, r2, ror #2
 	str	r3, [r1]
-	bcs	.L145
-.L131:
-	bl	updateCat
-	ldr	r4, .L146+28
-	add	r5, r4, #140
+	bcs	.L147
 .L133:
+	bl	updateCat
+	ldr	r4, .L148+28
+	add	r5, r4, #140
+.L135:
 	ldr	r3, [r4, #24]
 	cmp	r3, #0
 	movne	r0, r4
 	blne	updateZombie.part.0
-.L132:
+.L134:
 	add	r4, r4, #28
 	cmp	r5, r4
-	bne	.L133
-	ldr	r0, .L146+32
+	bne	.L135
+	ldr	r0, .L148+32
 	add	r4, r0, #140
-.L135:
+.L137:
 	ldr	r3, [r0, #24]
 	cmp	r3, #0
 	blne	updateHairball.part.0
-.L134:
+.L136:
 	add	r0, r0, #28
 	cmp	r0, r4
-	bne	.L135
+	bne	.L137
 	mov	r3, #67108864
-	ldr	r2, .L146+36
+	ldr	r2, .L148+36
 	ldrh	r1, [r6]
 	ldrh	r2, [r2]
 	strh	r1, [r3, #16]	@ movhi
 	pop	{r4, r5, r6, lr}
 	strh	r2, [r3, #18]	@ movhi
 	bx	lr
-.L145:
-	bl	fireZombie
-	b	.L131
 .L147:
+	bl	fireZombie
+	b	.L133
+.L149:
 	.align	2
-.L146:
+.L148:
 	.word	hOff
 	.word	screenBlock
 	.word	playerHOff
