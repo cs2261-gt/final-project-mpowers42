@@ -26,7 +26,7 @@ unsigned short buttons;
 unsigned short oldButtons;
 
 // Game states
-enum {START, GAME, PAUSE, WIN, LOSE};
+enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
 OBJ_ATTR shadowOAM[128];
 
@@ -41,6 +41,9 @@ int main() {
 
             case START:
                 start();
+                break;
+            case INSTRUCTIONS:
+                instructions();
                 break;
             case GAME:
                 game();
@@ -97,6 +100,37 @@ void start() {
     if (BUTTON_PRESSED(BUTTON_START)) {
         initGame();
         goToGame();
+    }
+
+    if (BUTTON_PRESSED(BUTTON_SELECT)) {
+        goToInstructions();
+    }
+}
+
+// Sets up the instructions state
+void goToInstructions() {
+
+    // Change size to small
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL | BG_4BPP;
+
+    // DMA bg tiles, map, and palette into memory
+    DMANow(3, winScreenPal, PALETTE, 256);
+    DMANow(3, winScreenTiles, &CHARBLOCK[0], winScreenTilesLen / 2);
+    DMANow(3, winScreenMap, &SCREENBLOCK[28], winScreenMapLen / 2);
+
+    REG_DISPCTL = MODE0 | BG0_ENABLE;
+
+    // Reset hOff to 0
+    REG_BG0HOFF = 0;
+
+    state = INSTRUCTIONS;
+}
+
+// Runs every frame of the instructions state
+void instructions() {
+
+    if (BUTTON_PRESSED(BUTTON_SELECT)) {
+        goToStart();
     }
 }
 

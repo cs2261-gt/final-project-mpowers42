@@ -1477,7 +1477,7 @@ unsigned short buttons;
 unsigned short oldButtons;
 
 
-enum {START, GAME, PAUSE, WIN, LOSE};
+enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
 OBJ_ATTR shadowOAM[128];
 
@@ -1492,6 +1492,9 @@ int main() {
 
             case START:
                 start();
+                break;
+            case INSTRUCTIONS:
+                instructions();
                 break;
             case GAME:
                 game();
@@ -1548,6 +1551,37 @@ void start() {
     if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
         initGame();
         goToGame();
+    }
+
+    if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2))))) {
+        goToInstructions();
+    }
+}
+
+
+void goToInstructions() {
+
+
+    (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (0<<14) | (0<<7);
+
+
+    DMANow(3, winScreenPal, ((unsigned short *)0x5000000), 256);
+    DMANow(3, winScreenTiles, &((charblock *)0x6000000)[0], 32 / 2);
+    DMANow(3, winScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
+
+    (*(unsigned short *)0x4000000) = 0 | (1<<8);
+
+
+    (*(volatile unsigned short *)0x04000010) = 0;
+
+    state = INSTRUCTIONS;
+}
+
+
+void instructions() {
+
+    if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2))))) {
+        goToStart();
     }
 }
 
