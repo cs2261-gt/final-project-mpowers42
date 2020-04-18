@@ -1364,8 +1364,10 @@ typedef struct {
 
 
 typedef struct {
- int row;
- int col;
+ int screenRow;
+ int screenCol;
+ int worldRow;
+ int worldCol;
  int rdel;
  int cdel;
  int height;
@@ -1522,8 +1524,10 @@ void initHairball() {
 
   hairball[i].height = 8;
   hairball[i].width = 8;
-  hairball[i].row = -hairball[i].height;
-  hairball[i].col = 0;
+  hairball[i].screenRow = 0;
+  hairball[i].screenCol = 0;
+        hairball[i].worldRow = 0;
+        hairball[i].worldCol = 0;
   hairball[i].rdel = 0;
         hairball[i].cdel = 2;
   hairball[i].active = 0;
@@ -1614,7 +1618,7 @@ void updateZombie(ZOMBIE* z) {
 
         for (int i = 0; i < 5; i++) {
             if (collision(z->col, z->row, z->width, z->height,
-                hairball[i].col, hairball[i].row, hairball[i].width, hairball[i].height)) {
+                hairball[i].screenCol, hairball[i].screenRow, hairball[i].width, hairball[i].height)) {
 
 
                 hairball[i].active = 0;
@@ -1627,7 +1631,7 @@ void updateZombie(ZOMBIE* z) {
 
 
         if (collision(z->col, z->row, z->width, z->height,
-            cat.screenCol - 5, cat.screenRow + 10, cat.width, cat.height)
+            cat.screenCol - 5, cat.screenRow, cat.width, cat.height)
             && z->active) {
 
             goToLose();
@@ -1652,15 +1656,19 @@ void updateHairball(HAIRBALL* h) {
 
 
     if (h->active) {
-        if (h->row + h->height-1 >= 0
-            && h->row + h->rdel < 160 -1
-            && h->col + h->cdel < 240) {
-                h->row += h->rdel;
-                h->col += h->cdel;
+        if (h->worldRow + h->height-1 >= 0
+            && h->worldRow + h->rdel < 160 -1
+            && h->worldCol + h->cdel < 240) {
+                h->worldRow += h->rdel;
+                h->worldCol += h->cdel;
             } else {
                 h->active = 0;
             }
     }
+
+    h->screenRow = h->worldRow - vOff;
+    h->screenCol = h->worldCol - hOff;
+
 }
 
 
@@ -1697,8 +1705,8 @@ void drawZombie(ZOMBIE* z, int index) {
 
 void drawHairball(HAIRBALL* h, int index) {
     if (h->active) {
-            shadowOAM[index].attr0 = h->row | (0<<14);
-            shadowOAM[index].attr1 = h->col | (0<<14);
+            shadowOAM[index].attr0 = h->screenRow | (0<<14);
+            shadowOAM[index].attr1 = h->screenCol | (0<<14);
             shadowOAM[index].attr2 = ((0)*32+(6));
     } else {
         shadowOAM[index].attr0 = (2<<8);
@@ -1727,8 +1735,8 @@ void fireHairball() {
   if (!hairball[i].active) {
 
 
-   hairball[i].row = cat.screenRow + cat.height/2 ;
-            hairball[i].col = cat.screenCol + cat.width/2 ;
+   hairball[i].screenRow = cat.screenRow + cat.height/2 ;
+            hairball[i].screenCol = cat.screenCol + cat.width/2 ;
 
 
    hairball[i].active = 1;

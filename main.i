@@ -1365,7 +1365,7 @@ typedef struct {
 
 
 typedef struct {
- int row;
+ int screenRow;
  int col;
  int rdel;
  int cdel;
