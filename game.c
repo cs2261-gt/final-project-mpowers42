@@ -19,6 +19,7 @@ int zombieTimer; // timer for spawning zombies at intervals
 int hOff;
 int vOff;
 int playerHOff;
+int totalHOff;
 
 // Screenblock to change for XL background
 int screenBlock;
@@ -29,6 +30,7 @@ void initGame() {
     // Initialize horizontal and vertical offsets and screenblock
     vOff = 0;
     hOff = 0;
+    totalHOff = 0;
     playerHOff = 0;
     screenBlock = 28;
 
@@ -63,8 +65,8 @@ void initCat() {
 void initZombie() {
 
     for (int i = 0; i < ZOMBIECOUNT; i++) {
-        zombie[i].row = rand() % 110;
-        zombie[i].col = SCREENWIDTH;
+        zombie[i].worldRow = rand() % 110 + vOff;
+        zombie[i].worldCol = SCREENWIDTH + totalHOff;
         zombie[i].rdel = 1;
         zombie[i].cdel = 1;
         zombie[i].height = 16;
@@ -72,7 +74,7 @@ void initZombie() {
         zombie[i].active = 0;
     }
     zombie[0].active = 1; // set just one to active to start
-
+ 
 }
 
 // Initialize hairball
@@ -145,6 +147,7 @@ void updateCat() {
         if (screenBlock < 31 && hOff < (WORLDWIDTH - SCREENWIDTH - 1) && cat.screenCol > SCREENWIDTH / 3) {
             hOff++;
             playerHOff++;
+            totalHOff++;
         }
 
         animateCat();
@@ -166,16 +169,17 @@ void updateCat() {
 void updateZombie(ZOMBIE* z) {
     if (z->active) { // only update active zombies
         // Move the zombie across the screen to the left
-        z->col -= z->cdel;
+        z->worldCol -= z->cdel;
 
-        // if zombie reaches the end of the screen, set to inactive!
-        if (z->col < 0) {
+        // if zombie reaches the end of the WORLD, set to inactive!
+        if (z->screenCol + z->width < 0) {
             z->active = 0;
         }
 
         // Handle zombie-hairball collisions
         for (int i = 0; i < HAIRBALLCOUNT; i++) {
-            if (collision(z->col, z->row, z->width, z->height,
+            // need to check if hairball is active too!
+            if (hairball[i].active && collision(z->screenCol, z->screenRow, z->width, z->height,
                 hairball[i].screenCol, hairball[i].screenRow, hairball[i].width, hairball[i].height)) {
 
                 // Put back in the pool
@@ -188,12 +192,16 @@ void updateZombie(ZOMBIE* z) {
         }
 
         // Handle zombie-cat collisions
-        if (collision(z->col, z->row, z->width, z->height,
+        if (collision(z->screenCol, z->screenRow, z->width, z->height,
             cat.screenCol - 5, cat.screenRow, cat.width, cat.height) // Adjusting bc cat sprite is not the full 32 x 32
             && z->active) {
 
             goToLose();
         }
+
+        // allow zombie to move independently from the cat
+        z->screenRow = z->worldRow - vOff;
+        z->screenCol = z->worldCol - totalHOff;
     }
 }
 
@@ -201,9 +209,9 @@ void updateZombie(ZOMBIE* z) {
 void fireZombie() {
     for (int i = 0; i < ZOMBIECOUNT; i++) {
         if (!zombie[i].active) {
+            zombie[i].worldRow = rand() % 110 + vOff;
+            zombie[i].worldCol = SCREENWIDTH + totalHOff; // initialize worldCol and row to use totalHOff and voff
             zombie[i].active = 1;
-            zombie[i].row = rand() % 110;
-            zombie[i].col = SCREENWIDTH;
             break;
         }
     }
@@ -214,18 +222,21 @@ void updateHairball(HAIRBALL* h) {
 
     // If the hairball is active, update it; otherwise, ignore
     if (h->active) {
-        if (h->worldRow + h->height-1 >= 0
-            && h->worldRow + h->rdel < SCREENHEIGHT-1
-            && h->worldCol + h->cdel < SCREENWIDTH) {
+        if (h->worldRow + h->height-1 >= 0 && h->worldRow + h->rdel < SCREENHEIGHT-1) {
                 h->worldRow += h->rdel;
                 h->worldCol += h->cdel;
-            } else {
-                h->active = 0;
-            }
+        } else {
+            h->active = 0;
+        }
+
+        // if hairball reaches end of the screen
+        if (h->screenCol > SCREENWIDTH) {
+            h->active = 0;
+        }
     }
 
     h->screenRow = h->worldRow - vOff;
-    h->screenCol = h->worldCol - hOff;
+    h->screenCol = h->worldCol - totalHOff;
 
 }
 
@@ -251,9 +262,9 @@ void drawCat() {
 // Draw zombie
 void drawZombie(ZOMBIE* z, int index) {
     
-    if (z->active) {
-        shadowOAM[index].attr0 = z->row | ATTR0_SQUARE;
-        shadowOAM[index].attr1 = z->col | ATTR1_SMALL; // 16 x 16
+    if (z->active) {            // rowmask and colmask are macros that help draw things outside of the screen boundaries!
+        shadowOAM[index].attr0 = (ROWMASK & z->screenRow) | ATTR0_SQUARE;
+        shadowOAM[index].attr1 = (COLMASK & z->screenCol) | ATTR1_SMALL; // 16 x 16
         shadowOAM[index].attr2 = ATTR2_TILEID(4, 0);
     } else {
         shadowOAM[index].attr0 = ATTR0_HIDE;
@@ -263,8 +274,8 @@ void drawZombie(ZOMBIE* z, int index) {
 // Draw hairball
 void drawHairball(HAIRBALL* h, int index) {
     if (h->active) {
-            shadowOAM[index].attr0 = h->screenRow | ATTR0_SQUARE;
-            shadowOAM[index].attr1 = h->screenCol | ATTR1_TINY; // 8 x 8
+            shadowOAM[index].attr0 = (ROWMASK & h->screenRow) | ATTR0_SQUARE;
+            shadowOAM[index].attr1 = (COLMASK & h->screenCol) | ATTR1_TINY; // 8 x 8
             shadowOAM[index].attr2 = ATTR2_TILEID(6, 0);
     } else {
         shadowOAM[index].attr0 = ATTR0_HIDE;
@@ -293,8 +304,10 @@ void fireHairball() {
 		if (!hairball[i].active) {
 
 			// Position the new bullet
-			hairball[i].screenRow = cat.screenRow + cat.height/2 ;
-            hairball[i].screenCol = cat.screenCol + cat.width/2 ;
+            hairball[i].worldRow = cat.worldRow + cat.height / 2; // set the worldRow and col so that you can update screenrow and col accurately in updateHairball
+            hairball[i].worldCol = cat.worldCol + cat.width / 2;
+			// hairball[i].screenRow = cat.screenRow + cat.height/2;
+            // hairball[i].screenCol = cat.screenCol + cat.width/2;
 
 			// Take the bullet out of the pool
 			hairball[i].active = 1;
