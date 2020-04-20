@@ -17,8 +17,8 @@
 	.type	grassPal, %object
 	.size	grassPal, 512
 grassPal:
-	.short	608
-	.short	2922
+	.short	11113
+	.short	7149
 	.short	0
 	.short	0
 	.short	0
@@ -2440,7 +2440,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2498,6 +2498,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -2558,6 +2560,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2615,6 +2618,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -2673,7 +2678,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -2692,6 +2701,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2713,6 +2723,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -2725,6 +2737,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2743,6 +2759,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -2769,6 +2786,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2780,7 +2798,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -2799,6 +2821,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2820,6 +2843,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -2832,6 +2857,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2850,6 +2879,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -2876,6 +2906,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2907,8 +2938,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -2925,8 +2961,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -2957,9 +2997,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -2980,8 +3023,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -3010,8 +3058,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -3028,8 +3081,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -3060,9 +3117,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -3083,8 +3143,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -3114,7 +3179,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -3133,6 +3202,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -3164,7 +3237,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	1
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -3187,7 +3264,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -3218,7 +3299,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -3237,6 +3322,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -3268,7 +3357,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	1
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -3291,7 +3384,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4125,8 +4222,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4245,8 +4340,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4275,6 +4368,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4296,6 +4391,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4331,6 +4427,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4356,6 +4453,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4365,8 +4464,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4391,6 +4488,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4412,6 +4511,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4447,6 +4547,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4472,6 +4573,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4481,15 +4584,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4509,8 +4606,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4527,10 +4628,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	1
-	.short	0
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4560,9 +4664,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -4577,8 +4684,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4586,8 +4691,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4601,15 +4710,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
+	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -4622,7 +4726,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4639,8 +4748,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4649,8 +4763,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4672,9 +4784,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -4696,8 +4811,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	1
+	.short	256
+	.short	257
 	.short	0
 	.short	257
 	.short	257
@@ -4721,20 +4839,18 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4753,7 +4869,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4769,8 +4889,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4787,7 +4905,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	256
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4810,6 +4932,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4817,8 +4943,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4841,14 +4965,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
 	.short	256
-	.short	257
 	.short	1
+	.short	256
 	.short	0
 	.short	257
 	.short	257
@@ -4868,7 +4989,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4889,8 +5014,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4902,7 +5025,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	256
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -4925,6 +5052,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -4937,8 +5068,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -5004,19 +5133,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5052,19 +5174,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5124,19 +5239,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5172,19 +5280,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5244,19 +5345,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5292,19 +5386,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5364,32 +5451,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	257
-	.short	257
-	.short	257
-	.short	1
-	.short	0
-	.short	256
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -5412,19 +5476,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
-	.short	257
-	.short	257
-	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5486,15 +5540,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5534,16 +5582,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	0
-	.short	256
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -5564,62 +5606,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	1
-	.short	0
-	.short	257
-	.short	257
-	.short	0
 	.short	256
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -5654,19 +5643,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
-	.short	257
 	.short	1
-	.short	0
-	.short	257
-	.short	257
-	.short	0
 	.short	256
-	.short	257
-	.short	257
-	.short	257
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -5692,9 +5670,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	257
-	.short	257
-	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -5726,28 +5702,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	0
-	.short	256
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -5769,52 +5727,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	0
-	.short	256
-	.short	257
 	.short	1
-	.short	0
-	.short	257
-	.short	257
-	.short	0
 	.short	256
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -5849,18 +5763,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -5886,6 +5790,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -5917,7 +5822,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -5937,8 +5845,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -5969,8 +5881,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -5991,8 +5907,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6021,7 +5942,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6041,8 +5965,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6073,8 +6001,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6095,8 +6027,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6126,6 +6063,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6146,6 +6086,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -6178,6 +6122,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6200,7 +6148,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6231,6 +6183,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6251,6 +6206,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -6283,6 +6242,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6305,7 +6268,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6336,6 +6303,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6356,6 +6326,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -6388,6 +6362,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6410,7 +6388,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6441,6 +6423,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6461,6 +6446,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -6493,6 +6482,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6515,7 +6508,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6780,6 +6777,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6801,6 +6800,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6836,6 +6836,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6861,6 +6862,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6894,6 +6897,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6915,6 +6920,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6950,6 +6956,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -6975,6 +6982,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -6993,6 +7002,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7005,8 +7015,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -7023,8 +7037,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7041,6 +7060,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -7053,8 +7073,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7075,8 +7100,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -7093,6 +7122,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7105,8 +7135,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -7123,8 +7157,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7141,6 +7180,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -7153,8 +7193,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7175,8 +7220,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -7190,9 +7239,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -7204,6 +7256,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -7222,7 +7278,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7237,8 +7297,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7249,7 +7314,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7272,6 +7341,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -7286,9 +7359,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -7300,6 +7376,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -7318,7 +7398,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7333,8 +7417,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7345,7 +7434,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7368,6 +7461,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -7383,7 +7480,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	256
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7437,7 +7538,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7495,7 +7600,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	256
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7503,8 +7612,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7551,9 +7658,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
+	.short	1
 	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7622,9 +7731,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7670,9 +7776,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7742,9 +7845,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7790,9 +7890,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7862,9 +7959,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7910,9 +8004,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -7977,19 +8068,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8025,19 +8109,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8097,19 +8174,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8145,19 +8215,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8217,19 +8280,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8265,19 +8321,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8339,15 +8388,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8387,15 +8429,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8459,15 +8494,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8507,15 +8535,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8579,15 +8600,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8627,15 +8641,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8699,15 +8706,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -8747,15 +8747,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -9698,8 +9691,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -9746,8 +9737,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -9818,8 +9807,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -9866,8 +9853,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -9895,6 +9880,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -9938,8 +9924,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -9954,6 +9938,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -9986,8 +9972,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10016,6 +10000,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10058,8 +10043,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10075,6 +10058,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10106,8 +10091,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10135,7 +10118,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10154,6 +10141,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10173,13 +10161,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10191,6 +10177,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10209,6 +10199,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -10221,19 +10212,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10242,6 +10226,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10253,7 +10238,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10272,6 +10261,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10293,13 +10283,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
+	.short	1
 	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10308,6 +10296,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10326,6 +10319,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -10341,24 +10335,18 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10390,8 +10378,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10408,18 +10401,18 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10444,9 +10437,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10461,21 +10457,19 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
 	.short	1
-	.short	0
 	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10504,8 +10498,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10522,8 +10521,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10534,12 +10537,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10559,9 +10557,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10583,18 +10584,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	1
-	.short	0
 	.short	256
 	.short	257
-	.short	0
 	.short	0
 	.short	257
-	.short	257
-	.short	0
+	.short	1
 	.short	256
-	.short	257
-	.short	257
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -10624,7 +10619,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10643,6 +10642,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10654,12 +10657,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10679,7 +10677,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	1
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10703,14 +10705,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	1
-	.short	0
-	.short	256
-	.short	257
-	.short	0
-	.short	0
 	.short	257
-	.short	257
 	.short	0
+	.short	1
 	.short	256
 	.short	257
 	.short	257
@@ -10742,9 +10739,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	257
-	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10763,6 +10762,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10774,12 +10777,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10799,7 +10797,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	1
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10823,15 +10825,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	1
+	.short	257
 	.short	0
+	.short	1
 	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -10894,12 +10894,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -10942,16 +10937,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -11014,12 +11002,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -11062,16 +11045,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -11134,12 +11110,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -11182,16 +11153,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -11254,12 +11218,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -11302,16 +11261,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -11842,8 +11794,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -11858,6 +11808,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -11879,6 +11831,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -11890,8 +11843,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -11916,6 +11867,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -11941,6 +11893,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -11962,8 +11916,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -11976,6 +11928,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -11997,6 +11951,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12010,8 +11965,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12034,6 +11987,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12059,6 +12013,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12082,8 +12038,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12092,8 +12046,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12110,8 +12068,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12130,8 +12093,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12143,9 +12104,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -12167,10 +12131,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	1
-	.short	0
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12197,19 +12163,15 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
 	.short	0
 	.short	257
-	.short	257
-	.short	257
 	.short	1
-	.short	0
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12226,8 +12188,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12245,27 +12212,24 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -12287,8 +12251,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	1
+	.short	256
+	.short	257
 	.short	0
 	.short	257
 	.short	257
@@ -12317,19 +12284,15 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
+	.short	256
+	.short	1
+	.short	256
 	.short	0
 	.short	257
 	.short	257
-	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12346,7 +12309,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12365,19 +12332,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12385,7 +12345,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	256
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12408,9 +12372,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	1
+	.short	256
 	.short	0
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -12436,26 +12401,16 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	1
-	.short	0
 	.short	256
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
-	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12474,7 +12429,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12485,19 +12444,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12513,7 +12465,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	256
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12528,8 +12484,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12538,6 +12492,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -12557,19 +12515,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12605,19 +12556,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12643,19 +12587,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12678,16 +12616,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12726,16 +12657,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12763,19 +12687,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12798,16 +12716,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12846,16 +12757,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12883,19 +12787,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12918,16 +12816,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -12966,16 +12857,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13003,19 +12887,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	0
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13039,15 +12913,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13087,15 +12956,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13125,15 +12989,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13167,6 +13025,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13188,6 +13047,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13222,6 +13083,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13245,15 +13108,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
+	.short	257
 	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13286,6 +13145,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13307,6 +13167,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13341,6 +13203,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13365,15 +13229,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
 	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13403,7 +13262,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13423,8 +13285,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13455,8 +13321,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13477,8 +13347,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13507,7 +13382,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13527,8 +13405,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13559,8 +13441,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13581,8 +13467,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13612,6 +13503,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13632,6 +13526,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -13664,6 +13562,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13686,7 +13588,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -13717,6 +13623,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13737,6 +13646,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
+	.short	1
+	.short	256
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -13769,6 +13682,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -13791,7 +13708,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -15959,6 +15880,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16016,6 +15938,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16076,6 +16000,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16133,6 +16058,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16191,7 +16118,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16210,6 +16141,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16231,6 +16163,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16243,6 +16177,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16261,6 +16199,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -16287,6 +16226,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16298,7 +16238,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	0
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16317,6 +16261,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16338,6 +16283,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16350,6 +16297,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16368,6 +16319,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -16394,6 +16346,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16425,8 +16378,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16443,8 +16401,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16475,9 +16437,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16498,8 +16463,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16528,8 +16498,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16546,8 +16521,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16578,9 +16557,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16601,8 +16583,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16632,7 +16619,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16651,6 +16642,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16682,7 +16677,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	1
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16705,7 +16704,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16736,7 +16739,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -16755,6 +16762,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16786,7 +16797,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
+	.short	1
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -16809,7 +16824,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -17325,8 +17344,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -17445,8 +17462,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -17565,8 +17580,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -17685,8 +17698,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -17797,19 +17808,15 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -17824,6 +17831,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -17849,8 +17857,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -17861,6 +17867,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -17886,6 +17893,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -17897,8 +17906,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -17922,14 +17929,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	1
-	.short	0
+	.short	256
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -17948,6 +17951,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -17969,8 +17973,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -17985,6 +17987,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18010,6 +18013,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18017,8 +18022,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18041,17 +18044,14 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	0
-	.short	256
 	.short	257
 	.short	1
-	.short	0
-	.short	257
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18068,8 +18068,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18089,8 +18094,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18101,9 +18104,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
 	.short	257
+	.short	256
 	.short	257
+	.short	1
 	.short	257
 	.short	257
 	.short	257
@@ -18125,8 +18131,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18137,8 +18147,6 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18158,8 +18166,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18176,8 +18188,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18204,19 +18221,15 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
 	.short	1
-	.short	0
 	.short	257
 	.short	257
+	.short	256
 	.short	257
 	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18238,8 +18251,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18252,19 +18269,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18277,6 +18287,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18295,7 +18309,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18324,18 +18342,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
 	.short	0
-	.short	257
-	.short	257
 	.short	257
+	.short	256
 	.short	1
-	.short	0
 	.short	256
 	.short	257
 	.short	257
@@ -18359,6 +18372,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18372,19 +18389,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18397,6 +18407,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18415,7 +18429,11 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
 	.short	257
+	.short	0
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18444,23 +18462,14 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
 	.short	0
 	.short	257
-	.short	257
-	.short	257
+	.short	256
 	.short	1
-	.short	0
 	.short	256
-	.short	257
-	.short	257
-	.short	257
-	.short	257
 	.short	257
 	.short	257
 	.short	257
@@ -18483,6 +18492,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	256
+	.short	1
+	.short	256
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -18492,19 +18505,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18564,19 +18570,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18612,19 +18611,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
 	.short	257
-	.short	1
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18686,15 +18678,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18734,15 +18720,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18806,15 +18786,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18854,15 +18828,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18926,15 +18894,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -18974,15 +18936,9 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
-	.short	1
-	.short	0
 	.short	257
 	.short	257
-	.short	0
-	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -19069,6 +19025,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19090,6 +19047,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -19124,6 +19083,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -19149,6 +19110,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19183,6 +19145,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19204,6 +19167,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -19238,6 +19203,8 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -19263,6 +19230,7 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19294,7 +19262,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19314,8 +19285,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19346,8 +19321,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19368,8 +19347,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.short	257
@@ -19398,7 +19382,10 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19418,8 +19405,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19450,8 +19441,12 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
 	.short	257
 	.short	257
@@ -19472,8 +19467,13 @@ grassBitmap:
 	.short	257
 	.short	257
 	.short	257
+	.short	1
+	.short	256
 	.short	257
+	.short	0
 	.short	257
+	.short	1
+	.short	256
 	.short	257
 	.short	257
 	.ident	"GCC: (devkitARM release 53) 9.1.0"
