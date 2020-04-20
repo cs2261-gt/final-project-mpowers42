@@ -113,12 +113,11 @@ void start() {
 // Sets up the instructions state
 void goToInstructions() {
 
-    REG_DISPCTL = MODE4 | BG2_ENABLE | DISP_BACKBUFFER;
+    REG_DISPCTL = MODE3 | BG2_ENABLE;
 
     DMANow(3, grassPal, PALETTE, 256);
 
-    fillScreen4(CYAN);
-    drawFullscreenImage4(grassBitmap);
+    drawFullscreenImage3(grassBitmap);
     drawString(20, 40, "Avoid the zombies and obstacles,", BLACK);
     drawString(4, 50, "and help Cheeto escape the apocalypse!", BLACK);
     drawString(20, 70, " Use RIGHT, UP, and DOWN to walk", BLACK);
@@ -130,7 +129,6 @@ void goToInstructions() {
     drawString(165, 140, " to play", BLACK);
 
     waitForVBlank();
-    flipPage();
 
     state = INSTRUCTIONS;
 }

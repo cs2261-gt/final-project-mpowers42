@@ -149,89 +149,81 @@ goToInstructions:
 	ldr	r4, .L13+8
 	mov	lr, pc
 	bx	r4
-	mov	r0, #224
-	ldr	r3, .L13+12
-	mov	lr, pc
-	bx	r3
-	ldr	r0, .L13+16
-	ldr	r3, .L13+20
-	ldr	r4, .L13+24
+	ldr	r0, .L13+12
+	ldr	r3, .L13+16
+	ldr	r4, .L13+20
 	mov	lr, pc
 	bx	r3
 	mov	r3, #0
 	mov	r1, #40
 	mov	r0, #20
-	ldr	r2, .L13+28
+	ldr	r2, .L13+24
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #50
 	mov	r0, #4
-	ldr	r2, .L13+32
+	ldr	r2, .L13+28
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #70
 	mov	r0, #20
-	ldr	r2, .L13+36
+	ldr	r2, .L13+32
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #80
 	mov	r0, #10
-	ldr	r2, .L13+40
+	ldr	r2, .L13+36
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #100
 	mov	r0, #20
-	ldr	r2, .L13+44
+	ldr	r2, .L13+40
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #130
+	mov	r0, #10
+	ldr	r2, .L13+44
+	mov	lr, pc
+	bx	r4
+	mov	r3, #0
+	mov	r1, #140
 	mov	r0, #10
 	ldr	r2, .L13+48
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #140
-	mov	r0, #10
+	mov	r1, #130
+	mov	r0, #160
 	ldr	r2, .L13+52
 	mov	lr, pc
 	bx	r4
-	mov	r3, #0
-	mov	r1, #130
-	mov	r0, #160
 	ldr	r2, .L13+56
-	mov	lr, pc
-	bx	r4
-	ldr	r2, .L13+60
+	mov	r3, #0
 	mov	r1, #140
 	mov	r0, #165
-	mov	r3, #0
 	mov	lr, pc
 	bx	r4
-	ldr	r3, .L13+64
-	mov	lr, pc
-	bx	r3
-	ldr	r3, .L13+68
+	ldr	r3, .L13+60
 	mov	lr, pc
 	bx	r3
 	mov	r2, #1
-	ldr	r3, .L13+72
+	ldr	r3, .L13+64
 	pop	{r4, lr}
 	str	r2, [r3]
 	bx	lr
 .L14:
 	.align	2
 .L13:
-	.word	1044
+	.word	1027
 	.word	grassPal
 	.word	DMANow
-	.word	fillScreen4
 	.word	grassBitmap
-	.word	drawFullscreenImage4
+	.word	drawFullscreenImage3
 	.word	drawString
 	.word	.LC0
 	.word	.LC1
@@ -243,7 +235,6 @@ goToInstructions:
 	.word	.LC7
 	.word	.LC8
 	.word	waitForVBlank
-	.word	flipPage
 	.word	state
 	.size	goToInstructions, .-goToInstructions
 	.align	2

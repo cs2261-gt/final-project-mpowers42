@@ -1581,12 +1581,11 @@ void start() {
 
 void goToInstructions() {
 
-    (*(unsigned short *)0x4000000) = 4 | (1<<10) | (1<<4);
+    (*(unsigned short *)0x4000000) = 3 | (1<<10);
 
     DMANow(3, grassPal, ((unsigned short *)0x5000000), 256);
 
-    fillScreen4(((0) | (31)<<5 | (31)<<10));
-    drawFullscreenImage4(grassBitmap);
+    drawFullscreenImage3(grassBitmap);
     drawString(20, 40, "Avoid the zombies and obstacles,", ((0) | (0)<<5 | (0)<<10));
     drawString(4, 50, "and help Cheeto escape the apocalypse!", ((0) | (0)<<5 | (0)<<10));
     drawString(20, 70, " Use RIGHT, UP, and DOWN to walk", ((0) | (0)<<5 | (0)<<10));
@@ -1598,7 +1597,6 @@ void goToInstructions() {
     drawString(165, 140, " to play", ((0) | (0)<<5 | (0)<<10));
 
     waitForVBlank();
-    flipPage();
 
     state = INSTRUCTIONS;
 }
