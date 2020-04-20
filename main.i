@@ -1351,8 +1351,10 @@ typedef struct {
 
 
 typedef struct {
-    int row;
- int col;
+    int screenRow;
+ int screenCol;
+ int worldRow;
+ int worldCol;
  int rdel;
  int cdel;
  int height;
@@ -1366,7 +1368,9 @@ typedef struct {
 
 typedef struct {
  int screenRow;
- int col;
+ int screenCol;
+ int worldRow;
+ int worldCol;
  int rdel;
  int cdel;
  int height;
@@ -1468,6 +1472,22 @@ extern const unsigned short backgroundMap[4096];
 
 extern const unsigned short backgroundPal[256];
 # 20 "main.c" 2
+# 1 "font.h" 1
+
+extern const unsigned char fontdata_6x8[12288];
+# 21 "main.c" 2
+# 1 "text.h" 1
+
+void drawChar(int, int, char, unsigned short);
+void drawString(int, int, char *, unsigned short);
+# 22 "main.c" 2
+# 1 "grass.h" 1
+# 21 "grass.h"
+extern const unsigned short grassBitmap[19200];
+
+
+extern const unsigned short grassPal[256];
+# 23 "main.c" 2
 
 
 void initialize();
@@ -1561,18 +1581,24 @@ void start() {
 
 void goToInstructions() {
 
+    (*(unsigned short *)0x4000000) = 4 | (1<<10) | (1<<4);
 
-    (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (0<<14) | (0<<7);
+    DMANow(3, grassPal, ((unsigned short *)0x5000000), 256);
 
+    fillScreen4(((0) | (31)<<5 | (31)<<10));
+    drawFullscreenImage4(grassBitmap);
+    drawString(20, 40, "Avoid the zombies and obstacles,", ((0) | (0)<<5 | (0)<<10));
+    drawString(4, 50, "and help Cheeto escape the apocalypse!", ((0) | (0)<<5 | (0)<<10));
+    drawString(20, 70, " Use RIGHT, UP, and DOWN to walk", ((0) | (0)<<5 | (0)<<10));
+    drawString(10, 80, "Use A to shoot hairballs at zombies", ((0) | (0)<<5 | (0)<<10));
+    drawString(20, 100, "Press START to pause and unpause", ((0) | (0)<<5 | (0)<<10));
+    drawString(10, 130, "Press SELECT", ((0) | (0)<<5 | (0)<<10));
+    drawString(10, 140, " to go back", ((0) | (0)<<5 | (0)<<10));
+    drawString(160, 130, "Press START", ((0) | (0)<<5 | (0)<<10));
+    drawString(165, 140, " to play", ((0) | (0)<<5 | (0)<<10));
 
-    DMANow(3, winScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, winScreenTiles, &((charblock *)0x6000000)[0], 32 / 2);
-    DMANow(3, winScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
-
-    (*(unsigned short *)0x4000000) = 0 | (1<<8);
-
-
-    (*(volatile unsigned short *)0x04000010) = 0;
+    waitForVBlank();
+    flipPage();
 
     state = INSTRUCTIONS;
 }
@@ -1582,6 +1608,9 @@ void instructions() {
 
     if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2))))) {
         goToStart();
+    }
+    if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
+        goToGame();
     }
 }
 

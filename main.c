@@ -17,6 +17,9 @@
 #include "loseScreen.h"
 #include "spritesheet.h"
 #include "background.h"
+#include "font.h"
+#include "text.h"
+#include "grass.h"
 
 // Prototype
 void initialize();
@@ -110,18 +113,24 @@ void start() {
 // Sets up the instructions state
 void goToInstructions() {
 
-    // Change size to small
-    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL | BG_4BPP;
+    REG_DISPCTL = MODE4 | BG2_ENABLE | DISP_BACKBUFFER;
 
-    // DMA bg tiles, map, and palette into memory
-    DMANow(3, winScreenPal, PALETTE, 256);
-    DMANow(3, winScreenTiles, &CHARBLOCK[0], winScreenTilesLen / 2);
-    DMANow(3, winScreenMap, &SCREENBLOCK[28], winScreenMapLen / 2);
+    DMANow(3, grassPal, PALETTE, 256);
 
-    REG_DISPCTL = MODE0 | BG0_ENABLE;
+    fillScreen4(CYAN);
+    drawFullscreenImage4(grassBitmap);
+    drawString(20, 40, "Avoid the zombies and obstacles,", BLACK);
+    drawString(4, 50, "and help Cheeto escape the apocalypse!", BLACK);
+    drawString(20, 70, " Use RIGHT, UP, and DOWN to walk", BLACK);
+    drawString(10, 80, "Use A to shoot hairballs at zombies", BLACK);
+    drawString(20, 100, "Press START to pause and unpause", BLACK);
+    drawString(10, 130, "Press SELECT", BLACK);
+    drawString(10, 140, " to go back", BLACK);
+    drawString(160, 130, "Press START", BLACK);
+    drawString(165, 140, " to play", BLACK);
 
-    // Reset hOff to 0
-    REG_BG0HOFF = 0;
+    waitForVBlank();
+    flipPage();
 
     state = INSTRUCTIONS;
 }
@@ -131,6 +140,9 @@ void instructions() {
 
     if (BUTTON_PRESSED(BUTTON_SELECT)) {
         goToStart();
+    }
+    if (BUTTON_PRESSED(BUTTON_START)) {
+        goToGame();
     }
 }
 
