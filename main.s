@@ -138,81 +138,71 @@ goToInstructions:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	mov	r2, #67108864
-	ldr	r1, .L13
+	mov	r3, #67108864
+	ldr	r2, .L13
 	push	{r4, lr}
-	mov	r3, #256
-	strh	r1, [r2]	@ movhi
-	mov	r0, #3
-	mov	r2, #83886080
-	ldr	r1, .L13+4
-	ldr	r4, .L13+8
-	mov	lr, pc
-	bx	r4
-	ldr	r0, .L13+12
-	ldr	r3, .L13+16
-	ldr	r4, .L13+20
+	ldr	r0, .L13+4
+	strh	r2, [r3]	@ movhi
+	ldr	r3, .L13+8
+	ldr	r4, .L13+12
 	mov	lr, pc
 	bx	r3
 	mov	r3, #0
 	mov	r1, #40
 	mov	r0, #20
-	ldr	r2, .L13+24
+	ldr	r2, .L13+16
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #50
 	mov	r0, #4
-	ldr	r2, .L13+28
+	ldr	r2, .L13+20
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #70
 	mov	r0, #20
-	ldr	r2, .L13+32
+	ldr	r2, .L13+24
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #80
 	mov	r0, #10
-	ldr	r2, .L13+36
+	ldr	r2, .L13+28
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #100
 	mov	r0, #20
+	ldr	r2, .L13+32
+	mov	lr, pc
+	bx	r4
+	mov	r3, #0
+	mov	r1, #130
+	mov	r0, #10
+	ldr	r2, .L13+36
+	mov	lr, pc
+	bx	r4
+	mov	r3, #0
+	mov	r1, #140
+	mov	r0, #10
 	ldr	r2, .L13+40
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #130
-	mov	r0, #10
+	mov	r0, #160
 	ldr	r2, .L13+44
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #140
-	mov	r0, #10
 	ldr	r2, .L13+48
-	mov	lr, pc
-	bx	r4
-	mov	r3, #0
-	mov	r1, #130
-	mov	r0, #160
-	ldr	r2, .L13+52
-	mov	lr, pc
-	bx	r4
-	ldr	r2, .L13+56
-	mov	r3, #0
 	mov	r1, #140
 	mov	r0, #165
 	mov	lr, pc
 	bx	r4
-	ldr	r3, .L13+60
-	mov	lr, pc
-	bx	r3
 	mov	r2, #1
-	ldr	r3, .L13+64
+	ldr	r3, .L13+52
 	pop	{r4, lr}
 	str	r2, [r3]
 	bx	lr
@@ -220,8 +210,6 @@ goToInstructions:
 	.align	2
 .L13:
 	.word	1027
-	.word	grassPal
-	.word	DMANow
 	.word	grassBitmap
 	.word	drawFullscreenImage3
 	.word	drawString
@@ -234,7 +222,6 @@ goToInstructions:
 	.word	.LC6
 	.word	.LC7
 	.word	.LC8
-	.word	waitForVBlank
 	.word	state
 	.size	goToInstructions, .-goToInstructions
 	.align	2
@@ -376,17 +363,20 @@ instructions:
 	@ frame_needed = 0, uses_anonymous_args = 0
 	push	{r4, lr}
 	ldr	r4, .L45
+	ldr	r3, .L45+4
+	mov	lr, pc
+	bx	r3
 	ldrh	r3, [r4]
 	tst	r3, #4
 	beq	.L34
-	ldr	r2, .L45+4
+	ldr	r2, .L45+8
 	ldrh	r2, [r2]
 	tst	r2, #4
 	beq	.L43
 .L34:
 	tst	r3, #8
 	beq	.L33
-	ldr	r3, .L45+4
+	ldr	r3, .L45+8
 	ldrh	r3, [r3]
 	tst	r3, #8
 	beq	.L44
@@ -404,6 +394,7 @@ instructions:
 	.align	2
 .L45:
 	.word	oldButtons
+	.word	waitForVBlank
 	.word	buttons
 	.size	instructions, .-instructions
 	.align	2

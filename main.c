@@ -115,8 +115,6 @@ void goToInstructions() {
 
     REG_DISPCTL = MODE3 | BG2_ENABLE;
 
-    DMANow(3, grassPal, PALETTE, 256);
-
     drawFullscreenImage3(grassBitmap);
     drawString(20, 40, "Avoid the zombies and obstacles,", BLACK);
     drawString(4, 50, "and help Cheeto escape the apocalypse!", BLACK);
@@ -128,13 +126,13 @@ void goToInstructions() {
     drawString(160, 130, "Press START", BLACK);
     drawString(165, 140, " to play", BLACK);
 
-    waitForVBlank();
-
     state = INSTRUCTIONS;
 }
 
 // Runs every frame of the instructions state
 void instructions() {
+
+    waitForVBlank();
 
     if (BUTTON_PRESSED(BUTTON_SELECT)) {
         goToStart();

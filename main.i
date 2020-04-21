@@ -1482,11 +1482,8 @@ void drawChar(int, int, char, unsigned short);
 void drawString(int, int, char *, unsigned short);
 # 22 "main.c" 2
 # 1 "grass.h" 1
-# 21 "grass.h"
+# 20 "grass.h"
 extern const unsigned short grassBitmap[19200];
-
-
-extern const unsigned short grassPal[256];
 # 23 "main.c" 2
 
 
@@ -1583,8 +1580,6 @@ void goToInstructions() {
 
     (*(unsigned short *)0x4000000) = 3 | (1<<10);
 
-    DMANow(3, grassPal, ((unsigned short *)0x5000000), 256);
-
     drawFullscreenImage3(grassBitmap);
     drawString(20, 40, "Avoid the zombies and obstacles,", ((0) | (0)<<5 | (0)<<10));
     drawString(4, 50, "and help Cheeto escape the apocalypse!", ((0) | (0)<<5 | (0)<<10));
@@ -1596,13 +1591,13 @@ void goToInstructions() {
     drawString(160, 130, "Press START", ((0) | (0)<<5 | (0)<<10));
     drawString(165, 140, " to play", ((0) | (0)<<5 | (0)<<10));
 
-    waitForVBlank();
-
     state = INSTRUCTIONS;
 }
 
 
 void instructions() {
+
+    waitForVBlank();
 
     if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2))))) {
         goToStart();
