@@ -69,9 +69,12 @@ void initZombie() {
         zombie[i].worldCol = SCREENWIDTH + totalHOff;
         zombie[i].rdel = 1;
         zombie[i].cdel = 1;
-        zombie[i].height = 16;
-        zombie[i].width = 16;
+        zombie[i].height = 32;
+        zombie[i].width = 32;
         zombie[i].active = 0;
+        zombie[i].aniCounter = 0;
+        zombie[i].currFrame = 0;
+        zombie[i].numFrames = 4;
     }
     zombie[0].active = 1; // set just one to active to start
  
@@ -176,6 +179,8 @@ void updateZombie(ZOMBIE* z) {
             z->active = 0;
         }
 
+        animateZombie(z);
+
         // Handle zombie-hairball collisions
         for (int i = 0; i < HAIRBALLCOUNT; i++) {
             // need to check if hairball is active too!
@@ -264,8 +269,8 @@ void drawZombie(ZOMBIE* z, int index) {
     
     if (z->active) {            // rowmask and colmask are macros that help draw things outside of the screen boundaries!
         shadowOAM[index].attr0 = (ROWMASK & z->screenRow) | ATTR0_SQUARE;
-        shadowOAM[index].attr1 = (COLMASK & z->screenCol) | ATTR1_SMALL; // 16 x 16
-        shadowOAM[index].attr2 = ATTR2_TILEID(4, 0);
+        shadowOAM[index].attr1 = (COLMASK & z->screenCol) | ATTR1_MEDIUM; // 32 x 32
+        shadowOAM[index].attr2 = ATTR2_TILEID(4, z->currFrame * 4);
     } else {
         shadowOAM[index].attr0 = ATTR0_HIDE;
     }
@@ -276,7 +281,7 @@ void drawHairball(HAIRBALL* h, int index) {
     if (h->active) {
             shadowOAM[index].attr0 = (ROWMASK & h->screenRow) | ATTR0_SQUARE;
             shadowOAM[index].attr1 = (COLMASK & h->screenCol) | ATTR1_TINY; // 8 x 8
-            shadowOAM[index].attr2 = ATTR2_TILEID(6, 0);
+            shadowOAM[index].attr2 = ATTR2_TILEID(8, 0);
     } else {
         shadowOAM[index].attr0 = ATTR0_HIDE;
     }
@@ -294,6 +299,20 @@ void animateCat() {
     }
 
     cat.aniCounter++;
+}
+
+// Animate zombies
+void animateZombie(ZOMBIE* z) {
+
+    if (z->aniCounter % 12 == 0) {
+        if (z->currFrame < z->numFrames - 1) {
+            z->currFrame++;
+        } else {
+            z->currFrame = 0;
+        }
+    }
+
+    z->aniCounter++;
 }
 
 // Fire a hairball

@@ -29,7 +29,7 @@ goToStart:
 	ldr	r1, .L4+4
 	mov	lr, pc
 	bx	r4
-	mov	r3, #3104
+	mov	r3, #3120
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L4+8
@@ -102,30 +102,33 @@ win.part.0:
 	.section	.rodata.str1.4,"aMS",%progbits,1
 	.align	2
 .LC0:
-	.ascii	"Avoid the zombies and obstacles,\000"
+	.ascii	"Instructions\000"
 	.align	2
 .LC1:
-	.ascii	"and help Cheeto escape the apocalypse!\000"
+	.ascii	"Avoid the zombies and obstacles,\000"
 	.align	2
 .LC2:
-	.ascii	" Use RIGHT, UP, and DOWN to walk\000"
+	.ascii	"and help Cheeto escape the apocalypse!\000"
 	.align	2
 .LC3:
-	.ascii	"Use A to shoot hairballs at zombies\000"
+	.ascii	" Use RIGHT, UP, and DOWN to walk\000"
 	.align	2
 .LC4:
-	.ascii	"Press START to pause and unpause\000"
+	.ascii	"Use A to shoot hairballs at zombies\000"
 	.align	2
 .LC5:
-	.ascii	"Press SELECT\000"
+	.ascii	"Press START to pause and unpause\000"
 	.align	2
 .LC6:
-	.ascii	" to go back\000"
+	.ascii	"Press SELECT\000"
 	.align	2
 .LC7:
-	.ascii	"Press START\000"
+	.ascii	" to go back\000"
 	.align	2
 .LC8:
+	.ascii	"Press START\000"
+	.align	2
+.LC9:
 	.ascii	" to play\000"
 	.text
 	.align	2
@@ -148,61 +151,67 @@ goToInstructions:
 	mov	lr, pc
 	bx	r3
 	mov	r3, #0
+	mov	r1, #20
+	mov	r0, #80
+	ldr	r2, .L13+16
+	mov	lr, pc
+	bx	r4
+	mov	r3, #0
 	mov	r1, #40
 	mov	r0, #20
-	ldr	r2, .L13+16
+	ldr	r2, .L13+20
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #50
 	mov	r0, #4
-	ldr	r2, .L13+20
+	ldr	r2, .L13+24
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #70
 	mov	r0, #20
-	ldr	r2, .L13+24
+	ldr	r2, .L13+28
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #80
 	mov	r0, #10
-	ldr	r2, .L13+28
+	ldr	r2, .L13+32
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #100
 	mov	r0, #20
-	ldr	r2, .L13+32
-	mov	lr, pc
-	bx	r4
-	mov	r3, #0
-	mov	r1, #130
-	mov	r0, #10
 	ldr	r2, .L13+36
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #140
+	mov	r1, #130
 	mov	r0, #10
 	ldr	r2, .L13+40
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #130
-	mov	r0, #160
+	mov	r1, #140
+	mov	r0, #10
 	ldr	r2, .L13+44
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
+	mov	r1, #130
+	mov	r0, #160
 	ldr	r2, .L13+48
+	mov	lr, pc
+	bx	r4
+	mov	r3, #0
+	ldr	r2, .L13+52
 	mov	r1, #140
 	mov	r0, #165
 	mov	lr, pc
 	bx	r4
 	mov	r2, #1
-	ldr	r3, .L13+52
+	ldr	r3, .L13+56
 	pop	{r4, lr}
 	str	r2, [r3]
 	bx	lr
@@ -222,6 +231,7 @@ goToInstructions:
 	.word	.LC6
 	.word	.LC7
 	.word	.LC8
+	.word	.LC9
 	.word	state
 	.size	goToInstructions, .-goToInstructions
 	.align	2

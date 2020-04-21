@@ -1359,9 +1359,9 @@ typedef struct {
  int height;
  int width;
  int active;
-
-
-
+ int aniCounter;
+ int currFrame;
+ int numFrames;
 } ZOMBIE;
 
 
@@ -1401,12 +1401,16 @@ void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
 void animateCat();
+void animateZombie(ZOMBIE *);
 void fireHairball();
 void fireZombie();
 # 5 "game.c" 2
 # 1 "startScreen.h" 1
-# 21 "startScreen.h"
-extern const unsigned short startScreenTiles[9600];
+# 22 "startScreen.h"
+extern const unsigned short startScreenTiles[3120];
+
+
+extern const unsigned short startScreenMap[1024];
 
 
 extern const unsigned short startScreenPal[256];
@@ -1510,9 +1514,12 @@ void initZombie() {
         zombie[i].worldCol = 240 + totalHOff;
         zombie[i].rdel = 1;
         zombie[i].cdel = 1;
-        zombie[i].height = 16;
-        zombie[i].width = 16;
+        zombie[i].height = 32;
+        zombie[i].width = 32;
         zombie[i].active = 0;
+        zombie[i].aniCounter = 0;
+        zombie[i].currFrame = 0;
+        zombie[i].numFrames = 4;
     }
     zombie[0].active = 1;
 
@@ -1617,6 +1624,8 @@ void updateZombie(ZOMBIE* z) {
             z->active = 0;
         }
 
+        animateZombie(z);
+
 
         for (int i = 0; i < 5; i++) {
 
@@ -1705,8 +1714,8 @@ void drawZombie(ZOMBIE* z, int index) {
 
     if (z->active) {
         shadowOAM[index].attr0 = (0xFF & z->screenRow) | (0<<14);
-        shadowOAM[index].attr1 = (0x1FF & z->screenCol) | (1<<14);
-        shadowOAM[index].attr2 = ((0)*32+(4));
+        shadowOAM[index].attr1 = (0x1FF & z->screenCol) | (2<<14);
+        shadowOAM[index].attr2 = ((z->currFrame * 4)*32+(4));
     } else {
         shadowOAM[index].attr0 = (2<<8);
     }
@@ -1717,7 +1726,7 @@ void drawHairball(HAIRBALL* h, int index) {
     if (h->active) {
             shadowOAM[index].attr0 = (0xFF & h->screenRow) | (0<<14);
             shadowOAM[index].attr1 = (0x1FF & h->screenCol) | (0<<14);
-            shadowOAM[index].attr2 = ((0)*32+(6));
+            shadowOAM[index].attr2 = ((0)*32+(8));
     } else {
         shadowOAM[index].attr0 = (2<<8);
     }
@@ -1735,6 +1744,20 @@ void animateCat() {
     }
 
     cat.aniCounter++;
+}
+
+
+void animateZombie(ZOMBIE* z) {
+
+    if (z->aniCounter % 12 == 0) {
+        if (z->currFrame < z->numFrames - 1) {
+            z->currFrame++;
+        } else {
+            z->currFrame = 0;
+        }
+    }
+
+    z->aniCounter++;
 }
 
 
