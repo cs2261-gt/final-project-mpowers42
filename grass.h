@@ -3,11 +3,11 @@
 
 //======================================================================
 //
-//	grass, 240x160@8, 
+//	grass, 240x160@16, 
 //	+ bitmap not compressed
-//	Total size: 38400 = 38400
+//	Total size: 76800 = 76800
 //
-//	Time-stamp: 2020-04-20, 13:56:03
+//	Time-stamp: 2020-04-21, 11:53:25
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.3
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -16,8 +16,8 @@
 #ifndef GRIT_GRASS_H
 #define GRIT_GRASS_H
 
-#define grassBitmapLen 38400
-extern const unsigned short grassBitmap[19200];
+#define grassBitmapLen 76800
+extern const unsigned short grassBitmap[38400];
 
 #endif // GRIT_GRASS_H
 

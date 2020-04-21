@@ -1405,11 +1405,8 @@ void fireHairball();
 void fireZombie();
 # 5 "game.c" 2
 # 1 "startScreen.h" 1
-# 22 "startScreen.h"
-extern const unsigned short startScreenTiles[16];
-
-
-extern const unsigned short startScreenMap[1024];
+# 21 "startScreen.h"
+extern const unsigned short startScreenTiles[9600];
 
 
 extern const unsigned short startScreenPal[256];

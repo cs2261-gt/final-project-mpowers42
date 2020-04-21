@@ -80,6 +80,7 @@ void initialize() {
 }
 
 // Sets up the start state
+// Settings: tile, 4bpp, Map with sbb checked, Pal checked
 void goToStart() {
 
     // DMA bg tiles, map, and palette into memory
@@ -111,6 +112,7 @@ void start() {
 }
 
 // Sets up the instructions state
+// Settings: 16bpp, bitmap (GBA), do not check Pal
 void goToInstructions() {
 
     REG_DISPCTL = MODE3 | BG2_ENABLE;

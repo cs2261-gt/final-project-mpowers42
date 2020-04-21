@@ -1407,7 +1407,7 @@ void fireZombie();
 # 13 "main.c" 2
 # 1 "startScreen.h" 1
 # 22 "startScreen.h"
-extern const unsigned short startScreenTiles[16];
+extern const unsigned short startScreenTiles[3104];
 
 
 extern const unsigned short startScreenMap[1024];
@@ -1483,7 +1483,7 @@ void drawString(int, int, char *, unsigned short);
 # 22 "main.c" 2
 # 1 "grass.h" 1
 # 20 "grass.h"
-extern const unsigned short grassBitmap[19200];
+extern const unsigned short grassBitmap[38400];
 # 23 "main.c" 2
 
 
@@ -1545,11 +1545,12 @@ void initialize() {
 }
 
 
+
 void goToStart() {
 
 
     DMANow(3, startScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, startScreenTiles, &((charblock *)0x6000000)[0], 32 / 2);
+    DMANow(3, startScreenTiles, &((charblock *)0x6000000)[0], 6208 / 2);
     DMANow(3, startScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
 
@@ -1574,6 +1575,7 @@ void start() {
         goToInstructions();
     }
 }
+
 
 
 void goToInstructions() {
