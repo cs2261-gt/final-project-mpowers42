@@ -1437,6 +1437,16 @@ extern const unsigned short gameScreenMap[1024];
 
 extern const unsigned short gameScreenPal[256];
 # 7 "game.c" 2
+# 1 "pauseScreen.h" 1
+# 22 "pauseScreen.h"
+extern const unsigned short pauseScreenTiles[16];
+
+
+extern const unsigned short pauseScreenMap[1024];
+
+
+extern const unsigned short pauseScreenPal[256];
+# 8 "game.c" 2
 # 1 "winScreen.h" 1
 # 22 "winScreen.h"
 extern const unsigned short winScreenTiles[16];
@@ -1446,7 +1456,7 @@ extern const unsigned short winScreenMap[1024];
 
 
 extern const unsigned short winScreenPal[256];
-# 8 "game.c" 2
+# 9 "game.c" 2
 # 1 "loseScreen.h" 1
 # 22 "loseScreen.h"
 extern const unsigned short loseScreenTiles[16];
@@ -1456,14 +1466,68 @@ extern const unsigned short loseScreenMap[1024];
 
 
 extern const unsigned short loseScreenPal[256];
-# 9 "game.c" 2
+# 10 "game.c" 2
 # 1 "spritesheet.h" 1
 # 21 "spritesheet.h"
 extern const unsigned short spritesheetTiles[16384];
 
 
 extern const unsigned short spritesheetPal[256];
-# 10 "game.c" 2
+# 11 "game.c" 2
+# 1 "background.h" 1
+# 22 "background.h"
+extern const unsigned short backgroundTiles[128];
+
+
+extern const unsigned short backgroundMap[4096];
+
+
+extern const unsigned short backgroundPal[256];
+# 12 "game.c" 2
+# 1 "font.h" 1
+
+extern const unsigned char fontdata_6x8[12288];
+# 13 "game.c" 2
+# 1 "text.h" 1
+
+void drawChar(int, int, char, unsigned short);
+void drawString(int, int, char *, unsigned short);
+# 14 "game.c" 2
+# 1 "grass.h" 1
+# 20 "grass.h"
+extern const unsigned short grassBitmap[38400];
+# 15 "game.c" 2
+# 1 "sound.h" 1
+SOUND soundA;
+SOUND soundB;
+
+
+
+void setupSounds();
+void playSoundA(const signed char* sound, int length, int loops);
+void playSoundB(const signed char* sound, int length, int loops);
+
+void setupInterrupts();
+void interruptHandler();
+
+void pauseSound();
+void unpauseSound();
+void stopSound();
+# 16 "game.c" 2
+# 1 "gameSong.h" 1
+
+
+
+
+extern const signed char gameSong[1830816];
+# 17 "game.c" 2
+# 1 "catSound.h" 1
+
+
+
+
+extern const signed char catSound[4594];
+# 18 "game.c" 2
 
 
 CAT cat;
@@ -1562,8 +1626,8 @@ void initBlueCar() {
     for (int i = 0; i < 5; i++) {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
-        blueCar[i].row = i % 5 * 35;
-        blueCar[i].col = i % 5 * 120;
+        blueCar[i].row = i % 5 * 200;
+        blueCar[i].col = i % 5 * 200;
     }
 
 }
@@ -1637,6 +1701,7 @@ void updateCat() {
     if ((!(~(oldButtons)&((1<<0))) && (~buttons & ((1<<0))))) {
         fireHairball();
     }
+
 }
 
 
@@ -1763,8 +1828,8 @@ void drawHairball(HAIRBALL* h, int index) {
 
 
 void drawBlueCar(BLUECAR* b, int index) {
-    shadowOAM[index].attr0 = (0xFF & b->row) | (0<<14);
-    shadowOAM[index].attr1 = (0x1FF & b->col) | (2<<14);
+    shadowOAM[index].attr0 = (0xFF & (b->row - vOff)) | (0<<14);
+    shadowOAM[index].attr1 = (0x1FF & (b->col - totalHOff)) | (2<<14);
     shadowOAM[index].attr2 = ((1)*32+(8));
 }
 
@@ -1798,6 +1863,8 @@ void animateZombie(ZOMBIE* z) {
 
 
 void fireHairball() {
+
+    playSoundB(catSound, 4594, 0);
 
 
  for (int i = 0; i < 5; i++) {

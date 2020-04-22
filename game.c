@@ -4,9 +4,17 @@
 #include "game.h"
 #include "startScreen.h"
 #include "gameScreen.h"
+#include "pauseScreen.h"
 #include "winScreen.h"
 #include "loseScreen.h"
 #include "spritesheet.h"
+#include "background.h"
+#include "font.h"
+#include "text.h"
+#include "grass.h"
+#include "sound.h"
+#include "gameSong.h"
+#include "catSound.h"
 
 // Variables
 CAT cat;
@@ -105,8 +113,8 @@ void initBlueCar() {
     for (int i = 0; i < BLUECARCOUNT; i++) {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
-        blueCar[i].row = i % BLUECARCOUNT * 35;
-        blueCar[i].col = i % BLUECARCOUNT * 120;
+        blueCar[i].row = i % BLUECARCOUNT * 200;
+        blueCar[i].col = i % BLUECARCOUNT * 200;
     }
 
 }
@@ -180,6 +188,7 @@ void updateCat() {
     if (BUTTON_PRESSED(BUTTON_A)) {
         fireHairball();
     }
+
 }
 
 // Update zombie
@@ -306,8 +315,8 @@ void drawHairball(HAIRBALL* h, int index) {
 
 // Draw blue car
 void drawBlueCar(BLUECAR* b, int index) {
-    shadowOAM[index].attr0 = (ROWMASK & b->row) | ATTR0_SQUARE;
-    shadowOAM[index].attr1 = (COLMASK & b->col) | ATTR1_MEDIUM; // 32 x 32
+    shadowOAM[index].attr0 = (ROWMASK & (b->row - vOff)) | ATTR0_SQUARE;
+    shadowOAM[index].attr1 = (COLMASK & (b->col - totalHOff)) | ATTR1_MEDIUM; // 32 x 32
     shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
 }
 
@@ -341,6 +350,8 @@ void animateZombie(ZOMBIE* z) {
 
 // Fire a hairball
 void fireHairball() {
+
+    playSoundB(catSound, CATSOUNDLEN, 0);
 
 	// Find the first inactive bullet
 	for (int i = 0; i < HAIRBALLCOUNT; i++) {

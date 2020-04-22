@@ -1385,6 +1385,15 @@ typedef struct {
 } HAIRBALL;
 
 
+typedef struct {
+ int row;
+ int col;
+ int height;
+ int width;
+} BLUECAR;
+
+
+
 
 
 
@@ -1392,12 +1401,14 @@ typedef struct {
 extern CAT cat;
 extern ZOMBIE zombie[5];
 extern HAIRBALL hairball[5];
+extern BLUECAR blueCar[5];
 extern int zombiesRemaining;
 
 
 void initGame();
 void initCat();
 void initZombie();
+void initBlueCar();
 void initHairball();
 void updateGame();
 void updateCat();
@@ -1407,6 +1418,7 @@ void drawGame();
 void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
+void drawBlueCar(BLUECAR *, int index);
 void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();
@@ -1492,6 +1504,37 @@ void drawString(int, int, char *, unsigned short);
 # 20 "grass.h"
 extern const unsigned short grassBitmap[38400];
 # 22 "main.c" 2
+# 1 "sound.h" 1
+SOUND soundA;
+SOUND soundB;
+
+
+
+void setupSounds();
+void playSoundA(const signed char* sound, int length, int loops);
+void playSoundB(const signed char* sound, int length, int loops);
+
+void setupInterrupts();
+void interruptHandler();
+
+void pauseSound();
+void unpauseSound();
+void stopSound();
+# 23 "main.c" 2
+# 1 "gameSong.h" 1
+
+
+
+
+extern const signed char gameSong[1830816];
+# 24 "main.c" 2
+# 1 "catSound.h" 1
+
+
+
+
+extern const signed char catSound[4594];
+# 25 "main.c" 2
 
 
 void initialize();
@@ -1546,6 +1589,10 @@ void initialize() {
     (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((28)<<8) | (0<<14) | (0<<7);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8) | (1<<12);
+
+    setupSounds();
+    setupInterrupts();
+
 
 
     goToStart();
@@ -1640,6 +1687,8 @@ void goToGame() {
     waitForVBlank();
     DMANow(3, shadowOAM, ((OBJ_ATTR*)(0x7000000)), 512);
 
+    playSoundA(gameSong, 1830816, 1);
+
     state = GAME;
 }
 
@@ -1652,12 +1701,16 @@ void game() {
     DMANow(3, shadowOAM, ((OBJ_ATTR*)(0x7000000)), 512);
 
 
-    if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3)))))
+    if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
+        pauseSound();
         goToPause();
-    else if (zombiesRemaining == 0)
+    } else if (zombiesRemaining == 0) {
+        stopSound();
         goToWin();
-    else if ((!(~(oldButtons)&((1<<1))) && (~buttons & ((1<<1)))))
+    } else if ((!(~(oldButtons)&((1<<1))) && (~buttons & ((1<<1))))) {
+        stopSound();
         goToLose();
+    }
 }
 
 
@@ -1683,9 +1736,10 @@ void goToPause() {
 void pause() {
 
 
-    if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3)))))
+    if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
+        unpauseSound();
         goToGame();
-    else if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2)))))
+    } else if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2)))))
         goToStart();
 }
 

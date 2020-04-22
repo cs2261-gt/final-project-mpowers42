@@ -19,6 +19,9 @@
 #include "font.h"
 #include "text.h"
 #include "grass.h"
+#include "sound.h"
+#include "gameSong.h"
+#include "catSound.h"
 
 // Prototype
 void initialize();
@@ -73,6 +76,10 @@ void initialize() {
     REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL | BG_4BPP;
 
     REG_DISPCTL = MODE0 | BG0_ENABLE | SPRITE_ENABLE;
+
+    setupSounds();
+    setupInterrupts();
+
 
     // Set up the first state
     goToStart();
@@ -167,6 +174,8 @@ void goToGame() {
     waitForVBlank();
     DMANow(3, shadowOAM, OAM, 512);
 
+    playSoundA(gameSong, GAMESONGLEN, 1);
+
     state = GAME;
 }
 
@@ -179,12 +188,16 @@ void game() {
     DMANow(3, shadowOAM, OAM, 512);
 
     // State transitions
-    if (BUTTON_PRESSED(BUTTON_START))
+    if (BUTTON_PRESSED(BUTTON_START)) {
+        pauseSound();
         goToPause();
-    else if (zombiesRemaining == 0)
+    } else if (zombiesRemaining == 0) {
+        stopSound();
         goToWin();
-    else if (BUTTON_PRESSED(BUTTON_B))
+    } else if (BUTTON_PRESSED(BUTTON_B)) {
+        stopSound();
         goToLose();
+    }
 }
 
 // Sets up the pause state
@@ -210,9 +223,10 @@ void goToPause() {
 void pause() {
 
     // State transitions
-    if (BUTTON_PRESSED(BUTTON_START))
+    if (BUTTON_PRESSED(BUTTON_START)) {
+        unpauseSound();
         goToGame();
-    else if (BUTTON_PRESSED(BUTTON_SELECT))
+    } else if (BUTTON_PRESSED(BUTTON_SELECT))
         goToStart();
 }
 
