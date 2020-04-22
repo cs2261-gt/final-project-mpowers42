@@ -1366,9 +1366,9 @@ typedef struct {
  int height;
  int width;
  int active;
-
-
-
+ int aniCounter;
+ int currFrame;
+ int numFrames;
 } ZOMBIE;
 
 
@@ -1408,6 +1408,7 @@ void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
 void animateCat();
+void animateZombie(ZOMBIE *);
 void fireHairball();
 void fireZombie();
 # 12 "main.c" 2

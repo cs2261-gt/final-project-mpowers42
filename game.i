@@ -1378,6 +1378,15 @@ typedef struct {
 } HAIRBALL;
 
 
+typedef struct {
+ int row;
+ int col;
+ int height;
+ int width;
+} BLUECAR;
+
+
+
 
 
 
@@ -1385,12 +1394,14 @@ typedef struct {
 extern CAT cat;
 extern ZOMBIE zombie[5];
 extern HAIRBALL hairball[5];
+extern BLUECAR blueCar[5];
 extern int zombiesRemaining;
 
 
 void initGame();
 void initCat();
 void initZombie();
+void initBlueCar();
 void initHairball();
 void updateGame();
 void updateCat();
@@ -1400,6 +1411,7 @@ void drawGame();
 void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
+void drawBlueCar(BLUECAR *, int index);
 void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();
@@ -1457,6 +1469,7 @@ extern const unsigned short spritesheetPal[256];
 CAT cat;
 ZOMBIE zombie[5];
 HAIRBALL hairball[5];
+BLUECAR blueCar[5];
 int zombiesRemaining;
 int zombieTimer;
 
@@ -1482,6 +1495,7 @@ void initGame() {
     initCat();
     initZombie();
     initHairball();
+    initBlueCar();
 
 
     zombiesRemaining = 5;
@@ -1540,6 +1554,18 @@ void initHairball() {
         hairball[i].cdel = 2;
   hairball[i].active = 0;
  }
+}
+
+
+void initBlueCar() {
+
+    for (int i = 0; i < 5; i++) {
+        blueCar[i].height = 32;
+        blueCar[i].width = 32;
+        blueCar[i].row = i % 5 * 35;
+        blueCar[i].col = i % 5 * 120;
+    }
+
 }
 
 
@@ -1699,6 +1725,9 @@ void drawGame() {
     }
     for (int i = 0; i < 5; i++)
   drawHairball(&hairball[i], 5 + i);
+
+    for (int i = 0; i < 5; i++)
+  drawBlueCar(&blueCar[i], 10 + i);
 }
 
 
@@ -1730,6 +1759,13 @@ void drawHairball(HAIRBALL* h, int index) {
     } else {
         shadowOAM[index].attr0 = (2<<8);
     }
+}
+
+
+void drawBlueCar(BLUECAR* b, int index) {
+    shadowOAM[index].attr0 = (0xFF & b->row) | (0<<14);
+    shadowOAM[index].attr1 = (0x1FF & b->col) | (2<<14);
+    shadowOAM[index].attr2 = ((1)*32+(8));
 }
 
 

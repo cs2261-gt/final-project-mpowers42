@@ -12,6 +12,7 @@
 CAT cat;
 ZOMBIE zombie[ZOMBIECOUNT];
 HAIRBALL hairball[HAIRBALLCOUNT];
+BLUECAR blueCar[BLUECARCOUNT];
 int zombiesRemaining;
 int zombieTimer; // timer for spawning zombies at intervals
 
@@ -37,6 +38,7 @@ void initGame() {
     initCat();
     initZombie();
     initHairball();
+    initBlueCar();
 
     // Initialize score
     zombiesRemaining = ZOMBIECOUNT;
@@ -95,6 +97,18 @@ void initHairball() {
         hairball[i].cdel = 2; // Move faster than cat
 		hairball[i].active = 0; // Inactive until fired
 	}
+}
+
+// Initialize blue car
+void initBlueCar() {
+
+    for (int i = 0; i < BLUECARCOUNT; i++) {
+        blueCar[i].height = 32;
+        blueCar[i].width = 32;
+        blueCar[i].row = i % BLUECARCOUNT * 35;
+        blueCar[i].col = i % BLUECARCOUNT * 120;
+    }
+
 }
 
 // Update game
@@ -254,6 +268,9 @@ void drawGame() {
     }
     for (int i = 0; i < HAIRBALLCOUNT; i++)
 		drawHairball(&hairball[i], 5 + i);
+
+    for (int i = 0; i < BLUECARCOUNT; i++)
+		drawBlueCar(&blueCar[i], 10 + i);
 }
 
 // Draw cat
@@ -285,6 +302,13 @@ void drawHairball(HAIRBALL* h, int index) {
     } else {
         shadowOAM[index].attr0 = ATTR0_HIDE;
     }
+}
+
+// Draw blue car
+void drawBlueCar(BLUECAR* b, int index) {
+    shadowOAM[index].attr0 = (ROWMASK & b->row) | ATTR0_SQUARE;
+    shadowOAM[index].attr1 = (COLMASK & b->col) | ATTR1_MEDIUM; // 32 x 32
+    shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
 }
 
 // Animate the cat
