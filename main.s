@@ -541,7 +541,7 @@ goToWin:
 	ldr	r1, .L71+4
 	mov	lr, pc
 	bx	r5
-	mov	r3, #16
+	mov	r3, #2800
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L71+8
@@ -614,7 +614,7 @@ goToLose:
 	ldr	r1, .L79+4
 	mov	lr, pc
 	bx	r5
-	mov	r3, #16
+	mov	r3, #896
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L79+8

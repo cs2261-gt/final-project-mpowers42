@@ -1450,7 +1450,7 @@ extern const unsigned short pauseScreenPal[256];
 # 17 "main.c" 2
 # 1 "winScreen.h" 1
 # 22 "winScreen.h"
-extern const unsigned short winScreenTiles[16];
+extern const unsigned short winScreenTiles[2800];
 
 
 extern const unsigned short winScreenMap[1024];
@@ -1460,7 +1460,7 @@ extern const unsigned short winScreenPal[256];
 # 18 "main.c" 2
 # 1 "loseScreen.h" 1
 # 22 "loseScreen.h"
-extern const unsigned short loseScreenTiles[16];
+extern const unsigned short loseScreenTiles[896];
 
 
 extern const unsigned short loseScreenMap[1024];
@@ -1745,7 +1745,7 @@ void goToWin() {
 
 
     DMANow(3, winScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, winScreenTiles, &((charblock *)0x6000000)[0], 32 / 2);
+    DMANow(3, winScreenTiles, &((charblock *)0x6000000)[0], 5600 / 2);
     DMANow(3, winScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
@@ -1772,7 +1772,7 @@ void goToLose() {
 
 
     DMANow(3, loseScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, loseScreenTiles, &((charblock *)0x6000000)[0], 32 / 2);
+    DMANow(3, loseScreenTiles, &((charblock *)0x6000000)[0], 1792 / 2);
     DMANow(3, loseScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);

@@ -1,6 +1,6 @@
 /* Finished: XL background implementation, basic gameplay, cat sprite and animation, state machine, collisions, zombie sprite and animation,
     car as a road block */
-// What needs to be added: Car animation, cheat, random entrance at the end to win
+// What needs to be added: Car animation, car-cat collision, cheat, random entrance at the end to win, push the background forward constatnly
 /* Cheat idea: There is a green crystal (or maybe a green fish/some sort of cat food) that the cat can get and 
     makes the cheeks turn green and allows the cat to eat the zombies */
 /* Bugs: If the cat gets to the end of the road without killing enough zombies, the game doesn't end which will be fixed with later implementation,
