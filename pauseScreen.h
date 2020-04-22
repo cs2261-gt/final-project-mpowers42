@@ -5,11 +5,11 @@
 //
 //	pauseScreen, 256x256@4, 
 //	+ palette 256 entries, not compressed
-//	+ 1 tiles (t|f|p reduced) not compressed
+//	+ 158 tiles (t|f|p reduced) not compressed
 //	+ regular map (in SBBs), not compressed, 32x32 
-//	Total size: 512 + 32 + 2048 = 2592
+//	Total size: 512 + 5056 + 2048 = 7616
 //
-//	Time-stamp: 2020-04-03, 22:35:52
+//	Time-stamp: 2020-04-22, 17:53:32
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.3
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -18,8 +18,8 @@
 #ifndef GRIT_PAUSESCREEN_H
 #define GRIT_PAUSESCREEN_H
 
-#define pauseScreenTilesLen 32
-extern const unsigned short pauseScreenTiles[16];
+#define pauseScreenTilesLen 5056
+extern const unsigned short pauseScreenTiles[2528];
 
 #define pauseScreenMapLen 2048
 extern const unsigned short pauseScreenMap[1024];
