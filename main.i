@@ -1470,7 +1470,7 @@ extern const unsigned short winScreenPal[256];
 # 19 "main.c" 2
 # 1 "loseScreen.h" 1
 # 22 "loseScreen.h"
-extern const unsigned short loseScreenTiles[896];
+extern const unsigned short loseScreenTiles[3280];
 
 
 extern const unsigned short loseScreenMap[1024];
@@ -1782,7 +1782,7 @@ void goToLose() {
 
 
     DMANow(3, loseScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, loseScreenTiles, &((charblock *)0x6000000)[0], 1792 / 2);
+    DMANow(3, loseScreenTiles, &((charblock *)0x6000000)[0], 6560 / 2);
     DMANow(3, loseScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
