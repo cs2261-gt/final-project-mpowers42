@@ -1419,7 +1419,7 @@ void fireZombie();
 # 5 "game.c" 2
 # 1 "startScreen.h" 1
 # 22 "startScreen.h"
-extern const unsigned short startScreenTiles[3120];
+extern const unsigned short startScreenTiles[4704];
 
 
 extern const unsigned short startScreenMap[1024];
@@ -1439,7 +1439,7 @@ extern const unsigned short gameScreenPal[256];
 # 7 "game.c" 2
 # 1 "pauseScreen.h" 1
 # 22 "pauseScreen.h"
-extern const unsigned short pauseScreenTiles[16];
+extern const unsigned short pauseScreenTiles[2528];
 
 
 extern const unsigned short pauseScreenMap[1024];
@@ -1449,7 +1449,7 @@ extern const unsigned short pauseScreenPal[256];
 # 8 "game.c" 2
 # 1 "winScreen.h" 1
 # 22 "winScreen.h"
-extern const unsigned short winScreenTiles[16];
+extern const unsigned short winScreenTiles[2800];
 
 
 extern const unsigned short winScreenMap[1024];
@@ -1459,7 +1459,7 @@ extern const unsigned short winScreenPal[256];
 # 9 "game.c" 2
 # 1 "loseScreen.h" 1
 # 22 "loseScreen.h"
-extern const unsigned short loseScreenTiles[16];
+extern const unsigned short loseScreenTiles[896];
 
 
 extern const unsigned short loseScreenMap[1024];
@@ -1536,6 +1536,7 @@ HAIRBALL hairball[5];
 BLUECAR blueCar[5];
 int zombiesRemaining;
 int zombieTimer;
+extern int loseGame;
 
 
 int hOff;
@@ -1555,6 +1556,7 @@ void initGame() {
     totalHOff = 0;
     playerHOff = 0;
     screenBlock = 28;
+    loseGame = 0;
 
     initCat();
     initZombie();
@@ -1598,6 +1600,8 @@ void initZombie() {
         zombie[i].aniCounter = 0;
         zombie[i].currFrame = 0;
         zombie[i].numFrames = 4;
+        zombie[i].screenRow = zombie[i].worldRow;
+        zombie[i].screenCol = zombie[i].worldCol;
     }
     zombie[0].active = 1;
 
@@ -1737,7 +1741,7 @@ void updateZombie(ZOMBIE* z) {
             cat.screenCol - 5, cat.screenRow, cat.width, cat.height)
             && z->active) {
 
-            goToLose();
+            loseGame = 1;
         }
 
 

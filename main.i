@@ -1420,7 +1420,7 @@ void fireZombie();
 # 14 "main.c" 2
 # 1 "startScreen.h" 1
 # 22 "startScreen.h"
-extern const unsigned short startScreenTiles[3120];
+extern const unsigned short startScreenTiles[4704];
 
 
 extern const unsigned short startScreenMap[1024];
@@ -1540,6 +1540,7 @@ unsigned short oldButtons;
 
 enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
+int loseGame;
 OBJ_ATTR shadowOAM[128];
 
 int main() {
@@ -1598,7 +1599,7 @@ void goToStart() {
 
 
     DMANow(3, startScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, startScreenTiles, &((charblock *)0x6000000)[0], 6240 / 2);
+    DMANow(3, startScreenTiles, &((charblock *)0x6000000)[0], 9408 / 2);
     DMANow(3, startScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
 
@@ -1701,7 +1702,7 @@ void game() {
     } else if (zombiesRemaining == 0) {
         stopSound();
         goToWin();
-    } else if ((!(~(oldButtons)&((1<<1))) && (~buttons & ((1<<1))))) {
+    } else if (loseGame) {
         stopSound();
         goToLose();
     }

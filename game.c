@@ -23,6 +23,7 @@ HAIRBALL hairball[HAIRBALLCOUNT];
 BLUECAR blueCar[BLUECARCOUNT];
 int zombiesRemaining;
 int zombieTimer; // timer for spawning zombies at intervals
+extern int loseGame;
 
 // Horizontal and vertical offsets
 int hOff;
@@ -42,6 +43,7 @@ void initGame() {
     totalHOff = 0;
     playerHOff = 0;
     screenBlock = 28;
+    loseGame = 0;
 
     initCat();
     initZombie();
@@ -85,6 +87,8 @@ void initZombie() {
         zombie[i].aniCounter = 0;
         zombie[i].currFrame = 0;
         zombie[i].numFrames = 4;
+        zombie[i].screenRow = zombie[i].worldRow;
+        zombie[i].screenCol = zombie[i].worldCol;
     }
     zombie[0].active = 1; // set just one to active to start
  
@@ -224,7 +228,7 @@ void updateZombie(ZOMBIE* z) {
             cat.screenCol - 5, cat.screenRow, cat.width, cat.height) // Adjusting bc cat sprite is not the full 32 x 32
             && z->active) {
 
-            goToLose();
+            loseGame = 1;
         }
 
         // allow zombie to move independently from the cat

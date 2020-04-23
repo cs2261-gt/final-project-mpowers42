@@ -35,6 +35,7 @@ unsigned short oldButtons;
 // Game states
 enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
+int loseGame;
 OBJ_ATTR shadowOAM[128];
 
 int main() {
@@ -196,7 +197,7 @@ void game() {
     } else if (zombiesRemaining == 0) {
         stopSound();
         goToWin();
-    } else if (BUTTON_PRESSED(BUTTON_B)) {
+    } else if (loseGame) {
         stopSound();
         goToLose();
     }
