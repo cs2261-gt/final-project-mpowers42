@@ -1386,6 +1386,14 @@ typedef struct {
 } BLUECAR;
 
 
+typedef struct {
+ int row;
+ int col;
+ int height;
+ int width;
+} DOOR;
+
+
 
 
 
@@ -1402,6 +1410,7 @@ void initGame();
 void initCat();
 void initZombie();
 void initBlueCar();
+void initDoor();
 void initHairball();
 void updateGame();
 void updateCat();
@@ -1412,6 +1421,7 @@ void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
 void drawBlueCar(BLUECAR *, int index);
+void drawDoor();
 void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();
@@ -1534,6 +1544,7 @@ CAT cat;
 ZOMBIE zombie[5];
 HAIRBALL hairball[5];
 BLUECAR blueCar[5];
+DOOR door;
 int zombiesRemaining;
 int zombieTimer;
 extern int loseGame;
@@ -1637,6 +1648,15 @@ void initBlueCar() {
 }
 
 
+void initDoor() {
+
+    door.height = 32;
+    door.width = 32;
+    door.row = 100;
+    door.col = 100;
+}
+
+
 void updateGame() {
 
 
@@ -1686,11 +1706,16 @@ void updateCat() {
         }
 
 
-        if (screenBlock < 31 && hOff < (1024 - 240 - 1) && cat.screenCol > 240 / 3) {
-            hOff++;
-            playerHOff++;
-            totalHOff++;
+        for (int i = 0; i < 5; i++) {
+            if (screenBlock < 31 && hOff < (1024 - 240 - 1) && cat.screenCol > 240 / 3 &&
+                !collision(cat.worldCol, cat.worldRow, cat.width, cat.height,
+                blueCar[i].col, blueCar[i].row, blueCar[i].width, blueCar[i].height)) {
+                hOff++;
+                playerHOff++;
+                totalHOff++;
+            }
         }
+
 
         animateCat();
     } else {
@@ -1835,6 +1860,13 @@ void drawBlueCar(BLUECAR* b, int index) {
     shadowOAM[index].attr0 = (0xFF & (b->row - vOff)) | (0<<14);
     shadowOAM[index].attr1 = (0x1FF & (b->col - totalHOff)) | (2<<14);
     shadowOAM[index].attr2 = ((1)*32+(8));
+}
+
+
+void drawDoor() {
+    shadowOAM[1].attr0 = (0xFF & (door.row - vOff)) | (0<<14);
+    shadowOAM[1].attr1 = (0x1FF & (door.col - totalHOff)) | (2<<14);
+    shadowOAM[1].attr2 = ((5)*32+(8));
 }
 
 

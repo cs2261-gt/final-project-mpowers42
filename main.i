@@ -1387,6 +1387,14 @@ typedef struct {
 } BLUECAR;
 
 
+typedef struct {
+ int row;
+ int col;
+ int height;
+ int width;
+} DOOR;
+
+
 
 
 
@@ -1403,6 +1411,7 @@ void initGame();
 void initCat();
 void initZombie();
 void initBlueCar();
+void initDoor();
 void initHairball();
 void updateGame();
 void updateCat();
@@ -1413,6 +1422,7 @@ void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
 void drawBlueCar(BLUECAR *, int index);
+void drawDoor();
 void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();

@@ -21,6 +21,7 @@ CAT cat;
 ZOMBIE zombie[ZOMBIECOUNT];
 HAIRBALL hairball[HAIRBALLCOUNT];
 BLUECAR blueCar[BLUECARCOUNT];
+DOOR door;
 int zombiesRemaining;
 int zombieTimer; // timer for spawning zombies at intervals
 extern int loseGame;
@@ -123,6 +124,15 @@ void initBlueCar() {
 
 }
 
+// Initialize door
+void initDoor() {
+
+    door.height = 32;
+    door.width = 32;
+    door.row = 100; //random
+    door.col = 100;
+}
+
 // Update game
 void updateGame() {
 
@@ -173,11 +183,16 @@ void updateCat() {
         }
 
         // SCREENWIDTH / 3 is complex movement - change it to what fits the game
-        if (screenBlock < 31 && hOff < (WORLDWIDTH - SCREENWIDTH - 1) && cat.screenCol > SCREENWIDTH / 3) {
-            hOff++;
-            playerHOff++;
-            totalHOff++;
+        for (int i = 0; i < BLUECARCOUNT; i++) {
+            if (screenBlock < 31 && hOff < (WORLDWIDTH - SCREENWIDTH - 1) && cat.screenCol > SCREENWIDTH / 3 &&
+                !collision(cat.worldCol, cat.worldRow, cat.width, cat.height,
+                blueCar[i].col, blueCar[i].row, blueCar[i].width, blueCar[i].height)) {
+                hOff++;
+                playerHOff++;
+                totalHOff++;
+            }
         }
+        
 
         animateCat();
     } else {
@@ -322,6 +337,13 @@ void drawBlueCar(BLUECAR* b, int index) {
     shadowOAM[index].attr0 = (ROWMASK & (b->row - vOff)) | ATTR0_SQUARE;
     shadowOAM[index].attr1 = (COLMASK & (b->col - totalHOff)) | ATTR1_MEDIUM; // 32 x 32
     shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
+}
+
+// Draw door
+void drawDoor() {
+    shadowOAM[1].attr0 = (ROWMASK & (door.row - vOff)) | ATTR0_SQUARE;
+    shadowOAM[1].attr1 = (COLMASK & (door.col - totalHOff)) | ATTR1_MEDIUM; // 32 x 32
+    shadowOAM[1].attr2 = ATTR2_TILEID(8, 5);
 }
 
 // Animate the cat

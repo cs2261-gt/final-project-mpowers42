@@ -50,6 +50,14 @@ typedef struct {
 	int width;
 } BLUECAR;
 
+// Door struct
+typedef struct {
+	int row;
+	int col;
+	int height;
+	int width;
+} DOOR;
+
 // Constants
 #define ZOMBIECOUNT 5
 #define HAIRBALLCOUNT 5
@@ -67,6 +75,7 @@ void initGame();
 void initCat();
 void initZombie();
 void initBlueCar();
+void initDoor();
 void initHairball();
 void updateGame();
 void updateCat();
@@ -77,6 +86,7 @@ void drawCat();
 void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
 void drawBlueCar(BLUECAR *, int index);
+void drawDoor();
 void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();
