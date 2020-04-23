@@ -183,14 +183,10 @@ void updateCat() {
         }
 
         // SCREENWIDTH / 3 is complex movement - change it to what fits the game
-        for (int i = 0; i < BLUECARCOUNT; i++) {
-            if (screenBlock < 31 && hOff < (WORLDWIDTH - SCREENWIDTH - 1) && cat.screenCol > SCREENWIDTH / 3 &&
-                !collision(cat.worldCol, cat.worldRow, cat.width, cat.height,
-                blueCar[i].col, blueCar[i].row, blueCar[i].width, blueCar[i].height)) {
-                hOff++;
-                playerHOff++;
-                totalHOff++;
-            }
+        if (screenBlock < 31 && hOff < (WORLDWIDTH - SCREENWIDTH - 1) && cat.screenCol > SCREENWIDTH / 3) {
+            hOff++;
+            playerHOff++;
+            totalHOff++;
         }
         
 

@@ -115,33 +115,30 @@ win.part.0:
 	.section	.rodata.str1.4,"aMS",%progbits,1
 	.align	2
 .LC0:
-	.ascii	"Instructions\000"
-	.align	2
-.LC1:
 	.ascii	"Avoid the zombies and obstacles,\000"
 	.align	2
-.LC2:
+.LC1:
 	.ascii	"and help Cheeto escape the apocalypse!\000"
 	.align	2
-.LC3:
+.LC2:
 	.ascii	" Use RIGHT, UP, and DOWN to walk\000"
 	.align	2
-.LC4:
+.LC3:
 	.ascii	"Use A to shoot hairballs at zombies\000"
 	.align	2
-.LC5:
+.LC4:
 	.ascii	"Press START to pause and unpause\000"
 	.align	2
-.LC6:
+.LC5:
 	.ascii	"Press SELECT\000"
 	.align	2
-.LC7:
+.LC6:
 	.ascii	" to go back\000"
 	.align	2
-.LC8:
+.LC7:
 	.ascii	"Press START\000"
 	.align	2
-.LC9:
+.LC8:
 	.ascii	" to play\000"
 	.text
 	.align	2
@@ -164,67 +161,61 @@ goToInstructions:
 	mov	lr, pc
 	bx	r3
 	mov	r3, #0
-	mov	r1, #20
-	mov	r0, #80
-	ldr	r2, .L16+16
-	mov	lr, pc
-	bx	r4
-	mov	r3, #0
 	mov	r1, #40
 	mov	r0, #20
-	ldr	r2, .L16+20
+	ldr	r2, .L16+16
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #50
 	mov	r0, #4
-	ldr	r2, .L16+24
+	ldr	r2, .L16+20
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #70
 	mov	r0, #20
-	ldr	r2, .L16+28
+	ldr	r2, .L16+24
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #80
 	mov	r0, #10
-	ldr	r2, .L16+32
+	ldr	r2, .L16+28
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #100
 	mov	r0, #20
-	ldr	r2, .L16+36
+	ldr	r2, .L16+32
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #130
+	mov	r0, #10
+	ldr	r2, .L16+36
+	mov	lr, pc
+	bx	r4
+	mov	r3, #0
+	mov	r1, #140
 	mov	r0, #10
 	ldr	r2, .L16+40
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #140
-	mov	r0, #10
+	mov	r1, #130
+	mov	r0, #160
 	ldr	r2, .L16+44
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #130
-	mov	r0, #160
 	ldr	r2, .L16+48
-	mov	lr, pc
-	bx	r4
-	mov	r3, #0
-	ldr	r2, .L16+52
 	mov	r1, #140
 	mov	r0, #165
 	mov	lr, pc
 	bx	r4
 	mov	r2, #1
-	ldr	r3, .L16+56
+	ldr	r3, .L16+52
 	pop	{r4, lr}
 	str	r2, [r3]
 	bx	lr
@@ -244,7 +235,6 @@ goToInstructions:
 	.word	.LC6
 	.word	.LC7
 	.word	.LC8
-	.word	.LC9
 	.word	state
 	.size	goToInstructions, .-goToInstructions
 	.align	2

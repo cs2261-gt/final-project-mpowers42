@@ -128,7 +128,6 @@ void goToInstructions() {
     REG_DISPCTL = MODE3 | BG2_ENABLE;
 
     drawFullscreenImage3(grassBitmap);
-    drawString(80, 20, "Instructions", BLACK);
     drawString(20, 40, "Avoid the zombies and obstacles,", BLACK);
     drawString(4, 50, "and help Cheeto escape the apocalypse!", BLACK);
     drawString(20, 70, " Use RIGHT, UP, and DOWN to walk", BLACK);

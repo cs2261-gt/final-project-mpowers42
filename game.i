@@ -1706,14 +1706,10 @@ void updateCat() {
         }
 
 
-        for (int i = 0; i < 5; i++) {
-            if (screenBlock < 31 && hOff < (1024 - 240 - 1) && cat.screenCol > 240 / 3 &&
-                !collision(cat.worldCol, cat.worldRow, cat.width, cat.height,
-                blueCar[i].col, blueCar[i].row, blueCar[i].width, blueCar[i].height)) {
-                hOff++;
-                playerHOff++;
-                totalHOff++;
-            }
+        if (screenBlock < 31 && hOff < (1024 - 240 - 1) && cat.screenCol > 240 / 3) {
+            hOff++;
+            playerHOff++;
+            totalHOff++;
         }
 
 

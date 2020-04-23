@@ -2,7 +2,7 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "main.c"
-# 10 "main.c"
+# 11 "main.c"
 # 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 1 3
 # 10 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 # 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/machine/ieeefp.h" 1 3
@@ -811,7 +811,7 @@ extern long double _strtold_r (struct _reent *, const char *restrict, char **res
 extern long double strtold (const char *restrict, char **restrict);
 # 336 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdlib.h" 3
 
-# 11 "main.c" 2
+# 12 "main.c" 2
 # 1 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 1 3
 # 36 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
 # 1 "/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h" 1 3 4
@@ -1222,7 +1222,7 @@ _putchar_unlocked(int _c)
 }
 # 797 "/opt/devkitpro/devkitARM/arm-none-eabi/include/stdio.h" 3
 
-# 12 "main.c" 2
+# 13 "main.c" 2
 # 1 "myLib.h" 1
 
 
@@ -1332,7 +1332,7 @@ typedef struct{
 
 
 int collision(int colA, int rowA, int widthA, int heightA, int colB, int rowB, int widthB, int heightB);
-# 13 "main.c" 2
+# 14 "main.c" 2
 # 1 "game.h" 1
 
 typedef struct {
@@ -1427,7 +1427,7 @@ void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();
 void fireZombie();
-# 14 "main.c" 2
+# 15 "main.c" 2
 # 1 "startScreen.h" 1
 # 22 "startScreen.h"
 extern const unsigned short startScreenTiles[4704];
@@ -1437,7 +1437,7 @@ extern const unsigned short startScreenMap[1024];
 
 
 extern const unsigned short startScreenPal[256];
-# 15 "main.c" 2
+# 16 "main.c" 2
 # 1 "gameScreen.h" 1
 # 22 "gameScreen.h"
 extern const unsigned short gameScreenTiles[16];
@@ -1447,7 +1447,7 @@ extern const unsigned short gameScreenMap[1024];
 
 
 extern const unsigned short gameScreenPal[256];
-# 16 "main.c" 2
+# 17 "main.c" 2
 # 1 "pauseScreen.h" 1
 # 22 "pauseScreen.h"
 extern const unsigned short pauseScreenTiles[2528];
@@ -1457,7 +1457,7 @@ extern const unsigned short pauseScreenMap[1024];
 
 
 extern const unsigned short pauseScreenPal[256];
-# 17 "main.c" 2
+# 18 "main.c" 2
 # 1 "winScreen.h" 1
 # 22 "winScreen.h"
 extern const unsigned short winScreenTiles[2800];
@@ -1467,7 +1467,7 @@ extern const unsigned short winScreenMap[1024];
 
 
 extern const unsigned short winScreenPal[256];
-# 18 "main.c" 2
+# 19 "main.c" 2
 # 1 "loseScreen.h" 1
 # 22 "loseScreen.h"
 extern const unsigned short loseScreenTiles[896];
@@ -1477,14 +1477,14 @@ extern const unsigned short loseScreenMap[1024];
 
 
 extern const unsigned short loseScreenPal[256];
-# 19 "main.c" 2
+# 20 "main.c" 2
 # 1 "spritesheet.h" 1
 # 21 "spritesheet.h"
 extern const unsigned short spritesheetTiles[16384];
 
 
 extern const unsigned short spritesheetPal[256];
-# 20 "main.c" 2
+# 21 "main.c" 2
 # 1 "background.h" 1
 # 22 "background.h"
 extern const unsigned short backgroundTiles[128];
@@ -1494,20 +1494,20 @@ extern const unsigned short backgroundMap[4096];
 
 
 extern const unsigned short backgroundPal[256];
-# 21 "main.c" 2
+# 22 "main.c" 2
 # 1 "font.h" 1
 
 extern const unsigned char fontdata_6x8[12288];
-# 22 "main.c" 2
+# 23 "main.c" 2
 # 1 "text.h" 1
 
 void drawChar(int, int, char, unsigned short);
 void drawString(int, int, char *, unsigned short);
-# 23 "main.c" 2
+# 24 "main.c" 2
 # 1 "grass.h" 1
 # 20 "grass.h"
 extern const unsigned short grassBitmap[38400];
-# 24 "main.c" 2
+# 25 "main.c" 2
 # 1 "sound.h" 1
 SOUND soundA;
 SOUND soundB;
@@ -1524,21 +1524,21 @@ void interruptHandler();
 void pauseSound();
 void unpauseSound();
 void stopSound();
-# 25 "main.c" 2
+# 26 "main.c" 2
 # 1 "gameSong.h" 1
 
 
 
 
 extern const signed char gameSong[1830816];
-# 26 "main.c" 2
+# 27 "main.c" 2
 # 1 "catSound.h" 1
 
 
 
 
 extern const signed char catSound[4594];
-# 27 "main.c" 2
+# 28 "main.c" 2
 
 
 void initialize();
@@ -1642,7 +1642,6 @@ void goToInstructions() {
     (*(unsigned short *)0x4000000) = 3 | (1<<10);
 
     drawFullscreenImage3(grassBitmap);
-    drawString(80, 20, "Instructions", ((0) | (0)<<5 | (0)<<10));
     drawString(20, 40, "Avoid the zombies and obstacles,", ((0) | (0)<<5 | (0)<<10));
     drawString(4, 50, "and help Cheeto escape the apocalypse!", ((0) | (0)<<5 | (0)<<10));
     drawString(20, 70, " Use RIGHT, UP, and DOWN to walk", ((0) | (0)<<5 | (0)<<10));
