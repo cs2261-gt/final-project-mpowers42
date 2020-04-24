@@ -121,7 +121,7 @@ void initBlueCar() {
     for (int i = 0; i < BLUECARCOUNT; i++) {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
-        blueCar[i].row = rand() % 160; // needs to be initialized within the world boundaries
+        blueCar[i].row = rand() % 130; // needs to be initialized within the world boundaries
         blueCar[i].col = rand() % 1024; // needs to be initialized within the world boundaries!
     }
 

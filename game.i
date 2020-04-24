@@ -1644,7 +1644,7 @@ void initBlueCar() {
     for (int i = 0; i < 5; i++) {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
-        blueCar[i].row = rand() % 160;
+        blueCar[i].row = rand() % 130;
         blueCar[i].col = rand() % 1024;
     }
 
@@ -1655,7 +1655,7 @@ void initDoor() {
 
     door.height = 32;
     door.width = 32;
-    door.row = srand() % 160 - door.height;
+    door.row = rand() % 160 - door.height;
     door.col = 1024 - 46;
 }
 
