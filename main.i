@@ -1430,7 +1430,7 @@ void fireZombie();
 # 15 "main.c" 2
 # 1 "startScreen.h" 1
 # 22 "startScreen.h"
-extern const unsigned short startScreenTiles[4704];
+extern const unsigned short startScreenTiles[5696];
 
 
 extern const unsigned short startScreenMap[1024];
@@ -1450,7 +1450,7 @@ extern const unsigned short gameScreenPal[256];
 # 17 "main.c" 2
 # 1 "pauseScreen.h" 1
 # 22 "pauseScreen.h"
-extern const unsigned short pauseScreenTiles[2528];
+extern const unsigned short pauseScreenTiles[3152];
 
 
 extern const unsigned short pauseScreenMap[1024];
@@ -1460,7 +1460,7 @@ extern const unsigned short pauseScreenPal[256];
 # 18 "main.c" 2
 # 1 "winScreen.h" 1
 # 22 "winScreen.h"
-extern const unsigned short winScreenTiles[2800];
+extern const unsigned short winScreenTiles[4000];
 
 
 extern const unsigned short winScreenMap[1024];
@@ -1551,6 +1551,7 @@ unsigned short oldButtons;
 enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
 int loseGame;
+int collided;
 OBJ_ATTR shadowOAM[128];
 
 int main() {
@@ -1609,7 +1610,7 @@ void goToStart() {
 
 
     DMANow(3, startScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, startScreenTiles, &((charblock *)0x6000000)[0], 9408 / 2);
+    DMANow(3, startScreenTiles, &((charblock *)0x6000000)[0], 11392 / 2);
     DMANow(3, startScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
 
@@ -1704,6 +1705,8 @@ void game() {
     waitForVBlank();
     DMANow(3, shadowOAM, ((OBJ_ATTR*)(0x7000000)), 512);
 
+    collided = 0;
+
 
     if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
         pauseSound();
@@ -1725,7 +1728,7 @@ void goToPause() {
 
 
     DMANow(3, pauseScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, pauseScreenTiles, &((charblock *)0x6000000)[0], 5056 / 2);
+    DMANow(3, pauseScreenTiles, &((charblock *)0x6000000)[0], 6304 / 2);
     DMANow(3, pauseScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
@@ -1755,7 +1758,7 @@ void goToWin() {
 
 
     DMANow(3, winScreenPal, ((unsigned short *)0x5000000), 256);
-    DMANow(3, winScreenTiles, &((charblock *)0x6000000)[0], 5600 / 2);
+    DMANow(3, winScreenTiles, &((charblock *)0x6000000)[0], 8000 / 2);
     DMANow(3, winScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);

@@ -859,6 +859,7 @@ winScreenMap:
 	.short	206
 	.short	207
 	.short	208
+	.short	1067
 	.short	209
 	.short	210
 	.short	211
@@ -867,12 +868,12 @@ winScreenMap:
 	.short	214
 	.short	215
 	.short	216
+	.short	36
+	.short	36
+	.short	213
 	.short	217
-	.short	36
-	.short	36
-	.short	214
+	.short	215
 	.short	218
-	.short	216
 	.short	219
 	.short	220
 	.short	221
@@ -881,11 +882,11 @@ winScreenMap:
 	.short	224
 	.short	225
 	.short	226
+	.short	171
+	.short	0
+	.short	0
+	.short	171
 	.short	227
-	.short	171
-	.short	0
-	.short	0
-	.short	171
 	.short	228
 	.short	229
 	.short	230
@@ -900,20 +901,19 @@ winScreenMap:
 	.short	239
 	.short	240
 	.short	241
+	.short	241
+	.short	237
+	.short	1261
+	.short	239
 	.short	242
-	.short	242
-	.short	238
-	.short	1262
-	.short	240
 	.short	243
 	.short	244
 	.short	245
 	.short	246
+	.short	228
 	.short	247
-	.short	229
 	.short	248
 	.short	249
-	.short	250
 	.short	171
 	.short	0
 	.short	0
@@ -1302,7 +1302,7 @@ winScreenMap:
 	.short	0
 	.short	0
 	.type	winScreenTiles, %object
-	.size	winScreenTiles, 8032
+	.size	winScreenTiles, 8000
 winScreenTiles:
 	.short	0
 	.short	0
@@ -4167,7 +4167,7 @@ winScreenTiles:
 	.short	13380
 	.short	13107
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4178,11 +4178,11 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	26214
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
 	.short	13107
 	.short	17476
 	.short	17476
@@ -4194,9 +4194,9 @@ winScreenTiles:
 	.short	13107
 	.short	13926
 	.short	25395
-	.short	13960
+	.short	13824
 	.short	13923
-	.short	13960
+	.short	13824
 	.short	13923
 	.short	13107
 	.short	26211
@@ -4210,12 +4210,12 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	13107
-	.short	26755
+	.short	24579
 	.short	25398
-	.short	-30589
-	.short	-31946
-	.short	-30584
-	.short	-31946
+	.short	3
+	.short	822
+	.short	0
+	.short	822
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4226,12 +4226,12 @@ winScreenTiles:
 	.short	13107
 	.short	13926
 	.short	25395
-	.short	26760
+	.short	24576
 	.short	26163
-	.short	-30584
-	.short	14387
-	.short	-30584
-	.short	26675
+	.short	0
+	.short	12339
+	.short	0
+	.short	24627
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4242,12 +4242,12 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13110
-	.short	-30621
-	.short	13112
-	.short	-30586
-	.short	13112
+	.short	99
+	.short	13104
+	.short	6
+	.short	13104
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4258,12 +4258,12 @@ winScreenTiles:
 	.short	13107
 	.short	26163
 	.short	26214
-	.short	-31949
-	.short	-30584
-	.short	-31949
-	.short	-30584
-	.short	-30584
-	.short	14472
+	.short	819
+	.short	0
+	.short	819
+	.short	0
+	.short	0
+	.short	12288
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4274,10 +4274,10 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	13158
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	13160
+	.short	0
+	.short	13152
+	.short	0
+	.short	13152
 	.short	13107
 	.short	13107
 	.short	17476
@@ -4291,11 +4291,11 @@ winScreenTiles:
 	.short	26211
 	.short	13926
 	.short	25446
-	.short	26760
+	.short	24576
 	.short	25398
-	.short	-30584
-	.short	-31130
-	.short	-30584
+	.short	0
+	.short	1638
+	.short	0
 	.short	8736
 	.short	8194
 	.short	8192
@@ -4307,11 +4307,11 @@ winScreenTiles:
 	.short	13107
 	.short	13158
 	.short	25395
-	.short	13960
-	.short	-31949
-	.short	14472
-	.short	-31181
-	.short	14472
+	.short	13824
+	.short	819
+	.short	12288
+	.short	1587
+	.short	12288
 	.short	8738
 	.short	17408
 	.short	546
@@ -4322,12 +4322,12 @@ winScreenTiles:
 	.short	13107
 	.short	26163
 	.short	26214
-	.short	13187
-	.short	-30586
-	.short	25475
-	.short	-30584
-	.short	-30589
-	.short	-30584
+	.short	13059
+	.short	6
+	.short	25347
+	.short	0
+	.short	3
+	.short	0
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4338,10 +4338,10 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	13926
-	.short	-30584
-	.short	26760
-	.short	-30584
-	.short	14472
+	.short	0
+	.short	24576
+	.short	0
+	.short	12288
 	.short	13107
 	.short	13107
 	.short	17476
@@ -4355,11 +4355,11 @@ winScreenTiles:
 	.short	25395
 	.short	26214
 	.short	13875
-	.short	-30589
-	.short	14387
-	.short	-30589
-	.short	14387
-	.short	-30584
+	.short	3
+	.short	12339
+	.short	3
+	.short	12339
+	.short	0
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4371,11 +4371,11 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	25398
-	.short	26758
-	.short	25400
-	.short	-30584
-	.short	25400
-	.short	-30584
+	.short	24582
+	.short	25392
+	.short	0
+	.short	25392
+	.short	0
 	.short	17476
 	.short	68
 	.short	17476
@@ -4419,11 +4419,11 @@ winScreenTiles:
 	.short	26163
 	.short	26214
 	.short	13155
-	.short	-30586
-	.short	13187
-	.short	-30586
-	.short	-31869
-	.short	-30584
+	.short	6
+	.short	13059
+	.short	6
+	.short	771
+	.short	0
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4434,12 +4434,12 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	13110
-	.short	-30584
+	.short	0
 	.short	13158
-	.short	-30584
-	.short	13192
-	.short	-31128
-	.short	14472
+	.short	0
+	.short	13056
+	.short	1632
+	.short	12288
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4451,11 +4451,11 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	25398
-	.short	-31178
-	.short	-31944
-	.short	-31181
-	.short	-31944
-	.short	-30618
+	.short	1590
+	.short	816
+	.short	1587
+	.short	816
+	.short	102
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4466,12 +4466,12 @@ winScreenTiles:
 	.short	13107
 	.short	13110
 	.short	26163
-	.short	13160
-	.short	-30621
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
+	.short	13152
+	.short	99
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4482,12 +4482,12 @@ winScreenTiles:
 	.short	13107
 	.short	13110
 	.short	26211
-	.short	13160
+	.short	13152
 	.short	25446
-	.short	13160
-	.short	25400
-	.short	13160
-	.short	-31128
+	.short	13152
+	.short	25392
+	.short	13152
+	.short	1632
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4498,12 +4498,12 @@ winScreenTiles:
 	.short	13107
 	.short	13158
 	.short	26163
-	.short	13960
-	.short	-31133
-	.short	14472
-	.short	-30621
-	.short	14472
-	.short	-30621
+	.short	13824
+	.short	1635
+	.short	12288
+	.short	99
+	.short	12288
+	.short	99
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4514,12 +4514,12 @@ winScreenTiles:
 	.short	13107
 	.short	13158
 	.short	26163
-	.short	13192
+	.short	13056
 	.short	13155
-	.short	13192
-	.short	-31901
-	.short	13192
-	.short	-30589
+	.short	13056
+	.short	867
+	.short	13056
+	.short	3
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4530,12 +4530,12 @@ winScreenTiles:
 	.short	13107
 	.short	13926
 	.short	26163
-	.short	14472
+	.short	12288
 	.short	13155
-	.short	13960
+	.short	13824
 	.short	13155
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4546,12 +4546,12 @@ winScreenTiles:
 	.short	13107
 	.short	26214
 	.short	26214
-	.short	-30589
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	13112
+	.short	3
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	13104
 	.short	17476
 	.short	17476
 	.short	17476
@@ -4562,124 +4562,108 @@ winScreenTiles:
 	.short	17459
 	.short	13158
 	.short	17459
-	.short	14472
+	.short	12288
 	.short	17459
-	.short	26760
+	.short	24576
 	.short	17459
-	.short	26760
+	.short	24576
 	.short	17459
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	13380
-	.short	-30589
-	.short	-30584
+	.short	3
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
-	.short	-30584
+	.short	0
+	.short	0
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13107
-	.short	-30621
-	.short	13960
-	.short	-30621
-	.short	-30584
-	.short	-31946
-	.short	-30584
-	.short	-31130
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-31946
-	.short	-30584
-	.short	-31946
-	.short	-30584
-	.short	-31946
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	14472
-	.short	-30584
-	.short	14472
-	.short	-30584
-	.short	14472
-	.short	-30584
-	.short	14472
-	.short	-30584
-	.short	14472
-	.short	-30584
-	.short	14472
-	.short	-30584
-	.short	14472
-	.short	-30584
-	.short	-30584
+	.short	99
+	.short	13824
+	.short	99
+	.short	0
+	.short	822
+	.short	0
+	.short	1638
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	822
+	.short	0
+	.short	822
+	.short	0
+	.short	822
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	12288
+	.short	0
+	.short	12288
+	.short	0
+	.short	12288
+	.short	0
+	.short	12288
+	.short	0
+	.short	12288
+	.short	0
+	.short	12288
+	.short	0
+	.short	12288
+	.short	0
+	.short	0
 	.short	13107
 	.short	13107
 	.short	13107
@@ -4694,270 +4678,270 @@ winScreenTiles:
 	.short	13107
 	.short	13107
 	.short	13107
-	.short	-30584
-	.short	13144
-	.short	-30586
-	.short	-30584
-	.short	-30586
-	.short	-30584
-	.short	-30586
-	.short	-30584
-	.short	-30586
-	.short	-30584
-	.short	-30586
-	.short	-30584
-	.short	-30586
-	.short	-30584
-	.short	-30586
-	.short	-30584
-	.short	-30586
-	.short	-30584
-	.short	-30618
-	.short	13960
-	.short	-30584
-	.short	13112
-	.short	-30584
+	.short	0
+	.short	13136
+	.short	6
+	.short	0
+	.short	6
+	.short	0
+	.short	6
+	.short	0
+	.short	6
+	.short	0
+	.short	6
+	.short	0
+	.short	6
+	.short	0
+	.short	6
+	.short	0
+	.short	6
+	.short	0
+	.short	102
+	.short	13824
+	.short	0
+	.short	13104
+	.short	0
 	.short	13110
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13192
-	.short	-30584
-	.short	14472
-	.short	-31133
-	.short	14472
-	.short	-30589
-	.short	-30584
-	.short	-30589
-	.short	-30584
-	.short	-30589
-	.short	-30584
-	.short	-30589
-	.short	-30584
-	.short	-30589
-	.short	-30584
-	.short	-30589
-	.short	-30584
-	.short	-30589
-	.short	-30584
-	.short	-30589
-	.short	-30584
+	.short	0
+	.short	13104
+	.short	0
+	.short	13056
+	.short	0
+	.short	12288
+	.short	1635
+	.short	12288
+	.short	3
+	.short	0
+	.short	3
+	.short	0
+	.short	3
+	.short	0
+	.short	3
+	.short	0
+	.short	3
+	.short	0
+	.short	3
+	.short	0
+	.short	3
+	.short	0
+	.short	3
+	.short	0
 	.short	13107
 	.short	13107
 	.short	26214
 	.short	13926
-	.short	-30584
-	.short	14472
-	.short	-30584
-	.short	14472
+	.short	0
+	.short	12288
+	.short	0
+	.short	12288
 	.short	13110
 	.short	13107
 	.short	13107
 	.short	13107
 	.short	13110
 	.short	13107
-	.short	-30584
-	.short	14472
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	25400
-	.short	-30584
-	.short	25448
-	.short	-30584
-	.short	25480
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30664
-	.short	-30584
-	.short	25400
-	.short	-30584
-	.short	25400
-	.short	14472
-	.short	13112
-	.short	14472
-	.short	13112
-	.short	14472
-	.short	13112
-	.short	14472
-	.short	13112
-	.short	14472
-	.short	25400
-	.short	14472
-	.short	-31944
-	.short	14472
-	.short	-30584
-	.short	14472
-	.short	-31944
-	.short	-30584
-	.short	-31944
-	.short	-30584
-	.short	-31944
-	.short	-30584
-	.short	-31944
-	.short	-30584
-	.short	-31944
-	.short	-30584
-	.short	-31944
-	.short	-30584
-	.short	-31944
-	.short	-30584
-	.short	-31944
-	.short	-30584
-	.short	13192
-	.short	-30589
-	.short	26248
-	.short	-30589
-	.short	26760
-	.short	-30586
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	13192
-	.short	-30584
-	.short	13192
-	.short	-30589
-	.short	13160
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	14472
-	.short	-30621
-	.short	26760
-	.short	-30621
-	.short	-30584
-	.short	-30618
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	14472
-	.short	-30586
-	.short	14472
-	.short	-30621
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	-30584
+	.short	0
+	.short	12288
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	25392
+	.short	0
+	.short	25440
+	.short	0
+	.short	25344
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	48
+	.short	0
+	.short	25392
+	.short	0
+	.short	25392
+	.short	12288
+	.short	13104
+	.short	12288
+	.short	13104
+	.short	12288
+	.short	13104
+	.short	12288
+	.short	13104
+	.short	12288
+	.short	25392
+	.short	12288
+	.short	816
+	.short	12288
+	.short	0
+	.short	12288
+	.short	816
+	.short	0
+	.short	816
+	.short	0
+	.short	816
+	.short	0
+	.short	816
+	.short	0
+	.short	816
+	.short	0
+	.short	816
+	.short	0
+	.short	816
+	.short	0
+	.short	816
+	.short	0
+	.short	13056
+	.short	3
+	.short	26112
+	.short	3
+	.short	24576
+	.short	6
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	13056
+	.short	0
+	.short	13056
+	.short	3
+	.short	13152
+	.short	0
+	.short	13152
+	.short	0
+	.short	13152
+	.short	0
+	.short	13152
+	.short	0
+	.short	13152
+	.short	0
+	.short	13152
+	.short	0
+	.short	13152
+	.short	0
+	.short	13152
+	.short	0
+	.short	12288
+	.short	99
+	.short	24576
+	.short	99
+	.short	0
+	.short	102
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	12288
+	.short	6
+	.short	12288
+	.short	99
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	26214
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
+	.short	0
 	.short	13107
-	.short	-30584
-	.short	-30584
+	.short	0
+	.short	0
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13926
-	.short	-30621
-	.short	13960
-	.short	-30621
-	.short	13960
-	.short	-30621
+	.short	99
+	.short	13824
+	.short	99
+	.short	13824
+	.short	99
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13107
-	.short	-30621
+	.short	99
 	.short	13107
-	.short	-30621
-	.short	13960
-	.short	-30621
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	26216
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	26168
-	.short	26760
+	.short	99
+	.short	13824
+	.short	99
+	.short	0
+	.short	13104
+	.short	0
+	.short	26208
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	26160
+	.short	24576
 	.short	17459
-	.short	26760
+	.short	24576
 	.short	17459
-	.short	26760
+	.short	24576
 	.short	17459
-	.short	13960
+	.short	13824
 	.short	17459
-	.short	13192
+	.short	13056
 	.short	17459
-	.short	14472
+	.short	12288
 	.short	17459
-	.short	26760
+	.short	24576
 	.short	17459
-	.short	26760
+	.short	24576
 	.short	17459
 	.short	13380
-	.short	-30589
+	.short	3
 	.short	13380
-	.short	-30669
+	.short	51
 	.short	13380
-	.short	-31949
+	.short	819
 	.short	13380
 	.short	13107
 	.short	17476
@@ -4968,12 +4952,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
 	.short	13107
 	.short	13107
 	.short	13107
@@ -4984,12 +4968,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	14472
-	.short	-30621
-	.short	14472
-	.short	-30621
-	.short	13960
-	.short	-31949
+	.short	12288
+	.short	99
+	.short	12288
+	.short	99
+	.short	13824
+	.short	819
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5000,11 +4984,11 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30584
-	.short	-31946
-	.short	-30584
-	.short	-31946
-	.short	26760
+	.short	0
+	.short	822
+	.short	0
+	.short	822
+	.short	24576
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5016,11 +5000,11 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	14472
+	.short	0
+	.short	51
+	.short	0
+	.short	51
+	.short	12288
 	.short	25395
 	.short	13107
 	.short	13107
@@ -5032,11 +5016,11 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30584
-	.short	13112
-	.short	-30584
-	.short	13112
-	.short	-30584
+	.short	0
+	.short	13104
+	.short	0
+	.short	13104
+	.short	0
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5048,12 +5032,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30584
-	.short	-30584
-	.short	-30589
-	.short	-30584
-	.short	-30669
-	.short	-30584
+	.short	0
+	.short	0
+	.short	3
+	.short	0
+	.short	51
+	.short	0
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5064,12 +5048,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30584
-	.short	13192
-	.short	-30584
-	.short	13192
-	.short	-30584
-	.short	13160
+	.short	0
+	.short	13056
+	.short	0
+	.short	13056
+	.short	0
+	.short	13152
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5080,12 +5064,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30586
-	.short	-30584
-	.short	-30586
-	.short	-30584
-	.short	-30621
-	.short	14472
+	.short	6
+	.short	0
+	.short	6
+	.short	0
+	.short	99
+	.short	12288
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5096,12 +5080,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-31181
-	.short	14472
-	.short	-31949
-	.short	14472
+	.short	1587
+	.short	12288
+	.short	819
+	.short	12288
 	.short	13107
-	.short	13192
+	.short	13056
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5112,12 +5096,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30589
-	.short	-30584
-	.short	-30589
-	.short	-30584
-	.short	-30669
-	.short	-30584
+	.short	3
+	.short	0
+	.short	3
+	.short	0
+	.short	51
+	.short	0
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5128,12 +5112,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30584
-	.short	26760
-	.short	-30584
-	.short	26760
-	.short	-30584
-	.short	14472
+	.short	0
+	.short	24576
+	.short	0
+	.short	24576
+	.short	0
+	.short	12288
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5144,12 +5128,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30669
-	.short	-30584
-	.short	-30669
-	.short	-30584
-	.short	-31949
-	.short	-30584
+	.short	51
+	.short	0
+	.short	51
+	.short	0
+	.short	819
+	.short	0
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5160,12 +5144,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	25400
-	.short	-30584
-	.short	25400
-	.short	-30584
+	.short	25392
+	.short	0
+	.short	25392
+	.short	0
 	.short	13107
-	.short	26758
+	.short	24582
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5192,12 +5176,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-31944
-	.short	-30584
-	.short	-31944
-	.short	-30584
+	.short	816
+	.short	0
+	.short	816
+	.short	0
 	.short	13107
-	.short	-30586
+	.short	6
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5208,12 +5192,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	13112
-	.short	-30669
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	13104
+	.short	51
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5224,12 +5208,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	13160
-	.short	-30584
-	.short	13160
-	.short	-30584
-	.short	13112
-	.short	-30589
+	.short	13152
+	.short	0
+	.short	13152
+	.short	0
+	.short	13104
+	.short	3
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5240,12 +5224,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	14472
-	.short	-30621
-	.short	14472
-	.short	-30621
-	.short	13192
-	.short	-31181
+	.short	12288
+	.short	99
+	.short	12288
+	.short	99
+	.short	13056
+	.short	1587
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5256,12 +5240,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30589
-	.short	13192
-	.short	-30669
+	.short	13056
+	.short	3
+	.short	13056
+	.short	3
+	.short	13056
+	.short	51
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5272,12 +5256,12 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	14472
-	.short	-30621
-	.short	14472
-	.short	-30621
-	.short	13960
-	.short	-31181
+	.short	12288
+	.short	99
+	.short	12288
+	.short	99
+	.short	13824
+	.short	1587
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5288,11 +5272,11 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-30584
-	.short	25400
-	.short	-30584
-	.short	13112
-	.short	-30584
+	.short	0
+	.short	25392
+	.short	0
+	.short	13104
+	.short	0
 	.short	13107
 	.short	13107
 	.short	13107
@@ -5304,11 +5288,11 @@ winScreenTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	26760
+	.short	24576
 	.short	17459
-	.short	26760
+	.short	24576
 	.short	17459
-	.short	14467
+	.short	12291
 	.short	17459
 	.short	13107
 	.short	17459

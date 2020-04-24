@@ -25,6 +25,7 @@ DOOR door;
 int zombiesRemaining;
 int zombieTimer; // timer for spawning zombies at intervals
 extern int loseGame;
+extern int collided;
 
 // Horizontal and vertical offsets
 int hOff;
@@ -45,6 +46,7 @@ void initGame() {
     playerHOff = 0;
     screenBlock = 28;
     loseGame = 0;
+    collided = 0;
 
     initCat();
     initZombie();
@@ -166,6 +168,13 @@ void updateGame() {
 // Update cat
 void updateCat() {
 
+    for (int i = 0; i < BLUECARCOUNT; i++) {
+        if (collision(cat.screenCol, cat.screenRow, cat.width, cat.height, blueCar[i].col, blueCar[i].row, blueCar[i].width, blueCar[i].height)) {
+            collided = 1;
+        }
+        break;
+    }
+
     if (BUTTON_HELD(BUTTON_UP) && cat.worldRow - cat.rdel > 0) {
 
         cat.worldRow -= cat.rdel;
@@ -178,7 +187,7 @@ void updateCat() {
     } 
     if (BUTTON_HELD(BUTTON_RIGHT)) {
 
-        if (cat.worldCol + cat.width < WORLDWIDTH - 1) {
+        if (cat.worldCol + cat.width < WORLDWIDTH - 1 && collided == 0) {
             cat.worldCol++;
         }
 
@@ -188,7 +197,6 @@ void updateCat() {
             playerHOff++;
             totalHOff++;
         }
-        
 
         animateCat();
     } else {

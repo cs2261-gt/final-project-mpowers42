@@ -1429,7 +1429,7 @@ void fireZombie();
 # 5 "game.c" 2
 # 1 "startScreen.h" 1
 # 22 "startScreen.h"
-extern const unsigned short startScreenTiles[4704];
+extern const unsigned short startScreenTiles[5696];
 
 
 extern const unsigned short startScreenMap[1024];
@@ -1449,7 +1449,7 @@ extern const unsigned short gameScreenPal[256];
 # 7 "game.c" 2
 # 1 "pauseScreen.h" 1
 # 22 "pauseScreen.h"
-extern const unsigned short pauseScreenTiles[2528];
+extern const unsigned short pauseScreenTiles[3152];
 
 
 extern const unsigned short pauseScreenMap[1024];
@@ -1459,7 +1459,7 @@ extern const unsigned short pauseScreenPal[256];
 # 8 "game.c" 2
 # 1 "winScreen.h" 1
 # 22 "winScreen.h"
-extern const unsigned short winScreenTiles[2800];
+extern const unsigned short winScreenTiles[4000];
 
 
 extern const unsigned short winScreenMap[1024];
@@ -1469,7 +1469,7 @@ extern const unsigned short winScreenPal[256];
 # 9 "game.c" 2
 # 1 "loseScreen.h" 1
 # 22 "loseScreen.h"
-extern const unsigned short loseScreenTiles[896];
+extern const unsigned short loseScreenTiles[3280];
 
 
 extern const unsigned short loseScreenMap[1024];
@@ -1548,6 +1548,7 @@ DOOR door;
 int zombiesRemaining;
 int zombieTimer;
 extern int loseGame;
+extern int collided;
 
 
 int hOff;
@@ -1568,6 +1569,7 @@ void initGame() {
     playerHOff = 0;
     screenBlock = 28;
     loseGame = 0;
+    collided = 0;
 
     initCat();
     initZombie();
@@ -1689,6 +1691,13 @@ void updateGame() {
 
 void updateCat() {
 
+    for (int i = 0; i < 5; i++) {
+        if (collision(cat.screenCol, cat.screenRow, cat.width, cat.height, blueCar[i].col, blueCar[i].row, blueCar[i].width, blueCar[i].height)) {
+            collided = 1;
+        }
+        break;
+    }
+
     if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<6))) && cat.worldRow - cat.rdel > 0) {
 
         cat.worldRow -= cat.rdel;
@@ -1701,7 +1710,7 @@ void updateCat() {
     }
     if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<4)))) {
 
-        if (cat.worldCol + cat.width < 1024 - 1) {
+        if (cat.worldCol + cat.width < 1024 - 1 && collided == 0) {
             cat.worldCol++;
         }
 
@@ -1711,7 +1720,6 @@ void updateCat() {
             playerHOff++;
             totalHOff++;
         }
-
 
         animateCat();
     } else {

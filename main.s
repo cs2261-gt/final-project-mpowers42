@@ -29,22 +29,22 @@ goToStart:
 	ldr	r1, .L4+4
 	mov	lr, pc
 	bx	r4
+	mov	r3, #5696
 	mov	r2, #100663296
 	mov	r0, #3
-	ldr	r3, .L4+8
-	ldr	r1, .L4+12
+	ldr	r1, .L4+8
 	mov	lr, pc
 	bx	r4
 	mov	r3, #1024
 	mov	r0, #3
-	ldr	r2, .L4+16
-	ldr	r1, .L4+20
+	ldr	r2, .L4+12
+	ldr	r1, .L4+16
 	mov	lr, pc
 	bx	r4
 	mov	r2, #67108864
 	mov	r3, #0
 	mov	r0, #256
-	ldr	r1, .L4+24
+	ldr	r1, .L4+20
 	strh	r0, [r2]	@ movhi
 	strh	r3, [r2, #16]	@ movhi
 	pop	{r4, lr}
@@ -55,7 +55,6 @@ goToStart:
 .L4:
 	.word	DMANow
 	.word	startScreenPal
-	.word	4704
 	.word	startScreenTiles
 	.word	100720640
 	.word	startScreenMap
@@ -440,7 +439,7 @@ goToPause:
 	ldr	r1, .L52+4
 	mov	lr, pc
 	bx	r5
-	mov	r3, #2528
+	mov	r3, #3152
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L52+8
@@ -532,7 +531,7 @@ goToWin:
 	ldr	r1, .L71+4
 	mov	lr, pc
 	bx	r5
-	mov	r3, #2800
+	mov	r3, #4000
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L71+8
@@ -659,43 +658,46 @@ game:
 	ldr	r4, .L92+12
 	mov	r3, #512
 	mov	r2, #117440512
-	mov	r0, #3
 	ldr	r1, .L92+16
+	mov	r0, #3
 	mov	lr, pc
 	bx	r4
+	mov	r2, #0
 	ldr	r3, .L92+20
-	ldrh	r3, [r3]
-	tst	r3, #8
-	beq	.L82
+	ldrh	r1, [r3]
 	ldr	r3, .L92+24
+	tst	r1, #8
+	str	r2, [r3]
+	beq	.L82
+	ldr	r3, .L92+28
 	ldrh	r3, [r3]
 	tst	r3, #8
 	beq	.L89
 .L82:
-	ldr	r3, .L92+28
+	ldr	r3, .L92+32
 	ldr	r3, [r3]
 	cmp	r3, #0
 	beq	.L90
-	ldr	r3, .L92+32
+	ldr	r3, .L92+36
 	ldr	r3, [r3]
 	cmp	r3, #0
 	bne	.L91
 	pop	{r4, lr}
 	bx	lr
 .L90:
-	ldr	r3, .L92+36
+	ldr	r3, .L92+40
 	mov	lr, pc
 	bx	r3
 	pop	{r4, lr}
 	b	goToWin
 .L91:
-	ldr	r3, .L92+36
+	ldr	r3, .L92+40
 	mov	lr, pc
 	bx	r3
 	pop	{r4, lr}
 	b	goToLose
 .L89:
-	ldr	r3, .L92+40
+	ldr	r3, .L92+44
 	mov	lr, pc
 	bx	r3
 	pop	{r4, lr}
@@ -709,6 +711,7 @@ game:
 	.word	DMANow
 	.word	shadowOAM
 	.word	oldButtons
+	.word	collided
 	.word	buttons
 	.word	zombiesRemaining
 	.word	loseGame
@@ -842,6 +845,7 @@ lose:
 	b	win
 	.size	lose, .-lose
 	.comm	shadowOAM,1024,4
+	.comm	collided,4,4
 	.comm	loseGame,4,4
 	.comm	state,4,4
 	.comm	oldButtons,2,2
