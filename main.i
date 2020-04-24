@@ -1548,6 +1548,9 @@ unsigned short buttons;
 unsigned short oldButtons;
 
 
+int seed;
+
+
 enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
 int loseGame;
@@ -1628,8 +1631,10 @@ void start() {
 
     if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
         initGame();
+        srand(seed);
         goToGame();
     }
+    seed++;
 
     if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2))))) {
         goToInstructions();

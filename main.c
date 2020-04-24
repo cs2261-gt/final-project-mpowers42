@@ -33,6 +33,9 @@ void initialize();
 unsigned short buttons;
 unsigned short oldButtons;
 
+// Random seed
+int seed;
+
 // Game states
 enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
@@ -114,8 +117,10 @@ void start() {
     // State transition
     if (BUTTON_PRESSED(BUTTON_START)) {
         initGame();
+        srand(seed);
         goToGame();
     }
+    seed++;
 
     if (BUTTON_PRESSED(BUTTON_SELECT)) {
         goToInstructions();

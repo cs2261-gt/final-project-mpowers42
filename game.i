@@ -1575,6 +1575,7 @@ void initGame() {
     initZombie();
     initHairball();
     initBlueCar();
+    initDoor();
 
 
     zombiesRemaining = 5;
@@ -1643,8 +1644,8 @@ void initBlueCar() {
     for (int i = 0; i < 5; i++) {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
-        blueCar[i].row = i % 5 * 200;
-        blueCar[i].col = i % 5 * 200;
+        blueCar[i].row = rand() % 160;
+        blueCar[i].col = rand() % 1024;
     }
 
 }
@@ -1654,8 +1655,8 @@ void initDoor() {
 
     door.height = 32;
     door.width = 32;
-    door.row = 100;
-    door.col = 100;
+    door.row = srand() % 160 - door.height;
+    door.col = 1024 - 46;
 }
 
 
@@ -1692,10 +1693,13 @@ void updateGame() {
 void updateCat() {
 
     for (int i = 0; i < 5; i++) {
-        if (collision(cat.screenCol, cat.screenRow, cat.width, cat.height, blueCar[i].col, blueCar[i].row, blueCar[i].width, blueCar[i].height)) {
+        if (collision(cat.screenCol, cat.screenRow, cat.width, cat.height,
+            (blueCar[i].col - totalHOff), (blueCar[i].row - vOff), blueCar[i].width, blueCar[i].height)) {
             collided = 1;
+            break;
+        } else {
+            collided = 0;
         }
-        break;
     }
 
     if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<6))) && cat.worldRow - cat.rdel > 0) {
@@ -1822,10 +1826,11 @@ void drawGame() {
         drawZombie(&zombie[i], 1 + i);
     }
     for (int i = 0; i < 5; i++)
-  drawHairball(&hairball[i], 5 + i);
+  drawHairball(&hairball[i], 1 + 5 + i);
 
     for (int i = 0; i < 5; i++)
-  drawBlueCar(&blueCar[i], 10 + i);
+  drawBlueCar(&blueCar[i], 1 + 5 + 5 + i);
+    drawDoor();
 }
 
 
@@ -1861,16 +1866,40 @@ void drawHairball(HAIRBALL* h, int index) {
 
 
 void drawBlueCar(BLUECAR* b, int index) {
-    shadowOAM[index].attr0 = (0xFF & (b->row - vOff)) | (0<<14);
-    shadowOAM[index].attr1 = (0x1FF & (b->col - totalHOff)) | (2<<14);
+    int carScreenRow = b->row - vOff;
+    int carScreenCol = b->col - totalHOff;
+
+    shadowOAM[index].attr0 = (0xFF & carScreenRow) | (0<<14);
+    shadowOAM[index].attr1 = (0x1FF & carScreenCol) | (2<<14);
     shadowOAM[index].attr2 = ((1)*32+(8));
+
+
+    if (carScreenRow < 0
+      || carScreenRow > 160
+      || carScreenCol < 0
+      || carScreenCol > 240) {
+
+        shadowOAM[100].attr0 = (2<<8);
+    }
 }
 
 
 void drawDoor() {
-    shadowOAM[1].attr0 = (0xFF & (door.row - vOff)) | (0<<14);
-    shadowOAM[1].attr1 = (0x1FF & (door.col - totalHOff)) | (2<<14);
-    shadowOAM[1].attr2 = ((5)*32+(8));
+    int doorScreenRow = door.row - vOff;
+    int doorScreenCol = door.col - totalHOff;
+
+    shadowOAM[100].attr0 = (0xFF & doorScreenRow) | (0<<14);
+    shadowOAM[100].attr1 = (0x1FF & doorScreenCol) | (2<<14);
+    shadowOAM[100].attr2 = ((5)*32+(8));
+
+
+    if (doorScreenRow < 0
+      || doorScreenRow > 160
+      || doorScreenCol < 0
+      || doorScreenCol > 240) {
+
+        shadowOAM[100].attr0 = (2<<8);
+    }
 }
 
 

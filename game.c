@@ -52,6 +52,7 @@ void initGame() {
     initZombie();
     initHairball();
     initBlueCar();
+    initDoor();
 
     // Initialize score
     zombiesRemaining = ZOMBIECOUNT;
@@ -120,8 +121,8 @@ void initBlueCar() {
     for (int i = 0; i < BLUECARCOUNT; i++) {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
-        blueCar[i].row = i % BLUECARCOUNT * 200;
-        blueCar[i].col = i % BLUECARCOUNT * 200;
+        blueCar[i].row = rand() % 160; // needs to be initialized within the world boundaries
+        blueCar[i].col = rand() % 1024; // needs to be initialized within the world boundaries!
     }
 
 }
@@ -131,8 +132,8 @@ void initDoor() {
 
     door.height = 32;
     door.width = 32;
-    door.row = 100; //random
-    door.col = 100;
+    door.row = rand() % 160 - door.height; //random
+    door.col = 1024 - 46; // map width - width of door
 }
 
 // Update game
@@ -168,11 +169,14 @@ void updateGame() {
 // Update cat
 void updateCat() {
 
-    for (int i = 0; i < BLUECARCOUNT; i++) {
-        if (collision(cat.screenCol, cat.screenRow, cat.width, cat.height, blueCar[i].col, blueCar[i].row, blueCar[i].width, blueCar[i].height)) {
+    for (int i = 0; i < BLUECARCOUNT; i++) { // make sure you check for collision again screencol and row values :)
+        if (collision(cat.screenCol, cat.screenRow, cat.width, cat.height, 
+            (blueCar[i].col - totalHOff), (blueCar[i].row  - vOff), blueCar[i].width, blueCar[i].height)) {
             collided = 1;
+            break; // break needs to be here, or else for loop breaks after first iteration
+        } else {
+            collided = 0;
         }
-        break;
     }
 
     if (BUTTON_HELD(BUTTON_UP) && cat.worldRow - cat.rdel > 0) {
@@ -299,10 +303,11 @@ void drawGame() {
         drawZombie(&zombie[i], 1 + i);
     }
     for (int i = 0; i < HAIRBALLCOUNT; i++)
-		drawHairball(&hairball[i], 5 + i);
+		drawHairball(&hairball[i], 1 + ZOMBIECOUNT + i);
 
     for (int i = 0; i < BLUECARCOUNT; i++)
-		drawBlueCar(&blueCar[i], 10 + i);
+		drawBlueCar(&blueCar[i], 1 + ZOMBIECOUNT + HAIRBALLCOUNT + i);
+    drawDoor();
 }
 
 // Draw cat
@@ -338,16 +343,40 @@ void drawHairball(HAIRBALL* h, int index) {
 
 // Draw blue car
 void drawBlueCar(BLUECAR* b, int index) {
-    shadowOAM[index].attr0 = (ROWMASK & (b->row - vOff)) | ATTR0_SQUARE;
-    shadowOAM[index].attr1 = (COLMASK & (b->col - totalHOff)) | ATTR1_MEDIUM; // 32 x 32
+    int carScreenRow = b->row - vOff;
+    int carScreenCol = b->col - totalHOff;
+
+    shadowOAM[index].attr0 = (ROWMASK & carScreenRow) | ATTR0_SQUARE;
+    shadowOAM[index].attr1 = (COLMASK & carScreenCol) | ATTR1_MEDIUM; // 32 x 32
     shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
+
+    // if the car is outside of the screen boundaries, don't draw it, or else "fake duplicates" will show up
+    if (carScreenRow < 0 
+      || carScreenRow > SCREENHEIGHT 
+      || carScreenCol < 0 
+      || carScreenCol > SCREENWIDTH) {
+
+        shadowOAM[100].attr0 = ATTR0_HIDE;
+    }
 }
 
 // Draw door
 void drawDoor() {
-    shadowOAM[1].attr0 = (ROWMASK & (door.row - vOff)) | ATTR0_SQUARE;
-    shadowOAM[1].attr1 = (COLMASK & (door.col - totalHOff)) | ATTR1_MEDIUM; // 32 x 32
-    shadowOAM[1].attr2 = ATTR2_TILEID(8, 5);
+    int doorScreenRow = door.row - vOff;
+    int doorScreenCol = door.col - totalHOff;
+
+    shadowOAM[100].attr0 = (ROWMASK & doorScreenRow) | ATTR0_SQUARE;
+    shadowOAM[100].attr1 = (COLMASK & doorScreenCol) | ATTR1_MEDIUM; // 32 x 32
+    shadowOAM[100].attr2 = ATTR2_TILEID(8, 5);
+
+    // if the door is outside of the screen boundaries, don't draw it, or else "fake duplicates" will show up
+    if (doorScreenRow < 0 
+      || doorScreenRow > SCREENHEIGHT 
+      || doorScreenCol < 0 
+      || doorScreenCol > SCREENWIDTH) {
+
+        shadowOAM[100].attr0 = ATTR0_HIDE;
+    }
 }
 
 // Animate the cat
