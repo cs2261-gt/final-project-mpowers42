@@ -1529,7 +1529,7 @@ void stopSound();
 
 
 
-extern const signed char gameSong[1830816];
+extern const signed char gameSong[3416515];
 # 17 "game.c" 2
 # 1 "catSound.h" 1
 
@@ -1866,20 +1866,13 @@ void drawHairball(HAIRBALL* h, int index) {
 
 
 void drawBlueCar(BLUECAR* b, int index) {
-    int carScreenRow = b->row - vOff;
-    int carScreenCol = b->col - totalHOff;
-
-    shadowOAM[index].attr0 = (0xFF & carScreenRow) | (0<<14);
-    shadowOAM[index].attr1 = (0x1FF & carScreenCol) | (2<<14);
-    shadowOAM[index].attr2 = ((1)*32+(8));
-
-
-    if (carScreenRow < 0
-      || carScreenRow > 160
-      || carScreenCol < 0
-      || carScreenCol > 240) {
-
-        shadowOAM[100].attr0 = (2<<8);
+# 362 "game.c"
+    if(b->col-totalHOff<0 || b->col-totalHOff>240){
+        shadowOAM[index].attr0 = (2<<8);
+    } else {
+        shadowOAM[index].attr0 = (0xFF & (b->row - vOff)) | (0<<14);
+        shadowOAM[index].attr1 = (0x1FF & (b->col - totalHOff)) | (2<<14);
+        shadowOAM[index].attr2 = ((1)*32+(8));
     }
 }
 

@@ -343,20 +343,28 @@ void drawHairball(HAIRBALL* h, int index) {
 
 // Draw blue car
 void drawBlueCar(BLUECAR* b, int index) {
-    int carScreenRow = b->row - vOff;
-    int carScreenCol = b->col - totalHOff;
+    // int carScreenRow = b->row - vOff;
+    // int carScreenCol = b->col - totalHOff;
 
-    shadowOAM[index].attr0 = (ROWMASK & carScreenRow) | ATTR0_SQUARE;
-    shadowOAM[index].attr1 = (COLMASK & carScreenCol) | ATTR1_MEDIUM; // 32 x 32
-    shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
+    // shadowOAM[index].attr0 = (ROWMASK & carScreenRow) | ATTR0_SQUARE;
+    // shadowOAM[index].attr1 = (COLMASK & carScreenCol) | ATTR1_MEDIUM; // 32 x 32
+    // shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
 
-    // if the car is outside of the screen boundaries, don't draw it, or else "fake duplicates" will show up
-    if (carScreenRow < 0 
-      || carScreenRow > SCREENHEIGHT 
-      || carScreenCol < 0 
-      || carScreenCol > SCREENWIDTH) {
+    // // if the car is outside of the screen boundaries, don't draw it, or else "fake duplicates" will show up
+    // if (carScreenRow < 0 
+    //   || carScreenRow > SCREENHEIGHT 
+    //   || carScreenCol < 0 
+    //   || carScreenCol > SCREENWIDTH) {
 
-        shadowOAM[100].attr0 = ATTR0_HIDE;
+    //     shadowOAM[100].attr0 = ATTR0_HIDE;
+    // }
+
+    if(b->col-totalHOff<0 || b->col-totalHOff>240){
+        shadowOAM[index].attr0 = ATTR0_HIDE;
+    } else {
+        shadowOAM[index].attr0 = (ROWMASK & (b->row - vOff)) | ATTR0_SQUARE;
+        shadowOAM[index].attr1 = (COLMASK & (b->col - totalHOff)) | ATTR1_MEDIUM; // 32 x 32
+        shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
     }
 }
 
