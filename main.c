@@ -25,6 +25,7 @@
 #include "sound.h"
 #include "gameSong.h"
 #include "catSound.h"
+#include "pauseSong.h"
 
 // Prototype
 void initialize();
@@ -40,6 +41,7 @@ int seed;
 enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
 int loseGame;
+int winGame;
 int collided;
 OBJ_ATTR shadowOAM[128];
 
@@ -196,14 +198,15 @@ void game() {
     waitForVBlank();
     DMANow(3, shadowOAM, OAM, 512);
 
+    unpauseSound();
+
     collided = 0; //reset
 
     // State transitions
     if (BUTTON_PRESSED(BUTTON_START)) {
         pauseSound();
         goToPause();
-    } else if (zombiesRemaining == 0) {
-        stopSound();
+    } else if (winGame) { 
         goToWin();
     } else if (loseGame) {
         stopSound();
@@ -227,6 +230,8 @@ void goToPause() {
     // Reset hOff to 0
     REG_BG0HOFF = 0;
 
+    playSoundA(pauseSong, PAUSESONGLEN, 1);
+
     state = PAUSE;
 }
 
@@ -235,8 +240,9 @@ void pause() {
 
     // State transitions
     if (BUTTON_PRESSED(BUTTON_START)) {
-        unpauseSound();
+        stopSound();
         goToGame();
+        unpauseSound();
     } else if (BUTTON_PRESSED(BUTTON_SELECT))
         goToStart();
 }

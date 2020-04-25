@@ -1548,6 +1548,7 @@ DOOR door;
 int zombiesRemaining;
 int zombieTimer;
 extern int loseGame;
+extern int winGame;
 extern int collided;
 
 
@@ -1569,6 +1570,7 @@ void initGame() {
     playerHOff = 0;
     screenBlock = 28;
     loseGame = 0;
+    winGame = 0;
     collided = 0;
 
     initCat();
@@ -1645,7 +1647,7 @@ void initBlueCar() {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
         blueCar[i].row = rand() % 130;
-        blueCar[i].col = rand() % 1024;
+        blueCar[i].col = rand() % 1000;
     }
 
 }
@@ -1669,10 +1671,6 @@ void updateGame() {
         (*(volatile unsigned short*)0x4000008) = ((0)<<2) | ((screenBlock)<<8) | (1<<14) | (0<<7);
     }
 
-    if (playerHOff > 512) {
-        playerHOff -= 512;
-    }
-
 
     zombieTimer++;
      if (zombieTimer % 100 == 0) {
@@ -1693,13 +1691,19 @@ void updateGame() {
 void updateCat() {
 
     for (int i = 0; i < 5; i++) {
-        if (collision(cat.screenCol, cat.screenRow, cat.width, cat.height,
+        if (collision(cat.screenCol - 4, cat.screenRow - 10, cat.width, cat.height,
             (blueCar[i].col - totalHOff), (blueCar[i].row - vOff), blueCar[i].width, blueCar[i].height)) {
             collided = 1;
             break;
         } else {
             collided = 0;
         }
+    }
+
+
+    if (collision(cat.screenCol - 4, cat.screenRow - 10, cat.width, cat.height,
+        door.col - totalHOff + 13, door.row - vOff, door.width, door.height)) {
+        winGame = 1;
     }
 
     if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<6))) && cat.worldRow - cat.rdel > 0) {
@@ -1757,8 +1761,8 @@ void updateZombie(ZOMBIE* z) {
 
         for (int i = 0; i < 5; i++) {
 
-            if (hairball[i].active && collision(z->screenCol, z->screenRow, z->width, z->height,
-                hairball[i].screenCol, hairball[i].screenRow, hairball[i].width, hairball[i].height)) {
+            if (hairball[i].active && collision(z->screenCol + 5, z->screenRow, z->width, z->height,
+                hairball[i].screenCol + 1, hairball[i].screenRow, hairball[i].width, hairball[i].height)) {
 
 
                 hairball[i].active = 0;
@@ -1770,8 +1774,8 @@ void updateZombie(ZOMBIE* z) {
         }
 
 
-        if (collision(z->screenCol, z->screenRow, z->width, z->height,
-            cat.screenCol - 5, cat.screenRow, cat.width, cat.height)
+        if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
+            cat.screenCol + 4, cat.screenRow , cat.width, cat.height)
             && z->active) {
 
             loseGame = 1;
@@ -1866,8 +1870,8 @@ void drawHairball(HAIRBALL* h, int index) {
 
 
 void drawBlueCar(BLUECAR* b, int index) {
-# 362 "game.c"
-    if(b->col-totalHOff<0 || b->col-totalHOff>240){
+
+    if (b->col-totalHOff<0 || b->col-totalHOff>240){
         shadowOAM[index].attr0 = (2<<8);
     } else {
         shadowOAM[index].attr0 = (0xFF & (b->row - vOff)) | (0<<14);
@@ -1935,8 +1939,6 @@ void fireHairball() {
 
             hairball[i].worldRow = cat.worldRow + cat.height / 2;
             hairball[i].worldCol = cat.worldCol + cat.width / 2;
-
-
 
 
    hairball[i].active = 1;

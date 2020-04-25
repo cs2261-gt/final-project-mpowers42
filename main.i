@@ -1530,7 +1530,7 @@ void stopSound();
 
 
 
-extern const signed char gameSong[1830816];
+extern const signed char gameSong[3416515];
 # 27 "main.c" 2
 # 1 "catSound.h" 1
 
@@ -1539,6 +1539,13 @@ extern const signed char gameSong[1830816];
 
 extern const signed char catSound[4594];
 # 28 "main.c" 2
+# 1 "pauseSong.h" 1
+
+
+
+
+extern const signed char pauseSong[785664];
+# 29 "main.c" 2
 
 
 void initialize();
@@ -1554,6 +1561,7 @@ int seed;
 enum {START, INSTRUCTIONS, GAME, PAUSE, WIN, LOSE};
 int state;
 int loseGame;
+int winGame;
 int collided;
 OBJ_ATTR shadowOAM[128];
 
@@ -1697,7 +1705,7 @@ void goToGame() {
     waitForVBlank();
     DMANow(3, shadowOAM, ((OBJ_ATTR*)(0x7000000)), 512);
 
-    playSoundA(gameSong, 1830816, 1);
+    playSoundA(gameSong, 3416515, 1);
 
     state = GAME;
 }
@@ -1710,14 +1718,15 @@ void game() {
     waitForVBlank();
     DMANow(3, shadowOAM, ((OBJ_ATTR*)(0x7000000)), 512);
 
+    unpauseSound();
+
     collided = 0;
 
 
     if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
         pauseSound();
         goToPause();
-    } else if (zombiesRemaining == 0) {
-        stopSound();
+    } else if (winGame) {
         goToWin();
     } else if (loseGame) {
         stopSound();
@@ -1741,6 +1750,8 @@ void goToPause() {
 
     (*(volatile unsigned short *)0x04000010) = 0;
 
+    playSoundA(pauseSong, 785664, 1);
+
     state = PAUSE;
 }
 
@@ -1749,8 +1760,9 @@ void pause() {
 
 
     if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
-        unpauseSound();
+        stopSound();
         goToGame();
+        unpauseSound();
     } else if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2)))))
         goToStart();
 }

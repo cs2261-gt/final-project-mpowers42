@@ -25,6 +25,7 @@ DOOR door;
 int zombiesRemaining;
 int zombieTimer; // timer for spawning zombies at intervals
 extern int loseGame;
+extern int winGame;
 extern int collided;
 
 // Horizontal and vertical offsets
@@ -46,6 +47,7 @@ void initGame() {
     playerHOff = 0;
     screenBlock = 28;
     loseGame = 0;
+    winGame = 0;
     collided = 0;
 
     initCat();
@@ -122,7 +124,7 @@ void initBlueCar() {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
         blueCar[i].row = rand() % 130; // needs to be initialized within the world boundaries
-        blueCar[i].col = rand() % 1024; // needs to be initialized within the world boundaries!
+        blueCar[i].col = rand() % 1000; // needs to be initialized within the world boundaries!
     }
 
 }
@@ -146,10 +148,6 @@ void updateGame() {
         REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(screenBlock) | BG_SIZE_WIDE | BG_4BPP;
     }
 
-    if (playerHOff > 512) {
-        playerHOff -= 512;
-    }
-
     // Spawn zombies at a fixed rate
     zombieTimer++;
      if (zombieTimer % 100 == 0) {
@@ -168,15 +166,21 @@ void updateGame() {
 
 // Update cat
 void updateCat() {
-
-    for (int i = 0; i < BLUECARCOUNT; i++) { // make sure you check for collision again screencol and row values :)
-        if (collision(cat.screenCol, cat.screenRow, cat.width, cat.height, 
+    // Handles cat-car collision
+    for (int i = 0; i < BLUECARCOUNT; i++) { 
+        if (collision(cat.screenCol - 4, cat.screenRow - 10, cat.width, cat.height, // Adjusted to specific cat sprite
             (blueCar[i].col - totalHOff), (blueCar[i].row  - vOff), blueCar[i].width, blueCar[i].height)) {
             collided = 1;
-            break; // break needs to be here, or else for loop breaks after first iteration
+            break;
         } else {
             collided = 0;
         }
+    }
+
+    // Handles cat-door collision 
+    if (collision(cat.screenCol - 4, cat.screenRow - 10, cat.width, cat.height,
+        door.col - totalHOff + 13, door.row - vOff, door.width, door.height)) {
+        winGame = 1;
     }
 
     if (BUTTON_HELD(BUTTON_UP) && cat.worldRow - cat.rdel > 0) {
@@ -233,9 +237,9 @@ void updateZombie(ZOMBIE* z) {
 
         // Handle zombie-hairball collisions
         for (int i = 0; i < HAIRBALLCOUNT; i++) {
-            // need to check if hairball is active too!
-            if (hairball[i].active && collision(z->screenCol, z->screenRow, z->width, z->height,
-                hairball[i].screenCol, hairball[i].screenRow, hairball[i].width, hairball[i].height)) {
+
+            if (hairball[i].active && collision(z->screenCol + 5, z->screenRow, z->width, z->height,
+                hairball[i].screenCol + 1, hairball[i].screenRow, hairball[i].width, hairball[i].height)) {  // Adjusted to fit specific sprites
 
                 // Put back in the pool
                 hairball[i].active = 0;
@@ -247,25 +251,25 @@ void updateZombie(ZOMBIE* z) {
         }
 
         // Handle zombie-cat collisions
-        if (collision(z->screenCol, z->screenRow, z->width, z->height,
-            cat.screenCol - 5, cat.screenRow, cat.width, cat.height) // Adjusting bc cat sprite is not the full 32 x 32
+        if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
+            cat.screenCol + 4, cat.screenRow , cat.width, cat.height) // Adjusted to fit specific sprites
             && z->active) {
 
             loseGame = 1;
         }
 
-        // allow zombie to move independently from the cat
+        // Allow zombie to move independently from the cat
         z->screenRow = z->worldRow - vOff;
         z->screenCol = z->worldCol - totalHOff;
     }
 }
 
-// intialize inactive zombies on fire
+// Intialize inactive zombies on fire
 void fireZombie() {
     for (int i = 0; i < ZOMBIECOUNT; i++) {
         if (!zombie[i].active) {
             zombie[i].worldRow = rand() % 110 + vOff;
-            zombie[i].worldCol = SCREENWIDTH + totalHOff; // initialize worldCol and row to use totalHOff and voff
+            zombie[i].worldCol = SCREENWIDTH + totalHOff;
             zombie[i].active = 1;
             break;
         }
@@ -321,7 +325,7 @@ void drawCat() {
 // Draw zombie
 void drawZombie(ZOMBIE* z, int index) {
     
-    if (z->active) {            // rowmask and colmask are macros that help draw things outside of the screen boundaries!
+    if (z->active) {
         shadowOAM[index].attr0 = (ROWMASK & z->screenRow) | ATTR0_SQUARE;
         shadowOAM[index].attr1 = (COLMASK & z->screenCol) | ATTR1_MEDIUM; // 32 x 32
         shadowOAM[index].attr2 = ATTR2_TILEID(4, z->currFrame * 4);
@@ -343,23 +347,8 @@ void drawHairball(HAIRBALL* h, int index) {
 
 // Draw blue car
 void drawBlueCar(BLUECAR* b, int index) {
-    // int carScreenRow = b->row - vOff;
-    // int carScreenCol = b->col - totalHOff;
-
-    // shadowOAM[index].attr0 = (ROWMASK & carScreenRow) | ATTR0_SQUARE;
-    // shadowOAM[index].attr1 = (COLMASK & carScreenCol) | ATTR1_MEDIUM; // 32 x 32
-    // shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
-
-    // // if the car is outside of the screen boundaries, don't draw it, or else "fake duplicates" will show up
-    // if (carScreenRow < 0 
-    //   || carScreenRow > SCREENHEIGHT 
-    //   || carScreenCol < 0 
-    //   || carScreenCol > SCREENWIDTH) {
-
-    //     shadowOAM[100].attr0 = ATTR0_HIDE;
-    // }
-
-    if(b->col-totalHOff<0 || b->col-totalHOff>240){
+    
+    if (b->col-totalHOff<0 || b->col-totalHOff>240){
         shadowOAM[index].attr0 = ATTR0_HIDE;
     } else {
         shadowOAM[index].attr0 = (ROWMASK & (b->row - vOff)) | ATTR0_SQUARE;
@@ -377,7 +366,7 @@ void drawDoor() {
     shadowOAM[100].attr1 = (COLMASK & doorScreenCol) | ATTR1_MEDIUM; // 32 x 32
     shadowOAM[100].attr2 = ATTR2_TILEID(8, 5);
 
-    // if the door is outside of the screen boundaries, don't draw it, or else "fake duplicates" will show up
+    // If the door is outside of the screen boundaries, don't draw it, or else "fake duplicates" will show up
     if (doorScreenRow < 0 
       || doorScreenRow > SCREENHEIGHT 
       || doorScreenCol < 0 
@@ -425,10 +414,8 @@ void fireHairball() {
 		if (!hairball[i].active) {
 
 			// Position the new bullet
-            hairball[i].worldRow = cat.worldRow + cat.height / 2; // set the worldRow and col so that you can update screenrow and col accurately in updateHairball
+            hairball[i].worldRow = cat.worldRow + cat.height / 2;
             hairball[i].worldCol = cat.worldCol + cat.width / 2;
-			// hairball[i].screenRow = cat.screenRow + cat.height/2;
-            // hairball[i].screenCol = cat.screenCol + cat.width/2;
 
 			// Take the bullet out of the pool
 			hairball[i].active = 1;
