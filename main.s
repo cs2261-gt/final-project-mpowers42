@@ -41,14 +41,20 @@ goToStart:
 	ldr	r1, .L4+16
 	mov	lr, pc
 	bx	r4
-	mov	r2, #67108864
-	mov	r3, #0
-	mov	r0, #256
+	mov	r4, #67108864
+	mov	r3, #256
+	mov	r2, #1
+	strh	r3, [r4]	@ movhi
 	ldr	r1, .L4+20
-	strh	r0, [r2]	@ movhi
-	strh	r3, [r2, #16]	@ movhi
+	ldr	r3, .L4+24
+	ldr	r0, .L4+28
+	mov	lr, pc
+	bx	r3
+	mov	r3, #0
+	ldr	r2, .L4+32
+	strh	r3, [r4, #16]	@ movhi
+	str	r3, [r2]
 	pop	{r4, lr}
-	str	r3, [r1]
 	bx	lr
 .L5:
 	.align	2
@@ -58,6 +64,9 @@ goToStart:
 	.word	startScreenTiles
 	.word	100720640
 	.word	startScreenMap
+	.word	3416515
+	.word	playSoundA
+	.word	gameSong
 	.word	state
 	.size	goToStart, .-goToStart
 	.align	2
@@ -295,14 +304,8 @@ goToGame:
 	ldr	r1, .L20+44
 	mov	lr, pc
 	bx	r4
-	mov	r2, #1
-	ldr	r3, .L20+48
-	ldr	r1, .L20+52
-	ldr	r0, .L20+56
-	mov	lr, pc
-	bx	r3
 	mov	r2, #2
-	ldr	r3, .L20+60
+	ldr	r3, .L20+48
 	pop	{r4, r5, r6, lr}
 	str	r2, [r3]
 	bx	lr
@@ -321,9 +324,6 @@ goToGame:
 	.word	hideSprites
 	.word	waitForVBlank
 	.word	shadowOAM
-	.word	playSoundA
-	.word	3416515
-	.word	gameSong
 	.word	state
 	.size	goToGame, .-goToGame
 	.align	2
@@ -462,20 +462,14 @@ goToPause:
 	ldr	r1, .L53+16
 	mov	lr, pc
 	bx	r5
-	mov	r2, #256
-	mov	r3, #0
-	strh	r2, [r4]	@ movhi
-	strh	r3, [r4, #16]	@ movhi
-	mov	r2, #1
-	ldr	r3, .L53+20
-	ldr	r1, .L53+24
-	ldr	r0, .L53+28
-	mov	lr, pc
-	bx	r3
+	mov	r0, #256
+	mov	r1, #0
 	mov	r2, #3
-	ldr	r3, .L53+32
-	pop	{r4, r5, r6, lr}
+	ldr	r3, .L53+20
+	strh	r0, [r4]	@ movhi
+	strh	r1, [r4, #16]	@ movhi
 	str	r2, [r3]
+	pop	{r4, r5, r6, lr}
 	bx	lr
 .L54:
 	.align	2
@@ -485,9 +479,6 @@ goToPause:
 	.word	pauseScreenTiles
 	.word	100720640
 	.word	pauseScreenMap
-	.word	playSoundA
-	.word	785664
-	.word	pauseSong
 	.word	state
 	.size	goToPause, .-goToPause
 	.align	2
@@ -518,11 +509,8 @@ pause:
 	b	goToStart
 .L68:
 	push	{r4, lr}
-	ldr	r3, .L69+8
-	mov	lr, pc
-	bx	r3
 	bl	goToGame
-	ldr	r3, .L69+12
+	ldr	r3, .L69+8
 	mov	lr, pc
 	bx	r3
 	pop	{r4, lr}
@@ -532,7 +520,6 @@ pause:
 .L69:
 	.word	oldButtons
 	.word	buttons
-	.word	stopSound
 	.word	unpauseSound
 	.size	pause, .-pause
 	.align	2
@@ -641,11 +628,17 @@ goToLose:
 	ldr	r1, .L81+16
 	mov	lr, pc
 	bx	r5
-	mov	r0, #256
+	mov	r3, #256
+	mov	r2, #0
+	strh	r3, [r4]	@ movhi
+	ldr	r1, .L81+20
+	ldr	r3, .L81+24
+	ldr	r0, .L81+28
+	mov	lr, pc
+	bx	r3
 	mov	r1, #0
 	mov	r2, #5
-	ldr	r3, .L81+20
-	strh	r0, [r4]	@ movhi
+	ldr	r3, .L81+32
 	strh	r1, [r4, #16]	@ movhi
 	str	r2, [r3]
 	pop	{r4, r5, r6, lr}
@@ -658,6 +651,9 @@ goToLose:
 	.word	loseScreenTiles
 	.word	100720640
 	.word	loseScreenMap
+	.word	88906
+	.word	playSoundA
+	.word	loseSong
 	.word	state
 	.size	goToLose, .-goToLose
 	.align	2

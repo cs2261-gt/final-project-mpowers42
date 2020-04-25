@@ -26,6 +26,7 @@
 #include "gameSong.h"
 #include "catSound.h"
 #include "pauseSong.h"
+#include "loseSound.h"
 
 // Prototype
 void initialize();
@@ -107,6 +108,8 @@ void goToStart() {
     // Turn off sprites
     REG_DISPCTL = MODE0 | BG0_ENABLE;
 
+    playSoundA(gameSong, GAMESONGLEN, 1);
+
     // Reset hOff to 0
     REG_BG0HOFF = 0;
 
@@ -185,8 +188,6 @@ void goToGame() {
     waitForVBlank();
     DMANow(3, shadowOAM, OAM, 512);
 
-    playSoundA(gameSong, GAMESONGLEN, 1);
-
     state = GAME;
 }
 
@@ -230,7 +231,7 @@ void goToPause() {
     // Reset hOff to 0
     REG_BG0HOFF = 0;
 
-    playSoundA(pauseSong, PAUSESONGLEN, 1);
+    // playSoundA(pauseSong, PAUSESONGLEN, 1);
 
     state = PAUSE;
 }
@@ -240,7 +241,7 @@ void pause() {
 
     // State transitions
     if (BUTTON_PRESSED(BUTTON_START)) {
-        stopSound();
+        // stopSound();
         goToGame();
         unpauseSound();
     } else if (BUTTON_PRESSED(BUTTON_SELECT))
@@ -286,6 +287,8 @@ void goToLose() {
     DMANow(3, loseScreenMap, &SCREENBLOCK[28], loseScreenMapLen / 2);
 
     REG_DISPCTL = MODE0 | BG0_ENABLE;
+
+    playSoundA(loseSong, LOSESONGLEN, 0);
 
     // Reset hOff to 0
     REG_BG0HOFF = 0;

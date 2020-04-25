@@ -1546,6 +1546,13 @@ extern const signed char catSound[4594];
 
 extern const signed char pauseSong[785664];
 # 29 "main.c" 2
+# 1 "loseSound.h" 1
+
+
+
+
+extern const signed char loseSong[88906];
+# 30 "main.c" 2
 
 
 void initialize();
@@ -1627,6 +1634,8 @@ void goToStart() {
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
 
+    playSoundA(gameSong, 3416515, 1);
+
 
     (*(volatile unsigned short *)0x04000010) = 0;
 
@@ -1705,8 +1714,6 @@ void goToGame() {
     waitForVBlank();
     DMANow(3, shadowOAM, ((OBJ_ATTR*)(0x7000000)), 512);
 
-    playSoundA(gameSong, 3416515, 1);
-
     state = GAME;
 }
 
@@ -1750,7 +1757,7 @@ void goToPause() {
 
     (*(volatile unsigned short *)0x04000010) = 0;
 
-    playSoundA(pauseSong, 785664, 1);
+
 
     state = PAUSE;
 }
@@ -1760,7 +1767,7 @@ void pause() {
 
 
     if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
-        stopSound();
+
         goToGame();
         unpauseSound();
     } else if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2)))))
@@ -1806,6 +1813,8 @@ void goToLose() {
     DMANow(3, loseScreenMap, &((screenblock *)0x6000000)[28], 2048 / 2);
 
     (*(unsigned short *)0x4000000) = 0 | (1<<8);
+
+    playSoundA(loseSong, 88906, 0);
 
 
     (*(volatile unsigned short *)0x04000010) = 0;
