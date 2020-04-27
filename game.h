@@ -11,6 +11,7 @@ typedef struct {
     int aniCounter;
 	int currFrame;
 	int numFrames;
+	int cheat;
 } CAT;
 
 // Zombie struct
@@ -58,6 +59,14 @@ typedef struct {
 	int width;
 } DOOR;
 
+// Fish struct
+typedef struct {
+	int row;
+	int col;
+	int height;
+	int width;
+} FISH;
+
 // Constants
 #define ZOMBIECOUNT 5
 #define HAIRBALLCOUNT 5
@@ -68,6 +77,7 @@ extern CAT cat;
 extern ZOMBIE zombie[ZOMBIECOUNT];
 extern HAIRBALL hairball[HAIRBALLCOUNT];
 extern BLUECAR blueCar[BLUECARCOUNT];
+extern FISH fish;
 extern int zombiesRemaining;
 
 //Prototypes
@@ -76,6 +86,7 @@ void initCat();
 void initZombie();
 void initBlueCar();
 void initDoor();
+void initFish();
 void initHairball();
 void updateGame();
 void updateCat();
@@ -87,6 +98,7 @@ void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
 void drawBlueCar(BLUECAR *, int index);
 void drawDoor();
+void drawFish();
 void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();

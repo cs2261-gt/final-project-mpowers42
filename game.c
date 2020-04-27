@@ -15,6 +15,8 @@
 #include "sound.h"
 #include "gameSong.h"
 #include "catSound.h"
+#include "loseSound.h"
+#include "winSound.h"
 
 // Variables
 CAT cat;
@@ -22,6 +24,7 @@ ZOMBIE zombie[ZOMBIECOUNT];
 HAIRBALL hairball[HAIRBALLCOUNT];
 BLUECAR blueCar[BLUECARCOUNT];
 DOOR door;
+FISH fish;
 int zombiesRemaining;
 int zombieTimer; // timer for spawning zombies at intervals
 extern int loseGame;
@@ -55,6 +58,7 @@ void initGame() {
     initHairball();
     initBlueCar();
     initDoor();
+    initFish();
 
     // Initialize score
     zombiesRemaining = ZOMBIECOUNT;
@@ -123,8 +127,8 @@ void initBlueCar() {
     for (int i = 0; i < BLUECARCOUNT; i++) {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
-        blueCar[i].row = rand() % 130; // needs to be initialized within the world boundaries
-        blueCar[i].col = rand() % 1000; // needs to be initialized within the world boundaries!
+        blueCar[i].row = rand() % 130;
+        blueCar[i].col = rand() % 900;
     }
 
 }
@@ -134,8 +138,16 @@ void initDoor() {
 
     door.height = 32;
     door.width = 32;
-    door.row = rand() % 160 - door.height; //random
+    door.row = rand() % 160 - door.height;
     door.col = 1024 - 46; // map width - width of door
+}
+
+// Initialize fish
+void initFish() {
+    fish.height = 8;
+    fish.width = 8;
+    fish.row = rand() % 130;
+    fish.col = 100;
 }
 
 // Update game
@@ -312,6 +324,7 @@ void drawGame() {
     for (int i = 0; i < BLUECARCOUNT; i++)
 		drawBlueCar(&blueCar[i], 1 + ZOMBIECOUNT + HAIRBALLCOUNT + i);
     drawDoor();
+    drawFish();
 }
 
 // Draw cat
@@ -374,6 +387,14 @@ void drawDoor() {
 
         shadowOAM[100].attr0 = ATTR0_HIDE;
     }
+}
+
+// Draw fish
+void drawFish() {
+
+    shadowOAM[120].attr0 = (ROWMASK & (fish.row - vOff)) | ATTR0_SQUARE;
+    shadowOAM[120].attr1 = (COLMASK & (fish.col - totalHOff)) | ATTR1_TINY; // 8 x 8
+    shadowOAM[120].attr2 = ATTR2_TILEID(9, 0);
 }
 
 // Animate the cat

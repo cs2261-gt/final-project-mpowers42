@@ -1346,6 +1346,7 @@ typedef struct {
     int aniCounter;
  int currFrame;
  int numFrames;
+ int cheat;
 } CAT;
 
 
@@ -1394,6 +1395,14 @@ typedef struct {
 } DOOR;
 
 
+typedef struct {
+ int row;
+ int col;
+ int height;
+ int width;
+} FISH;
+
+
 
 
 
@@ -1403,6 +1412,7 @@ extern CAT cat;
 extern ZOMBIE zombie[5];
 extern HAIRBALL hairball[5];
 extern BLUECAR blueCar[5];
+extern FISH fish;
 extern int zombiesRemaining;
 
 
@@ -1411,6 +1421,7 @@ void initCat();
 void initZombie();
 void initBlueCar();
 void initDoor();
+void initFish();
 void initHairball();
 void updateGame();
 void updateCat();
@@ -1422,6 +1433,7 @@ void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
 void drawBlueCar(BLUECAR *, int index);
 void drawDoor();
+void drawFish();
 void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();
@@ -1538,6 +1550,20 @@ extern const signed char gameSong[3416515];
 
 extern const signed char catSound[4594];
 # 18 "game.c" 2
+# 1 "loseSound.h" 1
+
+
+
+
+extern const signed char loseSong[88906];
+# 19 "game.c" 2
+# 1 "winSound.h" 1
+
+
+
+
+extern const signed char winSound[30958];
+# 20 "game.c" 2
 
 
 CAT cat;
@@ -1545,6 +1571,7 @@ ZOMBIE zombie[5];
 HAIRBALL hairball[5];
 BLUECAR blueCar[5];
 DOOR door;
+FISH fish;
 int zombiesRemaining;
 int zombieTimer;
 extern int loseGame;
@@ -1578,6 +1605,7 @@ void initGame() {
     initHairball();
     initBlueCar();
     initDoor();
+    initFish();
 
 
     zombiesRemaining = 5;
@@ -1647,7 +1675,7 @@ void initBlueCar() {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
         blueCar[i].row = rand() % 130;
-        blueCar[i].col = rand() % 1000;
+        blueCar[i].col = rand() % 900;
     }
 
 }
@@ -1659,6 +1687,14 @@ void initDoor() {
     door.width = 32;
     door.row = rand() % 160 - door.height;
     door.col = 1024 - 46;
+}
+
+
+void initFish() {
+    fish.height = 8;
+    fish.width = 8;
+    fish.row = rand() % 130;
+    fish.col = 100;
 }
 
 
@@ -1835,6 +1871,7 @@ void drawGame() {
     for (int i = 0; i < 5; i++)
   drawBlueCar(&blueCar[i], 1 + 5 + 5 + i);
     drawDoor();
+    drawFish();
 }
 
 
@@ -1897,6 +1934,14 @@ void drawDoor() {
 
         shadowOAM[100].attr0 = (2<<8);
     }
+}
+
+
+void drawFish() {
+
+    shadowOAM[200].attr0 = (0xFF & (fish.row - vOff)) | (0<<14);
+    shadowOAM[200].attr1 = (0x1FF & (fish.col - totalHOff)) | (0<<14);
+    shadowOAM[200].attr2 = ((0)*32+(9));
 }
 
 

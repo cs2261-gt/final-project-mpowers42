@@ -1,11 +1,9 @@
 /* Finished: XL background implementation, basic gameplay, cat sprite and animation, state machine, collisions, zombie sprite and animation,
-    car as a road block */
-// What needs to be added: Car animation, car-cat collision, cheat, random entrance at the end to win, push the background forward constantly
+    car as a road block, car-cat collision, door at the end */
+// What needs to be added: Car animation, cheat
 /* Cheat idea: There is a green crystal (or maybe a green fish/some sort of cat food) that the cat can get and 
     makes the cheeks turn green and allows the cat to eat the zombies */
-/* Bugs: If the cat gets to the end of the road without killing enough zombies, the game doesn't end which will be fixed with later implementation,
-    trying to implement the door but can't get it to draw, can't get cat-car collision to work (just makes cat move super fast, see comment in
-    updateCat() method) */
+/* Bugs:  */
 // How to play: Go up, down, and right with the up, down, and right buttons, press A to shoot hairballs, try to kill zombies
 
 #include <stdlib.h>
@@ -25,8 +23,8 @@
 #include "sound.h"
 #include "gameSong.h"
 #include "catSound.h"
-#include "pauseSong.h"
 #include "loseSound.h"
+#include "winSound.h"
 
 // Prototype
 void initialize();
@@ -158,8 +156,11 @@ void instructions() {
     waitForVBlank();
 
     if (BUTTON_PRESSED(BUTTON_SELECT)) {
-        goToStart();
+        initGame();
+        srand(seed);
+        goToGame();
     }
+    seed++;
     if (BUTTON_PRESSED(BUTTON_START)) {
         goToGame();
     }
@@ -260,6 +261,8 @@ void goToWin() {
     DMANow(3, winScreenMap, &SCREENBLOCK[28], winScreenMapLen / 2);
 
     REG_DISPCTL = MODE0 | BG0_ENABLE;
+
+    playSoundB(winSound, WINSOUNDLEN, 0);
 
     // Reset hOff to 0
     REG_BG0HOFF = 0;
