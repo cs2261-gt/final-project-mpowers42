@@ -1625,6 +1625,8 @@ void initCat() {
     cat.currFrame = 0;
     cat.numFrames = 3;
 
+    cat.cheat = 0;
+
 
     cat.worldRow = 160 / 2 - cat.width / 2 + vOff;
     cat.worldCol = 240 / 2 - cat.height / 2 + hOff;
@@ -1694,7 +1696,7 @@ void initFish() {
     fish.height = 8;
     fish.width = 8;
     fish.row = rand() % 130;
-    fish.col = 100;
+    fish.col = rand() % 100 + 500;
 }
 
 
@@ -1741,6 +1743,12 @@ void updateCat() {
         door.col - totalHOff + 13, door.row - vOff, door.width, door.height)) {
         winGame = 1;
     }
+
+
+    if (collision(cat.screenCol - 4, cat.screenRow - 10, cat.width, cat.height,
+        fish.col - totalHOff, fish.row - vOff, door.width, door.height)) {
+            cat.cheat = 1;
+        }
 
     if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<6))) && cat.worldRow - cat.rdel > 0) {
 
@@ -1804,17 +1812,24 @@ void updateZombie(ZOMBIE* z) {
                 hairball[i].active = 0;
                 z->active = 0;
 
-
-                zombiesRemaining--;
             }
         }
 
 
-        if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
-            cat.screenCol + 4, cat.screenRow , cat.width, cat.height)
-            && z->active) {
+        if (cat.cheat) {
+            if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
+                cat.screenCol + 4, cat.screenRow , cat.width, cat.height)
+                && z->active) {
 
-            loseGame = 1;
+                z->active = 0;
+            }
+        } else {
+            if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
+                cat.screenCol + 4, cat.screenRow , cat.width, cat.height)
+                && z->active) {
+
+                loseGame = 1;
+            }
         }
 
 
@@ -1877,9 +1892,15 @@ void drawGame() {
 
 void drawCat() {
 
-    shadowOAM[0].attr0 = cat.screenRow | (0<<14);
-    shadowOAM[0].attr1 = cat.screenCol | (2<<14);
-    shadowOAM[0].attr2 = ((cat.currFrame * 4)*32+(0));
+    if (cat.cheat) {
+        shadowOAM[200].attr0 = cat.screenRow | (0<<14);
+        shadowOAM[200].attr1 = cat.screenCol | (2<<14);
+        shadowOAM[200].attr2 = (((cat.currFrame * 4) + 4)*32+(0));
+    } else {
+        shadowOAM[0].attr0 = cat.screenRow | (0<<14);
+        shadowOAM[0].attr1 = cat.screenCol | (2<<14);
+        shadowOAM[0].attr2 = ((cat.currFrame * 4)*32+(0));
+    }
 }
 
 
@@ -1939,9 +1960,9 @@ void drawDoor() {
 
 void drawFish() {
 
-    shadowOAM[200].attr0 = (0xFF & (fish.row - vOff)) | (0<<14);
-    shadowOAM[200].attr1 = (0x1FF & (fish.col - totalHOff)) | (0<<14);
-    shadowOAM[200].attr2 = ((0)*32+(9));
+    shadowOAM[120].attr0 = (0xFF & (fish.row - vOff)) | (0<<14);
+    shadowOAM[120].attr1 = (0x1FF & (fish.col - totalHOff)) | (0<<14);
+    shadowOAM[120].attr2 = ((0)*32+(9));
 }
 
 

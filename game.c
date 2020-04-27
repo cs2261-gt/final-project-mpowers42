@@ -78,6 +78,8 @@ void initCat() {
     cat.currFrame = 0;
     cat.numFrames = 3;
 
+    cat.cheat = 0;
+
     // Place in the middle of the screen
     cat.worldRow = SCREENHEIGHT / 2 - cat.width / 2 + vOff;
     cat.worldCol = SCREENWIDTH / 2 - cat.height / 2 + hOff;
@@ -147,7 +149,7 @@ void initFish() {
     fish.height = 8;
     fish.width = 8;
     fish.row = rand() % 130;
-    fish.col = 100;
+    fish.col = rand() % 100 + 500;
 }
 
 // Update game
@@ -194,6 +196,12 @@ void updateCat() {
         door.col - totalHOff + 13, door.row - vOff, door.width, door.height)) {
         winGame = 1;
     }
+
+    // Handles cat-fish collision
+    if (collision(cat.screenCol - 4, cat.screenRow - 10, cat.width, cat.height,
+        fish.col - totalHOff, fish.row - vOff, door.width, door.height)) {
+            cat.cheat = 1;
+        }
 
     if (BUTTON_HELD(BUTTON_UP) && cat.worldRow - cat.rdel > 0) {
 
@@ -257,17 +265,24 @@ void updateZombie(ZOMBIE* z) {
                 hairball[i].active = 0;
                 z->active = 0;
 
-                // Update "score" (for now)
-                zombiesRemaining--;
             }
         }
 
         // Handle zombie-cat collisions
-        if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
-            cat.screenCol + 4, cat.screenRow , cat.width, cat.height) // Adjusted to fit specific sprites
-            && z->active) {
+        if (cat.cheat) {
+            if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
+                cat.screenCol + 4, cat.screenRow , cat.width, cat.height) // Adjusted to fit specific sprites
+                && z->active) {
 
-            loseGame = 1;
+                z->active = 0;
+            }
+        } else {
+            if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
+                cat.screenCol + 4, cat.screenRow , cat.width, cat.height) // Adjusted to fit specific sprites
+                && z->active) {
+
+                loseGame = 1;
+            }
         }
 
         // Allow zombie to move independently from the cat
@@ -330,9 +345,15 @@ void drawGame() {
 // Draw cat
 void drawCat() {
 
-    shadowOAM[0].attr0 = cat.screenRow | ATTR0_SQUARE;
-    shadowOAM[0].attr1 = cat.screenCol | ATTR1_MEDIUM; // 32 x 32
-    shadowOAM[0].attr2 = ATTR2_TILEID(0, cat.currFrame * 4);
+    if (cat.cheat) {
+        shadowOAM[200].attr0 = cat.screenRow | ATTR0_SQUARE;
+        shadowOAM[200].attr1 = cat.screenCol | ATTR1_MEDIUM; // 32 x 32
+        shadowOAM[200].attr2 = ATTR2_TILEID(0, (cat.currFrame * 4) + 4);
+    } else {
+        shadowOAM[0].attr0 = cat.screenRow | ATTR0_SQUARE;
+        shadowOAM[0].attr1 = cat.screenCol | ATTR1_MEDIUM; // 32 x 32
+        shadowOAM[0].attr2 = ATTR2_TILEID(0, cat.currFrame * 4);
+    }
 }
 
 // Draw zombie
