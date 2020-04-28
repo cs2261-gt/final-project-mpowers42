@@ -49,6 +49,9 @@ typedef struct {
 	int col;
 	int height;
 	int width;
+	int aniCounter;
+	int currFrame;
+	int numFrames;
 } BLUECAR;
 
 // Door struct
@@ -92,6 +95,7 @@ void initHairball();
 void updateGame();
 void updateCat();
 void updateZombie(ZOMBIE *);
+void updateBlueCar(BLUECAR *);
 void updateHairball(HAIRBALL *);
 void drawGame();
 void drawCat();
@@ -102,5 +106,6 @@ void drawDoor();
 void drawFish();
 void animateCat();
 void animateZombie(ZOMBIE *);
+void animateBlueCar(BLUECAR *);
 void fireHairball();
 void fireZombie();

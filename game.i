@@ -1384,6 +1384,9 @@ typedef struct {
  int col;
  int height;
  int width;
+ int aniCounter;
+ int currFrame;
+ int numFrames;
 } BLUECAR;
 
 
@@ -1427,6 +1430,7 @@ void initHairball();
 void updateGame();
 void updateCat();
 void updateZombie(ZOMBIE *);
+void updateBlueCar(BLUECAR *);
 void updateHairball(HAIRBALL *);
 void drawGame();
 void drawCat();
@@ -1437,6 +1441,7 @@ void drawDoor();
 void drawFish();
 void animateCat();
 void animateZombie(ZOMBIE *);
+void animateBlueCar(BLUECAR *);
 void fireHairball();
 void fireZombie();
 # 5 "game.c" 2
@@ -1686,6 +1691,9 @@ void initBlueCar() {
         blueCar[i].width = 32;
         blueCar[i].row = rand() % 130;
         blueCar[i].col = rand() % 800 + 100;
+        blueCar[i].aniCounter = 0;
+        blueCar[i].currFrame = 0;
+        blueCar[i].numFrames = 3;
     }
 
 }
@@ -1727,6 +1735,8 @@ void updateGame() {
     updateCat();
     for (int i = 0; i < 5; i++)
   updateZombie(&zombie[i]);
+    for (int i = 0; i < 5; i++)
+  updateBlueCar(&blueCar[i]);
     for (int i = 0; i < 5; i++)
   updateHairball(&hairball[i]);
 
@@ -1850,6 +1860,11 @@ void updateZombie(ZOMBIE* z) {
 }
 
 
+void updateBlueCar(BLUECAR* b) {
+    animateBlueCar(b);
+}
+
+
 void fireZombie() {
     for (int i = 0; i < 5; i++) {
         if (!zombie[i].active) {
@@ -1945,7 +1960,7 @@ void drawBlueCar(BLUECAR* b, int index) {
     } else {
         shadowOAM[index].attr0 = (0xFF & (b->row - vOff)) | (0<<14);
         shadowOAM[index].attr1 = (0x1FF & (b->col - totalHOff)) | (2<<14);
-        shadowOAM[index].attr2 = ((1)*32+(8));
+        shadowOAM[index].attr2 = ((1)*32+(b->currFrame * 4 + 8));
     }
 }
 
@@ -2015,6 +2030,20 @@ void animateZombie(ZOMBIE* z) {
     }
 
     z->aniCounter++;
+}
+
+
+void animateBlueCar(BLUECAR *b) {
+
+    if (b->aniCounter % 12 == 0) {
+        if (b->currFrame < b->numFrames - 1) {
+            b->currFrame++;
+        } else {
+            b->currFrame = 0;
+        }
+    }
+
+    b->aniCounter++;
 }
 
 

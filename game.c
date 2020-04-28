@@ -132,6 +132,9 @@ void initBlueCar() {
         blueCar[i].width = 32;
         blueCar[i].row = rand() % 130;
         blueCar[i].col = rand() % 800 + 100;
+        blueCar[i].aniCounter = 0;
+        blueCar[i].currFrame = 0;
+        blueCar[i].numFrames = 3;
     }
 
 }
@@ -173,6 +176,8 @@ void updateGame() {
     updateCat();
     for (int i = 0; i < ZOMBIECOUNT; i++)
 		updateZombie(&zombie[i]);
+    for (int i = 0; i < BLUECARCOUNT; i++)
+		updateBlueCar(&blueCar[i]);
     for (int i = 0; i < HAIRBALLCOUNT; i++)
 		updateHairball(&hairball[i]);
 
@@ -295,6 +300,11 @@ void updateZombie(ZOMBIE* z) {
     }
 }
 
+// Updates blue car
+void updateBlueCar(BLUECAR* b) {
+    animateBlueCar(b);
+}
+
 // Intialize inactive zombies on fire
 void fireZombie() {
     for (int i = 0; i < ZOMBIECOUNT; i++) {
@@ -391,7 +401,7 @@ void drawBlueCar(BLUECAR* b, int index) {
     } else {
         shadowOAM[index].attr0 = (ROWMASK & (b->row - vOff)) | ATTR0_SQUARE;
         shadowOAM[index].attr1 = (COLMASK & (b->col - totalHOff)) | ATTR1_MEDIUM; // 32 x 32
-        shadowOAM[index].attr2 = ATTR2_TILEID(8, 1);
+        shadowOAM[index].attr2 = ATTR2_TILEID(b->currFrame * 4 + 8, 1);
     }
 }
 
@@ -461,6 +471,20 @@ void animateZombie(ZOMBIE* z) {
     }
 
     z->aniCounter++;
+}
+
+// Animate zombies
+void animateBlueCar(BLUECAR *b) {
+
+    if (b->aniCounter % 12 == 0) {
+        if (b->currFrame < b->numFrames - 1) {
+            b->currFrame++;
+        } else {
+            b->currFrame = 0;
+        }
+    }
+
+    b->aniCounter++;
 }
 
 // Fire a hairball
