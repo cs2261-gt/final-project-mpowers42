@@ -17,6 +17,7 @@
 #include "catSound.h"
 #include "loseSound.h"
 #include "winSound.h"
+#include "eatingSound.h"
 
 // Variables
 CAT cat;
@@ -147,9 +148,10 @@ void initDoor() {
 // Initialize fish
 void initFish() {
     fish.height = 8;
-    fish.width = 8;
+    fish.width = 16;
     fish.row = rand() % 130;
     fish.col = rand() % 100 + 500;
+    fish.active = 1;
 }
 
 // Update game
@@ -201,6 +203,7 @@ void updateCat() {
     if (collision(cat.screenCol - 4, cat.screenRow - 10, cat.width, cat.height,
         fish.col - totalHOff, fish.row - vOff, door.width, door.height)) {
             cat.cheat = 1;
+            fish.active = 0;
         }
 
     if (BUTTON_HELD(BUTTON_UP) && cat.worldRow - cat.rdel > 0) {
@@ -275,6 +278,7 @@ void updateZombie(ZOMBIE* z) {
                 && z->active) {
 
                 z->active = 0;
+                playSoundB(eatingSound, EATINGSOUNDLEN, 0);
             }
         } else {
             if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
@@ -345,10 +349,10 @@ void drawGame() {
 // Draw cat
 void drawCat() {
 
-    if (cat.cheat) {
-        shadowOAM[200].attr0 = cat.screenRow | ATTR0_SQUARE;
-        shadowOAM[200].attr1 = cat.screenCol | ATTR1_MEDIUM; // 32 x 32
-        shadowOAM[200].attr2 = ATTR2_TILEID(0, (cat.currFrame * 4) + 4);
+    if (cat.cheat) { 
+        shadowOAM[0].attr0 = cat.screenRow | ATTR0_SQUARE;
+        shadowOAM[0].attr1 = cat.screenCol | ATTR1_MEDIUM; // 32 x 32
+        shadowOAM[0].attr2 = ATTR2_TILEID(0, ((cat.currFrame + 3) * 4));
     } else {
         shadowOAM[0].attr0 = cat.screenRow | ATTR0_SQUARE;
         shadowOAM[0].attr1 = cat.screenCol | ATTR1_MEDIUM; // 32 x 32
@@ -413,9 +417,22 @@ void drawDoor() {
 // Draw fish
 void drawFish() {
 
-    shadowOAM[120].attr0 = (ROWMASK & (fish.row - vOff)) | ATTR0_SQUARE;
-    shadowOAM[120].attr1 = (COLMASK & (fish.col - totalHOff)) | ATTR1_TINY; // 8 x 8
-    shadowOAM[120].attr2 = ATTR2_TILEID(9, 0);
+    if (fish.active) {
+        shadowOAM[120].attr0 = (ROWMASK & (fish.row - vOff)) | ATTR0_WIDE;
+        shadowOAM[120].attr1 = (COLMASK & (fish.col - totalHOff)) | ATTR1_TINY; // 16 x 8
+        shadowOAM[120].attr2 = ATTR2_TILEID(9, 0);
+    } else {
+        shadowOAM[120].attr0 = ATTR0_HIDE;
+    }
+
+    // Don't draw "fake duplicates"
+    if (fish.row - vOff < 0 
+      || fish.row - vOff > SCREENHEIGHT 
+      || fish.col - totalHOff < 0 
+      || fish.col - totalHOff > SCREENWIDTH) {
+
+        shadowOAM[120].attr0 = ATTR0_HIDE;
+    }
 }
 
 // Animate the cat

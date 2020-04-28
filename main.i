@@ -1347,6 +1347,7 @@ typedef struct {
     int aniCounter;
  int currFrame;
  int numFrames;
+ int cheat;
 } CAT;
 
 
@@ -1395,6 +1396,15 @@ typedef struct {
 } DOOR;
 
 
+typedef struct {
+ int row;
+ int col;
+ int height;
+ int width;
+ int active;
+} FISH;
+
+
 
 
 
@@ -1404,6 +1414,7 @@ extern CAT cat;
 extern ZOMBIE zombie[5];
 extern HAIRBALL hairball[5];
 extern BLUECAR blueCar[5];
+extern FISH fish;
 extern int zombiesRemaining;
 
 
@@ -1412,6 +1423,7 @@ void initCat();
 void initZombie();
 void initBlueCar();
 void initDoor();
+void initFish();
 void initHairball();
 void updateGame();
 void updateCat();
@@ -1423,6 +1435,7 @@ void drawZombie(ZOMBIE *, int index);
 void drawHairball(HAIRBALL *, int index);
 void drawBlueCar(BLUECAR *, int index);
 void drawDoor();
+void drawFish();
 void animateCat();
 void animateZombie(ZOMBIE *);
 void fireHairball();
@@ -1553,6 +1566,13 @@ extern const signed char loseSong[88906];
 
 extern const signed char winSound[30958];
 # 28 "main.c" 2
+# 1 "eatingSound.h" 1
+
+
+
+
+extern const signed char eatingSound[17568];
+# 29 "main.c" 2
 
 
 void initialize();

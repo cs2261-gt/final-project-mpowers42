@@ -25,6 +25,7 @@
 #include "catSound.h"
 #include "loseSound.h"
 #include "winSound.h"
+#include "eatingSound.h"
 
 // Prototype
 void initialize();

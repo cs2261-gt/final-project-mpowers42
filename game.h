@@ -65,6 +65,7 @@ typedef struct {
 	int col;
 	int height;
 	int width;
+	int active;
 } FISH;
 
 // Constants

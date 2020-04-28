@@ -1400,6 +1400,7 @@ typedef struct {
  int col;
  int height;
  int width;
+ int active;
 } FISH;
 
 
@@ -1564,6 +1565,13 @@ extern const signed char loseSong[88906];
 
 extern const signed char winSound[30958];
 # 20 "game.c" 2
+# 1 "eatingSound.h" 1
+
+
+
+
+extern const signed char eatingSound[17568];
+# 21 "game.c" 2
 
 
 CAT cat;
@@ -1694,9 +1702,10 @@ void initDoor() {
 
 void initFish() {
     fish.height = 8;
-    fish.width = 8;
+    fish.width = 16;
     fish.row = rand() % 130;
     fish.col = rand() % 100 + 500;
+    fish.active = 1;
 }
 
 
@@ -1748,6 +1757,7 @@ void updateCat() {
     if (collision(cat.screenCol - 4, cat.screenRow - 10, cat.width, cat.height,
         fish.col - totalHOff, fish.row - vOff, door.width, door.height)) {
             cat.cheat = 1;
+            fish.active = 0;
         }
 
     if ((~((*(volatile unsigned short *)0x04000130)) & ((1<<6))) && cat.worldRow - cat.rdel > 0) {
@@ -1822,6 +1832,7 @@ void updateZombie(ZOMBIE* z) {
                 && z->active) {
 
                 z->active = 0;
+                playSoundB(eatingSound, 17568, 0);
             }
         } else {
             if (collision(z->screenCol + 5, z->screenRow, z->width, z->height,
@@ -1893,9 +1904,9 @@ void drawGame() {
 void drawCat() {
 
     if (cat.cheat) {
-        shadowOAM[200].attr0 = cat.screenRow | (0<<14);
-        shadowOAM[200].attr1 = cat.screenCol | (2<<14);
-        shadowOAM[200].attr2 = (((cat.currFrame * 4) + 4)*32+(0));
+        shadowOAM[0].attr0 = cat.screenRow | (0<<14);
+        shadowOAM[0].attr1 = cat.screenCol | (2<<14);
+        shadowOAM[0].attr2 = ((((cat.currFrame + 3) * 4))*32+(0));
     } else {
         shadowOAM[0].attr0 = cat.screenRow | (0<<14);
         shadowOAM[0].attr1 = cat.screenCol | (2<<14);
@@ -1960,9 +1971,22 @@ void drawDoor() {
 
 void drawFish() {
 
-    shadowOAM[120].attr0 = (0xFF & (fish.row - vOff)) | (0<<14);
-    shadowOAM[120].attr1 = (0x1FF & (fish.col - totalHOff)) | (0<<14);
-    shadowOAM[120].attr2 = ((0)*32+(9));
+    if (fish.active) {
+        shadowOAM[120].attr0 = (0xFF & (fish.row - vOff)) | (1<<14);
+        shadowOAM[120].attr1 = (0x1FF & (fish.col - totalHOff)) | (0<<14);
+        shadowOAM[120].attr2 = ((0)*32+(9));
+    } else {
+        shadowOAM[120].attr0 = (2<<8);
+    }
+
+
+    if (fish.row - vOff < 0
+      || fish.row - vOff > 160
+      || fish.col - totalHOff < 0
+      || fish.col - totalHOff > 240) {
+
+        shadowOAM[120].attr0 = (2<<8);
+    }
 }
 
 
