@@ -1687,9 +1687,11 @@ void goToInstructions() {
     drawFullscreenImage3(grassBitmap);
     drawString(20, 40, "Avoid the zombies and obstacles,", ((0) | (0)<<5 | (0)<<10));
     drawString(4, 50, "and help Cheeto escape the apocalypse!", ((0) | (0)<<5 | (0)<<10));
-    drawString(20, 70, " Use RIGHT, UP, and DOWN to walk", ((0) | (0)<<5 | (0)<<10));
-    drawString(10, 80, "Use A to shoot hairballs at zombies", ((0) | (0)<<5 | (0)<<10));
-    drawString(20, 100, "Press START to pause and unpause", ((0) | (0)<<5 | (0)<<10));
+    drawString(20, 60, " Use RIGHT, UP, and DOWN to walk", ((0) | (0)<<5 | (0)<<10));
+    drawString(10, 70, "Use A to shoot hairballs at zombies", ((0) | (0)<<5 | (0)<<10));
+    drawString(20, 80, "Press START to pause and unpause", ((0) | (0)<<5 | (0)<<10));
+    drawString(50, 100, "Eat the single fish snack", ((0) | (0)<<5 | (0)<<10));
+    drawString(60, 110, "to eat the zombies!", ((0) | (0)<<5 | (0)<<10));
     drawString(10, 130, "Press SELECT", ((0) | (0)<<5 | (0)<<10));
     drawString(10, 140, " to go back", ((0) | (0)<<5 | (0)<<10));
     drawString(160, 130, "Press START", ((0) | (0)<<5 | (0)<<10));
@@ -1704,14 +1706,14 @@ void instructions() {
     waitForVBlank();
 
     if ((!(~(oldButtons)&((1<<2))) && (~buttons & ((1<<2))))) {
+        goToStart();
+    }
+    if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
         initGame();
         srand(seed);
         goToGame();
     }
     seed++;
-    if ((!(~(oldButtons)&((1<<3))) && (~buttons & ((1<<3))))) {
-        goToGame();
-    }
 }
 
 

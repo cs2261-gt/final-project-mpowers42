@@ -1685,7 +1685,7 @@ void initBlueCar() {
         blueCar[i].height = 32;
         blueCar[i].width = 32;
         blueCar[i].row = rand() % 130;
-        blueCar[i].col = rand() % 900;
+        blueCar[i].col = rand() % 800 + 100;
     }
 
 }

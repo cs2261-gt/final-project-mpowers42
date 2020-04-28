@@ -140,9 +140,11 @@ void goToInstructions() {
     drawFullscreenImage3(grassBitmap);
     drawString(20, 40, "Avoid the zombies and obstacles,", BLACK);
     drawString(4, 50, "and help Cheeto escape the apocalypse!", BLACK);
-    drawString(20, 70, " Use RIGHT, UP, and DOWN to walk", BLACK);
-    drawString(10, 80, "Use A to shoot hairballs at zombies", BLACK);
-    drawString(20, 100, "Press START to pause and unpause", BLACK);
+    drawString(20, 60, " Use RIGHT, UP, and DOWN to walk", BLACK);
+    drawString(10, 70, "Use A to shoot hairballs at zombies", BLACK);
+    drawString(20, 80, "Press START to pause and unpause", BLACK);
+    drawString(50, 100, "Eat the single fish snack", BLACK);
+    drawString(60, 110, "to eat the zombies!", BLACK);
     drawString(10, 130, "Press SELECT", BLACK);
     drawString(10, 140, " to go back", BLACK);
     drawString(160, 130, "Press START", BLACK);
@@ -157,14 +159,14 @@ void instructions() {
     waitForVBlank();
 
     if (BUTTON_PRESSED(BUTTON_SELECT)) {
+        goToStart();
+    }
+    if (BUTTON_PRESSED(BUTTON_START)) {
         initGame();
         srand(seed);
         goToGame();
     }
     seed++;
-    if (BUTTON_PRESSED(BUTTON_START)) {
-        goToGame();
-    }
 }
 
 // Sets up the game state

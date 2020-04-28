@@ -333,12 +333,12 @@ initBlueCar:
 	bx	r4
 	smull	r3, r2, r6, r0
 	asr	r3, r0, #31
-	add	r2, r2, r0
-	rsb	r3, r3, r2, asr #9
-	rsb	r3, r3, r3, lsl #4
-	rsb	r3, r3, r3, lsl #4
-	sub	r3, r0, r3, lsl #2
-	str	r3, [r8, #4]
+	rsb	r3, r3, r2, asr #8
+	add	r3, r3, r3, lsl #2
+	add	r3, r3, r3, lsl #2
+	sub	r0, r0, r3, lsl #5
+	add	r0, r0, #100
+	str	r0, [r8, #4]
 	add	r8, r8, #16
 	cmp	r8, r5
 	bne	.L48
@@ -350,7 +350,7 @@ initBlueCar:
 	.word	blueCar
 	.word	rand
 	.word	2114445439
-	.word	-1851608123
+	.word	1374389535
 	.size	initBlueCar, .-initBlueCar
 	.align	2
 	.global	initDoor

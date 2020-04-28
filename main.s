@@ -138,15 +138,21 @@ win.part.0:
 	.ascii	"Press START to pause and unpause\000"
 	.align	2
 .LC5:
-	.ascii	"Press SELECT\000"
+	.ascii	"Eat the single fish snack\000"
 	.align	2
 .LC6:
-	.ascii	" to go back\000"
+	.ascii	"to eat the zombies!\000"
 	.align	2
 .LC7:
-	.ascii	"Press START\000"
+	.ascii	"Press SELECT\000"
 	.align	2
 .LC8:
+	.ascii	" to go back\000"
+	.align	2
+.LC9:
+	.ascii	"Press START\000"
+	.align	2
+.LC10:
 	.ascii	" to play\000"
 	.text
 	.align	2
@@ -181,49 +187,61 @@ goToInstructions:
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #70
+	mov	r1, #60
 	mov	r0, #20
 	ldr	r2, .L16+24
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #80
+	mov	r1, #70
 	mov	r0, #10
 	ldr	r2, .L16+28
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #100
+	mov	r1, #80
 	mov	r0, #20
 	ldr	r2, .L16+32
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #130
-	mov	r0, #10
+	mov	r1, #100
+	mov	r0, #50
 	ldr	r2, .L16+36
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
-	mov	r1, #140
-	mov	r0, #10
+	mov	r1, #110
+	mov	r0, #60
 	ldr	r2, .L16+40
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
 	mov	r1, #130
-	mov	r0, #160
+	mov	r0, #10
 	ldr	r2, .L16+44
 	mov	lr, pc
 	bx	r4
 	mov	r3, #0
+	mov	r1, #140
+	mov	r0, #10
 	ldr	r2, .L16+48
+	mov	lr, pc
+	bx	r4
+	mov	r3, #0
+	mov	r1, #130
+	mov	r0, #160
+	ldr	r2, .L16+52
+	mov	lr, pc
+	bx	r4
+	mov	r3, #0
+	ldr	r2, .L16+56
 	mov	r1, #140
 	mov	r0, #165
 	mov	lr, pc
 	bx	r4
 	mov	r2, #1
-	ldr	r3, .L16+52
+	ldr	r3, .L16+60
 	pop	{r4, lr}
 	str	r2, [r3]
 	bx	lr
@@ -243,6 +261,8 @@ goToInstructions:
 	.word	.LC6
 	.word	.LC7
 	.word	.LC8
+	.word	.LC9
+	.word	.LC10
 	.word	state
 	.size	goToInstructions, .-goToInstructions
 	.align	2
@@ -393,34 +413,34 @@ instructions:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, r5, r6, lr}
-	ldr	r5, .L50
+	push	{r4, lr}
+	ldr	r4, .L50
 	ldr	r3, .L50+4
 	mov	lr, pc
 	bx	r3
-	ldrh	r2, [r5]
+	ldrh	r3, [r4]
+	tst	r3, #4
+	beq	.L38
+	ldr	r2, .L50+8
+	ldrh	r2, [r2]
 	tst	r2, #4
-	bne	.L46
-	ldr	r4, .L50+8
+	beq	.L49
 .L38:
+	tst	r3, #8
+	bne	.L46
+	ldr	r4, .L50+12
+.L39:
 	ldr	r3, [r4]
-	tst	r2, #8
 	add	r3, r3, #1
 	str	r3, [r4]
-	beq	.L37
-	ldr	r3, .L50+12
-	ldrh	r3, [r3]
-	tst	r3, #8
-	beq	.L49
-.L37:
-	pop	{r4, r5, r6, lr}
+	pop	{r4, lr}
 	bx	lr
 .L46:
-	ldr	r3, .L50+12
+	ldr	r3, .L50+8
 	ldrh	r3, [r3]
-	tst	r3, #4
-	ldr	r4, .L50+8
-	bne	.L38
+	tst	r3, #8
+	ldr	r4, .L50+12
+	bne	.L39
 	ldr	r3, .L50+16
 	mov	lr, pc
 	bx	r3
@@ -429,18 +449,18 @@ instructions:
 	mov	lr, pc
 	bx	r3
 	bl	goToGame
-	ldrh	r2, [r5]
-	b	.L38
+	b	.L39
 .L49:
-	pop	{r4, r5, r6, lr}
-	b	goToGame
+	bl	goToStart
+	ldrh	r3, [r4]
+	b	.L38
 .L51:
 	.align	2
 .L50:
 	.word	oldButtons
 	.word	waitForVBlank
-	.word	seed
 	.word	buttons
+	.word	seed
 	.word	initGame
 	.word	srand
 	.size	instructions, .-instructions
